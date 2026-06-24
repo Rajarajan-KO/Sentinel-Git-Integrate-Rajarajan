@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "aed43ac1704e1852d399",
+  "position": {
+    "x": 272,
+    "y": 80,
+    "z": 4750,
+    "height": 48,
+    "width": 160,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "FlowVisual_C29F1DCC_81F5_4973_94AD_0517D44CC06A",
+    "query": {
+      "queryState": {
+        "table": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BRAND TABLE"
+                    }
+                  },
+                  "Property": "OPERATION_UNIT"
+                }
+              },
+              "queryRef": "BRAND TABLE.OPERATION_UNIT",
+              "nativeQueryRef": "OPERATION_UNIT"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "flowInfo": [
+        {
+          "properties": {
+            "FlowId": {
+              "expr": {
+                "Literal": {
+                  "Value": "'/providers/Microsoft.Flow/environments/Default-548d26ab-8caa-49e1-97c2-a1b1a06cc39c/flows/4198303e-8ac3-477b-bb42-77df31fa95a8'"
+                }
+              }
+            },
+            "ManagementUri": {
+              "expr": {
+                "Literal": {
+                  "Value": "'https://us.api.flow.microsoft.com/providers/Microsoft.ProcessSimple'"
+                }
+              }
+            },
+            "EnvironmentId": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default-548d26ab-8caa-49e1-97c2-a1b1a06cc39c'"
+                }
+              }
+            },
+            "EnvironmentLocation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'unitedstates'"
+                }
+              }
+            },
+            "EnvironmentRegion": {
+              "expr": {
+                "Literal": {
+                  "Value": "'westus'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OU flow'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "0a02c660d2a28a92db6c",
+  "isHidden": true
+}

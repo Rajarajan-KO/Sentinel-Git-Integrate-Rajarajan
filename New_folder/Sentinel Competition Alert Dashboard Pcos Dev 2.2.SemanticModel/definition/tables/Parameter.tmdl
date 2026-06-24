@@ -1,0 +1,47 @@
+table Parameter
+	lineageTag: 2ca3bbc0-40a0-4dfc-b35e-a88c8ccc5bcb
+
+	column Parameter
+		lineageTag: ee8a7301-3f0e-4a36-8baa-c43ae463818b
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: c81aa83b-d582-4431-a94c-4db8fb0c2672
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: ddaacb77-5225-4605-835e-f12c24ce478e
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("QUARTER", NAMEOF('Pack & Flavour Table'[QUARTER]), 0)
+				}
+
+	annotation PBI_Id = 9f62b90cd99a4c91843b86afe354d79a
+

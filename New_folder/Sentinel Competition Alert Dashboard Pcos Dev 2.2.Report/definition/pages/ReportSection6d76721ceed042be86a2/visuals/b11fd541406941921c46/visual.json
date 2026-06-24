@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "b11fd541406941921c46",
+  "position": {
+    "x": 28.517109062878529,
+    "y": 1329.9342681142441,
+    "z": 61000,
+    "height": 121.84582963229917,
+    "width": 2434.3241281857217,
+    "tabOrder": 58000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Note: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "18pt"
+                    }
+                  },
+                  {
+                    "value": "Source of this dashboard is MPM 2.0, which incorporates globally standardized product definitions. While preliminary validation has been completed for topline  data from 'Category' through 'Brand Owner,' validation is still ongoing for more granular levels such as brand, SKU, and additional data elements like channel, distribution etc. and should be interpreted as directional until further notice.",
+                    "textStyle": {
+                      "fontSize": "18pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

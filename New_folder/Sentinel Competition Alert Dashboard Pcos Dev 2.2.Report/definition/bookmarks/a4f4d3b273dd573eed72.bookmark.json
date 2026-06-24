@@ -1,0 +1,3855 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Filter on Alert summary",
+  "name": "a4f4d3b273dd573eed72",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "347c5d4ce589d6973c93",
+      "032b14453b710570218e",
+      "26730973e18bb1839001",
+      "39ac02d43c6099433cd0",
+      "1c3aa89fb02847a164e0",
+      "3b7f2655531a033bce0b",
+      "3e50371808e7d902b623",
+      "cd030b1203a20ba4680e",
+      "d3e87e0040e6601062a5",
+      "441ca92764ac07457c50",
+      "4540e9ca0d3606a505a0",
+      "4c48010ae9c5e37dab66",
+      "9ee7538c4e0e936ac291",
+      "45c4cef05c08069091ea",
+      "5d9364b28dad17099a80",
+      "8c3d0ab58e2c33610303",
+      "63ea09f73c35c115cb02",
+      "6b3b8f79ba1a7d017001",
+      "764eeb7cb96b2b9d0dbd",
+      "79d0a2f54093b28ac32b",
+      "d5394423cbeebe71b27b",
+      "f069489466cc2c3387d7",
+      "7f3b727ca9c3d09b87e5",
+      "93f6c2e033bed93501b9",
+      "9b6205a273600ec4a9d2",
+      "9eac947cb7a13a3e12e5",
+      "c298540dbe0d6add5286",
+      "c3ace7e1692e3a355862",
+      "e59e215c7979310d4ad6",
+      "94b4b5a06d3b5833d19b",
+      "bd8dcb16e81a87c95207",
+      "eca0b5a135e8b0c7e00c",
+      "fa32ff4b7d25e2d161bb",
+      "fc051af3d3bc6461508e",
+      "fcd34300e8c5d21528e5"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "30592ed74445d723b6e4",
+    "sections": {
+      "30592ed74445d723b6e4": {
+        "visualContainers": {
+          "00ac60a330a00e0c53a4": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "01a0d26c360301a7858c": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "03dfbc30a0d408b00ea4": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "043d7a52049299953da8": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d7233285806266c0941c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "latest date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "047255e7051adcb20ac1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d02e00820a181b72e826",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "BRAND TABLE"
+                            }
+                          },
+                          "Property": "Latest Period"
+                        }
+                      },
+                      "Function": 3
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "089b87c8315ca80ac08a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bb468e792c19d096c880",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "SHARE_BRANDS"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4605c539b06eb0168a7b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Measure for Price_metric2"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dc5b7db1654a4b34847a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Measure for Price Metric1"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredColumnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "SHARE_BRANDS"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "SHARE_BRANDS"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "0b997b7c366963734035": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "44513abd265ec78b5003": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "c1f6ed98670d512076e3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a7143c032451db68a943",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "b9e22dd8c90b7219d560",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "COUNTRY"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "16e9e4413a4b8b83321d": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "16f1c72b1c98820ee928": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "1b741de4e6a6cc2a37cd": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "1e4a985f5805a29ad696": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3c9ee352a33f661051b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Forecast Bridge Table"
+                        }
+                      },
+                      "Property": "MESSAGE_VALUE"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "4f4176b09a1a4d9e605b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "ALERT_ID"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7e528da613676c6bbdc3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "49b66b2e01060b07ad6c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "514b88804e20be0b2043",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e16a695dc4e01eb35219",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND_OWNER"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "06cc94e30d44a0b9a0c1",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CHANNEL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "85510eb8b5e76d05ab65",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Global Snapshot Message"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "21f11981c51410d20265": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "265885c09da071ad491b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "30a9178d14dccda56267": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "26730973e18bb1839001": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e32f5baa3172c46e4786",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a7143c032451db68a943",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "264c1236478438489210",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Alert_run_status_check"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Alert_run_status_check"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "39ac02d43c6099433cd0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "1c3aa89fb02847a164e0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "3b7f2655531a033bce0b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterb0d7c15810a08e0e6445",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "g",
+                        "Entity": "Global Snapshot Data",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "g"
+                                      }
+                                    },
+                                    "Property": "PERIOD_ID"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "PERIOD_ID"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "52af8add530dbb7dd2d4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calender"
+                        }
+                      },
+                      "Property": "MONTH_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "Calender",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "c"
+                                            }
+                                          },
+                                          "Property": "MONTH_NAME"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Aug'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calender"
+                        }
+                      },
+                      "Property": "MONTH_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "cd030b1203a20ba4680e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d3e87e0040e6601062a5": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b1cd067c750823dbe784",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND_OWNER"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND_OWNER"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "441ca92764ac07457c50": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "4c48010ae9c5e37dab66": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9ee7538c4e0e936ac291": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "cc4e67042a8d2a0e0e2c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "5d9364b28dad17099a80": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8c3d0ab58e2c33610303": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b19a5592ed1baa46d103",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "ALERT_ID"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "ALERT_ID"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "63ea09f73c35c115cb02": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterb4e5570096391170498d",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "g",
+                        "Entity": "Global Snapshot Data",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "g"
+                                      }
+                                    },
+                                    "Property": "PERIOD_ID"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "PERIOD_ID"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "c155dc809dd81ede5248",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calender"
+                        }
+                      },
+                      "Property": "YEAR"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "Calender",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "c"
+                                            }
+                                          },
+                                          "Property": "YEAR"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'2025'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calender"
+                        }
+                      },
+                      "Property": "YEAR"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6b3b8f79ba1a7d017001": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "764eeb7cb96b2b9d0dbd": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "d5394423cbeebe71b27b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1a26aff02307e0859327",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CHANNEL"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CHANNEL"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "f069489466cc2c3387d7": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "7f3b727ca9c3d09b87e5": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "93f6c2e033bed93501b9": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "9b6205a273600ec4a9d2": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9eac947cb7a13a3e12e5": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c298540dbe0d6add5286": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "c3ace7e1692e3a355862": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "94b4b5a06d3b5833d19b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "bd8dcb16e81a87c95207": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0b5d0cf71c0637cc640d",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "CATEGORY"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "eca0b5a135e8b0c7e00c": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "fa32ff4b7d25e2d161bb": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "fc051af3d3bc6461508e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "fcd34300e8c5d21528e5": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "3a19c16d4c059885d1d0": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "3d33232fdaa8bc33cc66": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "58d222859729a6827dbc": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fb26ee09379971b3ba2a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a7143c032451db68a943",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "b",
+                        "Entity": "BRAND TABLE",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "b"
+                                        }
+                                      },
+                                      "Property": "ALERT_PRIORITY"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "1acf822eb049c7bd2893",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "OPERATION_UNIT"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "OPERATION_UNIT"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "77f2e0636a0a6ea9c4b7": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "45044ee9079b398e5782": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "590631cd68ecba8bbc78": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterb4e5570096391170498d",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "g",
+                        "Entity": "Global Snapshot Data",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "g"
+                                      }
+                                    },
+                                    "Property": "PERIOD_ID"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "PERIOD_ID"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "a90b44412a52851558ae",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calender"
+                        }
+                      },
+                      "Property": "YEAR"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "Calender",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "c"
+                                            }
+                                          },
+                                          "Property": "YEAR"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'2025'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calender"
+                        }
+                      },
+                      "Property": "YEAR"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "0ccc6380d3e7811ade43": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "220cf1d3d9268886d0c9": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "2e188d7f4bb3c6c0bd7c": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "37c511d5ce3728e1ae20": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "388557b700700747521e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "3c2740afee2636318784": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "3d55642610d5eb05ca92": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "578f7ce2748a2c409a18": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "598ecb4da10eed80a729": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "68208ef84c50110d13b0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "772dbff45dd5ec1cb6a7": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7a5c93758159a0605bab": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7e1d94305076ea60d32b": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "83f67098e88626550699": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "95b3982c6641199d2882": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "96b1a1b316b696d0ac3e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "9b1976f677c668995e2c": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "9c0ec924bcd097b3103e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a4d5f3599c01507db54b": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a561a1e010b1c2082aa9": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "a68c6d10b83703469bc8": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "b05c278a84737bb73603": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c064ef5887d62975c178": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "cb7bcd5474c4be5309b4": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "cc14f9e8cd928705ba03": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "ccd91304a97ce0340bc4": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d243decf758678b8574e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d39365e6c7130775731a": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "ea9a6bbcbb8e9b0d1028": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "ec10dabf538472cbee10": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "ff807bba217d6da680d6": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "0ac00319a3ec203d8d91": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "349c50ea25c3ec962637": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "3d4cf9320a206182b803": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "6593abf459a348ad3243": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7053990cb4309569601d": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "7712deeb8d0937b0b355": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8e8762f989d70090ee0d": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e9453fe6e109ea204638": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "694ec56495bbb416154a": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "73e456c01a51ea60b811": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterb0d7c15810a08e0e6445",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "g",
+                        "Entity": "Global Snapshot Data",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "g"
+                                      }
+                                    },
+                                    "Property": "PERIOD_ID"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "PERIOD_ID"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "1605e86868703127bb0e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calender"
+                        }
+                      },
+                      "Property": "MONTH_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "c",
+                                "Entity": "Calender",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "c"
+                                            }
+                                          },
+                                          "Property": "MONTH_NAME"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Aug'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calender"
+                        }
+                      },
+                      "Property": "MONTH_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "766baf808127620c57e3": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "70a32cb598d490c43e09": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0b5d0cf71c0637cc640d",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "CATEGORY"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "b8db41d3e70d396b0758": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8306e940b5a4d4472505": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "86a126dca8ab1d53d9ae": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "8c76123981026440b4d4": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "985c38fd08bd39eb766b": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "492336f869821bb83d66": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8d8707dfd078a447105d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a14a4fa9783335dd71e8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "filledMap",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d77966b805906ad70338": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "e1e3c43291c0c854d77d": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e2598f48db82b408ecb4": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "f34148b7196a5860374e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "2d71edac50822d8aa0bd": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d5f6f25e2a2509faf74e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "9f9d9ad9b63e0e3684eb",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "ALERT_PRIORITY"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'HIGH'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "50367831aab539b3357c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "filledMap",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "58f834a0cd7650384026": {
+            "filters": {
+              "byName": {
+                "71184d819b314015a085": {
+                  "name": "71184d819b314015a085",
+                  "type": "VisualTopN",
+                  "howCreated": 1
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "076d5ad473180467dc5c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "ALERT_ID"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "40b3223b35aa60d0de56",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "45fa954551a8428b076b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "18e3be5092b4891ebca2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CHANNEL"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "df2c74d6ae008033a6c4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "957b8992040c045649e2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND_OWNER"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "fde7a9605e204a0d1e0a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Global Snapshot Message"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "100ae368303d8094c89c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Forecast Bridge Table"
+                        }
+                      },
+                      "Property": "MESSAGE_VALUE"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "7df7a12b8b42bc8a780a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "ALERT_ID"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b69ec690d29101cd4d6d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a4ae8d52e2e1418e5357",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "ALERT_PRIORITY"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'HIGH'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "b127b14a97d178415682",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a28c10bf83bb02731922",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "BRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fb656f555b4d34ac70a4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "BRAND_OWNER"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "301932cbbaa8ea0a8a20",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "CHANNEL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c71ee16d69a2cd79718b",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "FINAL_ALERT_MESSAGE"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "''"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "FINAL_ALERT_MESSAGE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "6e93bc47a000b1e2c662": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "40b3223b35aa60d0de56",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "45fa954551a8428b076b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "18e3be5092b4891ebca2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CHANNEL"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "df2c74d6ae008033a6c4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "957b8992040c045649e2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "BRAND_OWNER"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "fde7a9605e204a0d1e0a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Global Snapshot Message"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "41b17fec153bd0c93907",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "ALERT_PRIORITY"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'HIGH'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "100ae368303d8094c89c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Forecast Bridge Table"
+                        }
+                      },
+                      "Property": "MESSAGE_VALUE"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "741255a1720427604d98",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "ALERT_ID"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f13c383351608c239d41",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "238be05c1045396b0c23",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8ed240192ea9d870a9d3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "BRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b4035b73a3a961a256ce",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "BRAND_OWNER"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "342504d4e555e614cc70",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "CHANNEL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7d206b75e701683d4b4d",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "d"
+                                        }
+                                      },
+                                      "Property": "FINAL_ALERT_MESSAGE"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ],
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "''"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "FINAL_ALERT_MESSAGE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Global Snapshot Data"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "aacabc145eb0a6b0b008": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "c29df320e15300c720e0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d41ca220ac00de60a2e5": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "dba9167c2b80d810b8c7": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "ec6200b0b98de2045034": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d5f6f25e2a2509faf74e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "9f9d9ad9b63e0e3684eb",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "DASHBOARD DATA",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "ALERT_PRIORITY"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'HIGH'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "ALERT_PRIORITY"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "91c57aa7aa84288909db",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "filledMap",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DASHBOARD DATA"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "99ecd139a8a47420c190": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9a2ef8545bb70473b144": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "a32ed178180c66801d7b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "b098f320d16904000931": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "deec4649515810007b7c": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "a60f1c82aa3ae67c69d6": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "00da3994dbe6b915b179": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "01cfa29d16a3a43a6883": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "0e575b1a3ee3e60338e0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "15379e5cece14892187a": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "177323887bb1be0c7827": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "1afcd4010eca0000707b": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "1befe5fa0492e42ad0a9": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "226357c8007d596d70b4": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "2436ae1f9e3186d33460": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3522d8c150360e0d479b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "492555b01d02ce905b70": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "4a49b77ae8a569090e63": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "4aac146d07a1ac952607": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "5a9624df60d83e680e68": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "5dc08ce0359ad275e478": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "6a6fee6430e4243db024": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "7756766f38e98cde1ee5": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "85fbb5479b1a5c47c0ce": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "885f101c20318a87446a": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "8ff4f6aa89e204209a1e": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "908472c83726109e6091": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "95a45ab5673c89077b82": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "aa0416450d7308dcc29b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "b807dbb8cb23672ce0c1": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "ba96ac2c905719808810": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "be4a5fbd0a2000c08b57": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "c035ab3dd65b9de55d58": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c4a8a91cbe42eb6b0d12": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c6361a25311d64077a54": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "cbfd0e094108c06056be": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d6f55d19a1c805c922e0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "dc22d7dd0bcad59400de": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "e266439cc2620ae04b95": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e2bc0aa836080bd21c9b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e3e80cf689cb10a8100a": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "f44dbd7b444941196181": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "b4ab11cf706808177531": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "b558c10b14ebb3e04eeb": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "bc4f5423c58070e48010": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterc9f2cec3e29286aa0171",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "ALERT_ID"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter150464708b66b021e5ae",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Forecast Bridge Table"
+                            }
+                          },
+                          "Property": "ALERT_ID"
+                        }
+                      },
+                      "Function": 2
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "9ecdcb60b0653ea311a0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Global Snapshot Alert Count"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Global Snapshot Alert Count"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "bd6decd94600b90e5dc9": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "bed7389aeab7040d0595": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "c60df6a462c1b529402b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "cc1a22c632b013015492": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "ccff81ec03d01e9ae3c7": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d2b936c3a67a13e832a7": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d73c81c459e532c1aac8": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "dbb264bc699042049847": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "e235ceb4d451d27ba3ec": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "3a9722d95a5aab1ad045": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "4b2266bc75091bd7dad2": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e707708a969780a14e0e": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "eaf875d68e54bc3caa36": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "f5833e6a444c6ac44763": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filtere47c01e696aae0d26235",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "b",
+                        "Entity": "BRAND TABLE",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "b"
+                                      }
+                                    },
+                                    "Property": "MANUFACTURER"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "'TCCC'"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "MANUFACTURER"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "ec263af78ca879864004",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Selected price metric"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "f9cbe7c6c5be12eb3cbd": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "fec0cd8c4b5078454543": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "347c5d4ce589d6973c93": {
+            "isHidden": false
+          },
+          "66d0dc48b9c010506c31": {
+            "isHidden": true
+          },
+          "686cf1528eb341aa8b9a": {
+            "isHidden": true
+          },
+          "98c6e9b80e6064aec21c": {
+            "children": {
+              "44aca5fdec62b8eb50ad": {
+                "children": {
+                  "1af5d6ab3284808b887a": {
+                    "isHidden": true
+                  }
+                }
+              }
+            }
+          },
+          "a2723b98c170090cbec4": {
+            "isHidden": true
+          },
+          "ac6e9e2b0907225a0c6b": {
+            "isHidden": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

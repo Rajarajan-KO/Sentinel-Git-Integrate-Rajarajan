@@ -1,0 +1,80 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "9d3191760cd78428e097",
+  "position": {
+    "x": 583.13405848814352,
+    "y": 207.81905275907241,
+    "z": 2000,
+    "height": 511.79318963055147,
+    "width": 665.33114651971687,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "brand_level_data"
+                    }
+                  },
+                  "Property": "BRAND"
+                }
+              },
+              "queryRef": "brand_level_data.BRAND",
+              "nativeQueryRef": "BRAND"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "brand_level_data"
+                    }
+                  },
+                  "Property": "BRAND_OWNER"
+                }
+              },
+              "queryRef": "brand_level_data.BRAND_OWNER",
+              "nativeQueryRef": "BRAND_OWNER"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "check tccc"
+                }
+              },
+              "queryRef": "Measures Table.check tccc",
+              "nativeQueryRef": "check tccc"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Trend_chart_30_09"
+                    }
+                  },
+                  "Property": "BRAND"
+                }
+              },
+              "queryRef": "Trend_chart_30_09.BRAND",
+              "nativeQueryRef": "BRAND1"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

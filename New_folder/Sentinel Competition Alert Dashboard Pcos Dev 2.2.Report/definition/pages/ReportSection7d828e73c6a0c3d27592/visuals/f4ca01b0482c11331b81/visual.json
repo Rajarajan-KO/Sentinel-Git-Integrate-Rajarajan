@@ -1,0 +1,168 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "f4ca01b0482c11331b81",
+  "position": {
+    "x": 857,
+    "y": 470,
+    "z": 41501,
+    "height": 69,
+    "width": 325,
+    "tabOrder": 33000
+  },
+  "visual": {
+    "visualType": "FlowVisual_C29F1DCC_81F5_4973_94AD_0517D44CC06A",
+    "query": {
+      "queryState": {
+        "table": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "Selection_All_Category"
+                }
+              },
+              "queryRef": "Measures Table.Selection_All_Category",
+              "nativeQueryRef": "Selection_All_Category"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "Selection_All_cOUNTRY"
+                }
+              },
+              "queryRef": "Measures Table.Selection_All_cOUNTRY",
+              "nativeQueryRef": "Selection_All_cOUNTRY"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "Selection_All_OU"
+                }
+              },
+              "queryRef": "Measures Table.Selection_All_OU",
+              "nativeQueryRef": "Selection_All_OU"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "flowInfo": [
+        {
+          "properties": {
+            "FlowId": {
+              "expr": {
+                "Literal": {
+                  "Value": "'/providers/Microsoft.ProcessSimple/environments/Default-548d26ab-8caa-49e1-97c2-a1b1a06cc39c/flows/9fba4c6f-fdb2-48b2-a1b3-b20f19a75f94'"
+                }
+              }
+            },
+            "ManagementUri": {
+              "expr": {
+                "Literal": {
+                  "Value": "'https://us.api.flow.microsoft.com/providers/Microsoft.ProcessSimple'"
+                }
+              }
+            },
+            "EnvironmentId": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default-548d26ab-8caa-49e1-97c2-a1b1a06cc39c'"
+                }
+              }
+            },
+            "EnvironmentLocation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'unitedstates'"
+                }
+              }
+            },
+            "EnvironmentRegion": {
+              "expr": {
+                "Literal": {
+                  "Value": "'westus'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "buttonText": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Summit'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "buttonFill": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EE0909'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "isHidden": true
+}

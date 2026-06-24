@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "b7c4f9b545f881f359f2",
+  "position": {
+    "x": 115,
+    "y": 215,
+    "z": 74000,
+    "height": 40.574282147315841,
+    "width": 125,
+    "tabOrder": 75000
+  },
+  "visualGroup": {
+    "displayName": "Alert_ID Slicer",
+    "groupMode": "ScaleMode"
+  }
+}

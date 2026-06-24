@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "0c4f0a9503218554b86c",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 1490.8349564209007,
+    "width": 2489.8165768094959,
+    "tabOrder": 0
+  },
+  "visualGroup": {
+    "displayName": "Geographical Overview",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "f4fa52c61cb17ddb540d"
+}

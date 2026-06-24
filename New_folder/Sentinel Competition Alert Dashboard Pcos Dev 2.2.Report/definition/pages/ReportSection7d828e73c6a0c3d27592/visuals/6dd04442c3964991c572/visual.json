@@ -1,0 +1,166 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "6dd04442c3964991c572",
+  "position": {
+    "x": 936.43108993186092,
+    "y": 106,
+    "z": 3000,
+    "height": 48,
+    "width": 172,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "FlowVisual_C29F1DCC_81F5_4973_94AD_0517D44CC06A",
+    "query": {
+      "queryState": {
+        "table": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BRAND TABLE"
+                    }
+                  },
+                  "Property": "OPERATION_UNIT"
+                }
+              },
+              "queryRef": "BRAND TABLE.OPERATION_UNIT",
+              "nativeQueryRef": "OPERATION_UNIT"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "flowInfo": [
+        {
+          "properties": {
+            "FlowId": {
+              "expr": {
+                "Literal": {
+                  "Value": "'/providers/Microsoft.Flow/environments/Default-548d26ab-8caa-49e1-97c2-a1b1a06cc39c/flows/4198303e-8ac3-477b-bb42-77df31fa95a8'"
+                }
+              }
+            },
+            "ManagementUri": {
+              "expr": {
+                "Literal": {
+                  "Value": "'https://us.api.flow.microsoft.com/providers/Microsoft.ProcessSimple'"
+                }
+              }
+            },
+            "EnvironmentId": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default-548d26ab-8caa-49e1-97c2-a1b1a06cc39c'"
+                }
+              }
+            },
+            "EnvironmentLocation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'unitedstates'"
+                }
+              }
+            },
+            "EnvironmentRegion": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "buttonText": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Submit'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "buttonFill": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F90000'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pcos flow ou'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "d6a91f0cce02d0216a97"
+}

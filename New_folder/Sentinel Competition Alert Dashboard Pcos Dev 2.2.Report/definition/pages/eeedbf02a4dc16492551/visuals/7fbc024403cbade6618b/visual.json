@@ -1,0 +1,4133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "7fbc024403cbade6618b",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 559.97232341652386,
+    "width": 1220,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pack visual table"
+                    }
+                  },
+                  "Property": "Metrics"
+                }
+              },
+              "queryRef": "Pack visual table.Metrics",
+              "nativeQueryRef": " ",
+              "active": true,
+              "displayName": " "
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pack & Flavour Table"
+                    }
+                  },
+                  "Property": "QUARTER"
+                }
+              },
+              "queryRef": "Pack & Flavour Table.QUARTER",
+              "nativeQueryRef": "QUARTER",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pack & Flavour Table"
+                    }
+                  },
+                  "Property": "BRAND"
+                }
+              },
+              "queryRef": "Pack & Flavour Table.BRAND",
+              "nativeQueryRef": "BRAND",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pack & Flavour Table"
+                    }
+                  },
+                  "Property": "FLAVOUR_PACK"
+                }
+              },
+              "queryRef": "Pack & Flavour Table.FLAVOUR_PACK",
+              "nativeQueryRef": "PACK",
+              "active": true,
+              "displayName": "PACK"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "Pack & flavour"
+                }
+              },
+              "queryRef": "Measures Table.Pack & flavour",
+              "nativeQueryRef": " 1",
+              "displayName": " "
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "Q6%"
+                }
+              },
+              "queryRef": "Measures Table.Q6%",
+              "nativeQueryRef": "Q6%"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Measures Table"
+                  }
+                },
+                "Property": "Q6%"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Pack & Flavour Table.BRAND"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Pack & Flavour Table.FLAVOUR_PACK"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Outline'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#818181'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "101.95434451357328D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'25Q2'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "106.04159726308208D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume %'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'25Q2'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "88.52836731776074D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'24Q1'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "72.76728904877274D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'24Q2'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120.05347081780616D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'24Q3'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.16456761944923D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'24Q4'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99.031714439068D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'25Q1'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.84454368135295D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume %'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'24Q1'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "131.7805787662209D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume %'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'24Q2'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123.56030624759984D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume %'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'24Q3'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.02242248219125D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume %'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'24Q4'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.09342682076772D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "volueme"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume %'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Table (2)"
+                          }
+                        },
+                        "Property": "Period"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'25Q1'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "125.64809672854435D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Pack & Flavour Table.BRAND"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "165.31977783246137D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Pack & Flavour Table.FLAVOUR_PACK"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q125'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q224'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q225'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q324'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q325'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q424'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q125'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q224'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q225'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q324'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q325'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q424'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.70867750232726D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q125'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "69.42704056659954D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q224'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.22005485463522D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q225'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "71.71690273407052D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q324'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "71.71690273407052D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q325'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "62.71062286978251D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q424'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.32024583625031D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q125'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "69.75256778594726D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q224'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "67.68881263932508D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q225'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "87.67320967880626D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q324'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105.83451719515105D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q325'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "131.2754170747623D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q424'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "66.71428357486982D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q224'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q224'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.85754498146322D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q324'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q324'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.85715179514554D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q424'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q424'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.85714062264181D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q125'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q125'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.28571209875582D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q225'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q225'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "62.428597672062125D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q325'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q325'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.85714062264181D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q224'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q224'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.85714062264181D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q324'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q324'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65.28571209875582D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q424'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q424'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.6300869364093D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q125'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q125'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85.28568994390353D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q225'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q225'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "92.42858619053496D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q325'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack visual table"
+                          }
+                        },
+                        "Property": "Metrics"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Volume'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pack & Flavour Table"
+                          }
+                        },
+                        "Property": "QUARTER"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Q325'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "Measures Table.Q6%"
+          }
+        }
+      ],
+      "blankRows": [
+        {
+          "properties": {
+            "showBlankRows": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Measures Table.Pack & flavour"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "748c4336205d06d82236",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d2a9a142472e91cbf3e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pack & Flavour Table"
+              }
+            },
+            "Property": "DATA_TYPE"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Pack & Flavour Table",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "DATA_TYPE"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Pack Level'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "isHidden": true
+}

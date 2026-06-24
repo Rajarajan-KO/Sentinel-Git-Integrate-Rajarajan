@@ -1,0 +1,17 @@
+table 'Bridge Country Table'
+	lineageTag: 5e0d1356-c5bb-48c2-8caf-f6cce76a4b62
+
+	column COUNTRY
+		lineageTag: 63268412-9ff6-457c-ad74-bd0bde32002e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DASHBOARD DATA[COUNTRY]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Bridge Country Table' = calculated
+		mode: import
+		source = ALL('DASHBOARD DATA'[COUNTRY])
+
+	annotation PBI_Id = a1aad91e5b464117b49d59f702d252f3
+

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "ee9e6b9fc5394a0edd58",
+  "position": {
+    "x": 261.517531743841,
+    "y": 91,
+    "z": 36000,
+    "height": 40.574282147315841,
+    "width": 200.56637168141594,
+    "tabOrder": 34000
+  },
+  "visualGroup": {
+    "displayName": "Country Slicer",
+    "groupMode": "ScaleMode"
+  }
+}

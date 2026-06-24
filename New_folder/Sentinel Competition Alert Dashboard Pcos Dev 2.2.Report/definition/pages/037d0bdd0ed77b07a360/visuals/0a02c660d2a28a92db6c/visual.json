@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "0a02c660d2a28a92db6c",
+  "position": {
+    "x": 120,
+    "y": 205,
+    "z": 0,
+    "height": 243,
+    "width": 432,
+    "tabOrder": 7
+  },
+  "visualGroup": {
+    "displayName": "Pcos",
+    "groupMode": "ScaleMode"
+  }
+}

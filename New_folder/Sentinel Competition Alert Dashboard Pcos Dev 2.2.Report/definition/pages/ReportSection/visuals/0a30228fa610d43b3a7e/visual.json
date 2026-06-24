@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "0a30228fa610d43b3a7e",
+  "position": {
+    "x": 1381.0634428677156,
+    "y": 0,
+    "z": 5000,
+    "height": 41.834518062130343,
+    "width": 979.71442681708993,
+    "tabOrder": 5000
+  },
+  "visualGroup": {
+    "displayName": "Triage slicer",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "b27a2a0a7a11609a0977"
+}

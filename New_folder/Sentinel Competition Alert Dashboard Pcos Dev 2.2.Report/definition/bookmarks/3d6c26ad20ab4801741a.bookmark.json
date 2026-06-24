@@ -1,0 +1,576 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Notes",
+  "name": "3d6c26ad20ab4801741a",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "be1d6f40ed2163203428",
+      "d6a91f0cce02d0216a97",
+      "cc439412c9e610413cd1",
+      "54fa5ac0a620dd880108",
+      "56eed061cb07186c602c",
+      "6915bbf954492815b8ca",
+      "6dd04442c3964991c572",
+      "6e9d7d7d0a328b57ce98",
+      "73413013008d3d80eb96",
+      "8c2b5dfd69d81d63d525",
+      "8d72a4dd0ee7205a186a",
+      "960b6be3bd2c3167ae39",
+      "99f4b04ec028a121b263",
+      "9e7eb1d96b51ca5d747e",
+      "a3fff351c068e3840204",
+      "bb683d3091ba58080470",
+      "d86a99f10a1470e2a43e",
+      "de14bf6169b6e9219ebe"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection7d828e73c6a0c3d27592",
+    "sections": {
+      "ReportSection7d828e73c6a0c3d27592": {
+        "visualContainers": {
+          "1fbdac35155aa00cacbc": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "2b0e31c1f9a6b9c051fe": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "3621207f0df6cd4b145d": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "408bc0fccd739dd8b3dc": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "42a6a7b3db55de2c10b6": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "44707e8002488552cdc3": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "460ce866b1dbb128eb90": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "4b123b0d9870ad41d022": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "4b696d38e1db9450b31a": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "54fa5ac0a620dd880108": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "63ae77b6a2cbc9d467ee": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "6915bbf954492815b8ca": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f28b197317c9896de430",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "FlowVisual_C29F1DCC_81F5_4973_94AD_0517D44CC06A",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "6dd04442c3964991c572": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e623fdab01787623b564",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "OPERATION_UNIT"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "FlowVisual_C29F1DCC_81F5_4973_94AD_0517D44CC06A",
+              "objects": {}
+            }
+          },
+          "6e9d7d7d0a328b57ce98": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "73413013008d3d80eb96": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "75155be0d1c710db0bc5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "COUNTRY"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7ac47b8e531d007d751d": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "7da00da32970d7a8e842": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "7f4f7a5ade4c01daddaa": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8461912b04e5c88d59d8": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8c2b5dfd69d81d63d525": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "8d72a4dd0ee7205a186a": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "90ec49fc84bdddac8386": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "91f9b04c8c68015cc330": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "960b6be3bd2c3167ae39": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "67573c335a468cd061b0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "OPERATION_UNIT"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "OPERATION_UNIT"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "967720cf83a3573717f3": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "99f4b04ec028a121b263": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9a5a6314c3091a518846": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9b8ac80ba63b7207a7e0": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "9ee45da9e104e370a681": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "9f8efc3b494fdb3fc47f": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "a3fff351c068e3840204": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "ef2eb933307de22b4c0b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "bd5a585f69cbdecde9c9": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "bd8b4208f81ace55f193": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "c0f36cef6ecd0730419a": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "cd94aeca1417c7dd5117": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "d638c29065d26873ffd0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d63fd93d8be893f7548d": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "d86a99f10a1470e2a43e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "0976f7b93097c486c4ec",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "BRAND TABLE"
+                        }
+                      },
+                      "Property": "CATEGORY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "FlowVisual_C29F1DCC_81F5_4973_94AD_0517D44CC06A",
+              "objects": {},
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "f6b19556f86710e4001f": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "f7226f5d7283b8ee9596": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "f7900be9b4acc0a114ec": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "f8d508135febb41963a6": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "f956a02cf36d23583bf7": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "de14bf6169b6e9219ebe": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "be1d6f40ed2163203428": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          }
+        },
+        "visualContainerGroups": {
+          "cc439412c9e610413cd1": {
+            "isHidden": true
+          },
+          "d6a91f0cce02d0216a97": {
+            "isHidden": true
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

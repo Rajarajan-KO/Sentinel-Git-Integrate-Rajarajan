@@ -1,0 +1,92 @@
+table Alert_run_status_check
+	lineageTag: 0b3d7956-e7af-47db-ad77-423adce6f129
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a302125-f6c2-4add-a083-de614ddcc430
+		summarizeBy: count
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column HIER_NUM
+		dataType: double
+		formatString: 0
+		lineageTag: 7d05e645-6512-460a-951b-98fa82311b2a
+		summarizeBy: sum
+		sourceColumn: HIER_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY
+		dataType: string
+		lineageTag: b8b6d8ec-cbba-4b58-9b29-9bc781c05dd8
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: 3a243c4c-ee2f-4177-8995-76eeb635fefa
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RUN_DATE
+		dataType: string
+		lineageTag: a2f464eb-cc0d-469d-a8a2-a1f23d446796
+		summarizeBy: none
+		sourceColumn: RUN_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month year' = ```
+			
+			 var mont_= RIGHT(Alert_run_status_check[PERIOD_ID],2)
+			 var year_ = LEFT(Alert_run_status_check[PERIOD_ID],4)
+			 var name_mont= SWITCH(mont_,"01","Jan","02","Feb","03","Mar","04","Apr","05","May","06","Jun","07","Jul","08","Aug","09","Sep","10","Oct","11","Nov","12","Dec")
+			 RETURN
+			//  IF(Alert_run_status_check[PERIOD_ID]=202509,"Sep-2025","Oct-2025")
+			name_mont&"-"&year_
+			 
+			```
+		lineageTag: 9f6fa8ff-3366-4467-bb3f-21d199e76da0
+		summarizeBy: none
+		sortByColumn: PERIOD_ID
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New OU' = LOOKUPVALUE('DASHBOARD DATA'[OPERATION_UNIT],'DASHBOARD DATA'[COUNTRY],Alert_run_status_check[COUNTRY])
+		lineageTag: aa2d50ed-74ba-4bac-b1b6-b2afbbd5affe
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FLAG
+		dataType: string
+		lineageTag: 3e976db3-0660-41bd-82b9-973d91b103b6
+		summarizeBy: none
+		sourceColumn: FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Alert_run_status_check = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_run_status_check = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_run_status_check"]}[Data],
+				  #"Changed column type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_run_status_check, {{"PERIOD_ID", Int64.Type}, {"HIER_NUM", Int64.Type}}),
+				  #"Replaced value" = Table.ReplaceValue(#"Changed column type", null, 8, Replacer.ReplaceValue, {"HIER_NUM"})
+				in
+				    #"Replaced value"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

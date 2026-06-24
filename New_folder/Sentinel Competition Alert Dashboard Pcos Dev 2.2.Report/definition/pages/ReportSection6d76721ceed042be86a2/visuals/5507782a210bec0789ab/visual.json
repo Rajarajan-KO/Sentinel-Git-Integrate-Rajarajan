@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "5507782a210bec0789ab",
+  "position": {
+    "x": 482.35511815340749,
+    "y": 650.27481660634089,
+    "z": 7000,
+    "height": 130.17090328968956,
+    "width": 1521.4882943143812,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Please continue to refer to the ongoing updates to",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "16pt",
+                      "textDecoration": "underline",
+                      "color": "#ffffff"
+                    },
+                    "url": "https://groups.coca-cola.com/sites/MarketplacePerformanceMeasurement/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fgroups%2Ecoca%2Dcola%2Ecom%2Fsites%2FMarketplacePerformanceMeasurement%2FSitePages%2FTechnical%5FInfo%2D%2D%2DStaging%2Easpx%3Fcsf%3D1%26web%3D1%26e%3DStL3gH&correlation=39f5bca1%2D1062%2D9000%2Dd642%2Dbf6f5399b3da&Type=item&name=57b9f141%2Dda76%2D4797%2D90d4%2D49fa6ca12af3&listItemId=41&listItemUniqueId=159fb91d%2Dde35%2D4936%2D924b%2De99d9d2a8c08"
+                  },
+                  {
+                    "value": "MPM 2.0 Knowledge Hub",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "color": "#ffffff"
+                    },
+                    "url": "https://groups.coca-cola.com/sites/MarketplacePerformanceMeasurement/_layouts/15/AccessDenied.aspx?Source=https%3A%2F%2Fgroups%2Ecoca%2Dcola%2Ecom%2Fsites%2FMarketplacePerformanceMeasurement%2FSitePages%2FTechnical%5FInfo%2D%2D%2DStaging%2Easpx%3Fcsf%3D1%26web%3D1%26e%3DStL3gH&correlation=39f5bca1%2D1062%2D9000%2Dd642%2Dbf6f5399b3da&Type=item&name=57b9f141%2Dda76%2D4797%2D90d4%2D49fa6ca12af3&listItemId=41&listItemUniqueId=159fb91d%2Dde35%2D4936%2D924b%2De99d9d2a8c08"
+                  },
+                  {
+                    "value": " for information on the data product. Data is as of August 12, 2025 and June 25 data is not yet available for the markets of China, Japan, and Kazakhstan. Additionally, data is missing for certain categories in the markets of Saudi Arabia, Algeria, South Korea, the Philippines, Thailand, and Vietnam.",
+                    "textStyle": {
+                      "fontSize": "16pt",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "6424836663d2a00903a2"
+}

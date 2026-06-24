@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "6202704ab6ff31cc63cf",
+  "position": {
+    "x": 1902.248437430731,
+    "y": 12,
+    "z": 57000,
+    "height": 40,
+    "width": 40,
+    "tabOrder": 25000
+  },
+  "visualGroup": {
+    "displayName": "Home BUtton",
+    "groupMode": "ScaleMode"
+  }
+}

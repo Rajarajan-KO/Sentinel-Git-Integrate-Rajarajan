@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "8d3da2e9240623b70428",
+  "position": {
+    "x": 2.5924644602616844,
+    "y": 20.739715682093475,
+    "z": 43000,
+    "height": 1441.4102399054966,
+    "width": 2493.9508107717406,
+    "tabOrder": 40000
+  },
+  "visualGroup": {
+    "displayName": "Notes",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

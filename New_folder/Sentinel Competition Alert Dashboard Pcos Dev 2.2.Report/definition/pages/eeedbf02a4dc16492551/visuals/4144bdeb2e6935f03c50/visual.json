@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "4144bdeb2e6935f03c50",
+  "position": {
+    "x": 0.063518966404136457,
+    "y": 1.1707975427477777,
+    "z": 7000,
+    "height": 671.32920245725234,
+    "width": 2503.0792253033228,
+    "tabOrder": 5000
+  },
+  "visualGroup": {
+    "displayName": "Pack &flavor",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "f1935ace5a2c0b6e3712"
+}

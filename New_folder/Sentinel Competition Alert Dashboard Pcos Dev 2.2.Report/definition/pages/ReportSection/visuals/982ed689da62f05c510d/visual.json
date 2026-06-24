@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "982ed689da62f05c510d",
+  "position": {
+    "x": 1569,
+    "y": 215,
+    "z": 77000,
+    "height": 40.574282147315841,
+    "width": 200.00578633510486,
+    "tabOrder": 67000
+  },
+  "visualGroup": {
+    "displayName": "Channel Slicer",
+    "groupMode": "ScaleMode"
+  }
+}

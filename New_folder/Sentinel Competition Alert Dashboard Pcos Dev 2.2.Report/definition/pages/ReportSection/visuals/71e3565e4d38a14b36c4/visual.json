@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "71e3565e4d38a14b36c4",
+  "position": {
+    "x": 1290,
+    "y": 215,
+    "z": 76000,
+    "height": 40.574282147315841,
+    "width": 200.05730232553424,
+    "tabOrder": 70000
+  },
+  "visualGroup": {
+    "displayName": "Manufacturer Slicer",
+    "groupMode": "ScaleMode"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "0312e6c10b3023436d4b",
+  "position": {
+    "x": 846.26983902728955,
+    "y": 0,
+    "z": 5000,
+    "height": 41.834518062130343,
+    "width": 133.44458778980041,
+    "tabOrder": 0
+  },
+  "visualGroup": {
+    "displayName": "Trend Year Slicer",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "0a30228fa610d43b3a7e"
+}
