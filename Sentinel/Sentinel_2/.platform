@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sentinel Competition Alert Dashboard Pcos Dev 2.2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1df7d9ac-0c60-4fd7-a554-c685d2a3beb6"
+  }
+}

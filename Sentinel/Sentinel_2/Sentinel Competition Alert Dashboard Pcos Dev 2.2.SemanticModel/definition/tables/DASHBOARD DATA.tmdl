@@ -1,0 +1,758 @@
+table 'DASHBOARD DATA'
+	lineageTag: 0fd9752f-321b-4860-ad4f-28ef0812fabe
+
+	column COUNTRY
+		dataType: string
+		lineageTag: de368549-5cf6-4910-8897-018bbc600e8a
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANNEL
+		dataType: string
+		lineageTag: 1fc49777-e99d-4526-b88b-32e2aa79dc05
+		summarizeBy: none
+		sourceColumn: CHANNEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: aa716117-13f9-49f4-93af-f8d19fb3a449
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: c77cd5b0-2583-41e2-b817-7e0268f263c6
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: 3eb9d3f5-917e-4dcf-a45e-62f30d127d94
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 56041771-2e5b-429e-b2af-b881a480324e
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 0047393c-3e78-4a7c-acbe-fd85441f4190
+		summarizeBy: none
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d7159cc-eed1-4104-ad48-d239cb3a07e4
+		summarizeBy: none
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME
+		dataType: string
+		lineageTag: 9ab2337b-2ea6-4413-bed1-38d3c9b6cc13
+		summarizeBy: none
+		sourceColumn: MONTH_NAME
+		sortByColumn: MONTH
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_PRICE
+		dataType: double
+		lineageTag: 09057851-f35a-49d1-a894-4dc4530551e2
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_TDP
+		dataType: double
+		formatString: 0
+		lineageTag: 78cf4801-fed0-4dd0-b081-2101e7bb93b9
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_TDP
+
+		annotation SummarizationSetBy = Automatic
+
+	column YTD_TDP
+		dataType: double
+		lineageTag: 71413e67-e12c-4056-ac92-df28bc1a2393
+		summarizeBy: none
+		sourceColumn: YTD_TDP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_WD
+		dataType: double
+		formatString: 0
+		lineageTag: 2c527a66-a57c-44fa-96e1-ccde14311a73
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_WD
+
+		annotation SummarizationSetBy = Automatic
+
+	column YTD_WD
+		dataType: double
+		lineageTag: 0086cb81-0083-48e5-a064-2f07d5f51d9c
+		summarizeBy: none
+		sourceColumn: YTD_WD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_IPS
+		dataType: double
+		lineageTag: 0414122a-4cea-423a-b11a-e1343c5e5efd
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_IPS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column YTD_IPS
+		dataType: double
+		lineageTag: 565090f6-5d5b-44d2-801a-7817e2c03f73
+		summarizeBy: none
+		sourceColumn: YTD_IPS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ALERT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 03b7fcba-6c09-465f-8378-f9d9ab163808
+		summarizeBy: none
+		sourceColumn: ALERT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY
+		dataType: string
+		lineageTag: 91f81f65-a872-4b37-bdd4-fe7b9a975138
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAX_PERIOD_ID
+		dataType: string
+		lineageTag: 94a4a8b5-8b6f-45ad-8be9-412ee4debc8f
+		summarizeBy: none
+		sourceColumn: MAX_PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country2
+		dataType: string
+		lineageTag: 5850e99e-fe37-41bf-8e58-0544b67eb346
+		summarizeBy: none
+		sourceColumn: Country2
+
+		annotation SummarizationSetBy = Automatic
+
+	column MS_CHNL_FLAG
+		dataType: string
+		lineageTag: 05db553c-6da9-4dc1-983f-44d732da4b97
+		summarizeBy: none
+		sourceColumn: MS_CHNL_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARKET_VALUE_SHARE_MESSAGE
+		dataType: string
+		lineageTag: c059dd26-6056-4753-94fb-62e2a5be3e9e
+		summarizeBy: none
+		sourceColumn: MARKET_VALUE_SHARE_MESSAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_MESSAGE
+		dataType: string
+		lineageTag: 00a34431-ca77-4790-84c3-423810a6a141
+		summarizeBy: none
+		sourceColumn: PRICE_MESSAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TDP_MESSAGE
+		dataType: string
+		lineageTag: d7b47238-4540-4e53-afcb-396e5edda5ff
+		summarizeBy: none
+		sourceColumn: TDP_MESSAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCENARIO_GROUP
+		dataType: string
+		lineageTag: 792c38a9-2b0e-4a28-a847-27b8a5532789
+		summarizeBy: none
+		sourceColumn: SCENARIO_GROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column Val_key
+		dataType: string
+		lineageTag: 44f5c592-ebcd-43c2-84f0-1211a2f28360
+		summarizeBy: none
+		sourceColumn: Val_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO
+		dataType: string
+		lineageTag: f3a09460-139a-4a8b-ae9b-135bb48c3a0c
+		summarizeBy: none
+		sourceColumn: IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERATION_UNIT
+		dataType: string
+		lineageTag: 535b5a9c-6543-4f72-a821-3b604b326145
+		summarizeBy: none
+		sourceColumn: OPERATION_UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_MARKET_VALUE_SHARE
+		dataType: double
+		lineageTag: 277a66fa-e271-44b6-86ae-686a7b3c353f
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_MARKET_VALUE_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_3MMT_VALUE_SHARE
+		dataType: double
+		lineageTag: d3ecc2f5-1098-4c52-8b20-231774319255
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_3MMT_VALUE_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_3MMT_VALUE_SHARE
+		dataType: double
+		lineageTag: 319a0cb5-ee54-4daf-b4b9-f7b5c0fed246
+		summarizeBy: none
+		sourceColumn: PREVIOUS_3MMT_VALUE_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column YTD_MARKET_VALUE_SHARE
+		dataType: double
+		lineageTag: d6e1e32b-d9a0-4cc2-95b8-789a56b82c21
+		summarizeBy: none
+		sourceColumn: YTD_MARKET_VALUE_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR
+		dataType: double
+		lineageTag: f37f3df6-e9b7-4b95-9f6f-6ffc646dbdf0
+		summarizeBy: none
+		sourceColumn: MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR
+		dataType: double
+		lineageTag: 5363dd0c-f49a-4c1f-b158-cc9569d75b41
+		summarizeBy: none
+		sourceColumn: MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VALUE_MAX_SCENARIO_CHANGE
+		dataType: double
+		lineageTag: 815c5e35-bfd5-427e-9fc4-67f7cf7b1e90
+		summarizeBy: none
+		sourceColumn: VALUE_MAX_SCENARIO_CHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MS_SALES_ALERT_REGISTERED
+		dataType: string
+		lineageTag: 31082ac4-fa57-4468-b31b-16fdb3f4448b
+		summarizeBy: none
+		sourceColumn: MS_SALES_ALERT_REGISTERED
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUE_METRIC_1
+		dataType: string
+		lineageTag: b20c1a24-5571-4f6c-bb09-5e6fd71feabc
+		summarizeBy: none
+		sourceColumn: VALUE_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUE_METRIC_2
+		dataType: string
+		lineageTag: 5ad4f5e5-5ab5-4692-8faa-a88c799d7e0e
+		summarizeBy: none
+		sourceColumn: VALUE_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_MARKET_VOLUME_SHARE
+		dataType: double
+		lineageTag: bb8374d2-cb3c-4a38-8729-a865959bc8b1
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_MARKET_VOLUME_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_3MMT_VOLUME_SHARE
+		dataType: double
+		lineageTag: 7500eebb-b603-40ba-b8a9-1d9affa19a7c
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_3MMT_VOLUME_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_3MMT_VOLUME_SHARE
+		dataType: double
+		lineageTag: c382889d-dfa7-46eb-8c05-55213bd304a4
+		summarizeBy: none
+		sourceColumn: PREVIOUS_3MMT_VOLUME_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column YTD_MARKET_VOLUME_SHARE
+		dataType: double
+		lineageTag: ffdc4827-6179-49c2-aff5-5c276401e046
+		summarizeBy: none
+		sourceColumn: YTD_MARKET_VOLUME_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR
+		dataType: double
+		lineageTag: 242222b8-464f-4ba6-b406-cd961e91d642
+		summarizeBy: none
+		sourceColumn: MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR
+		dataType: double
+		lineageTag: 2782380a-7092-4a76-a72b-45ba0987c521
+		summarizeBy: none
+		sourceColumn: MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLUME_MAX_SCENARIO_CHANGE
+		dataType: double
+		lineageTag: 7014cfd4-452d-4d53-b961-a25ad18f0cd0
+		summarizeBy: none
+		sourceColumn: VOLUME_MAX_SCENARIO_CHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MS_VOLUME_ALERT_REGISTERED
+		dataType: string
+		lineageTag: 1204a639-999b-4073-b242-4f1a2d425a98
+		summarizeBy: none
+		sourceColumn: MS_VOLUME_ALERT_REGISTERED
+
+		annotation SummarizationSetBy = Automatic
+
+	column VOLUME_METRIC_1
+		dataType: string
+		lineageTag: 97feefb0-cf95-4e2d-aaa5-0ca93a75410e
+		summarizeBy: none
+		sourceColumn: VOLUME_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column VOLUME_METRIC_2
+		dataType: string
+		lineageTag: cf574bf8-9279-4d33-b89d-b202f6fa61ee
+		summarizeBy: none
+		sourceColumn: VOLUME_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_3MMT_PRICE
+		dataType: double
+		lineageTag: 5d6222ba-5712-4e3a-9d7e-f2f15444d57a
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_3MMT_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_3MMT_PRICE
+		dataType: double
+		lineageTag: 82750544-b24d-4022-a8ee-b46eb02bb0cf
+		summarizeBy: none
+		sourceColumn: PREVIOUS_3MMT_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column YTD_PRICE
+		dataType: double
+		lineageTag: 09776a97-fb79-4f9a-8c53-eaced0235f13
+		summarizeBy: none
+		sourceColumn: YTD_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRICE_MAX_SCENARIO_CHANGE
+		dataType: double
+		lineageTag: 026acbcf-a9d0-4b33-b9ac-3cd878dfed88
+		summarizeBy: none
+		sourceColumn: PRICE_MAX_SCENARIO_CHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRICE_ALERT_REGISTERED
+		dataType: string
+		lineageTag: 7d859587-533f-42c4-93af-b4cb540faa2a
+		summarizeBy: none
+		sourceColumn: PRICE_ALERT_REGISTERED
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_METRIC_1
+		dataType: string
+		lineageTag: ca9c7466-2d8b-4cdf-83b7-e26524ba26e5
+		summarizeBy: none
+		sourceColumn: PRICE_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_METRIC_2
+		dataType: string
+		lineageTag: 5a26d7c3-5a89-455f-9d6e-c5479856c9c7
+		summarizeBy: none
+		sourceColumn: PRICE_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_3MMT_TDP
+		dataType: double
+		lineageTag: a14a4993-22aa-4e66-9e07-638d7123b836
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_3MMT_TDP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_3MMT_TDP
+		dataType: double
+		lineageTag: 67f47988-776d-4c3b-9e70-e1d59095c923
+		summarizeBy: none
+		sourceColumn: PREVIOUS_3MMT_TDP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT
+		dataType: double
+		lineageTag: 44219726-2e8f-4109-8559-9d87828c5676
+		summarizeBy: none
+		sourceColumn: TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TDP_PREVIOUS_YEAR_FULL_YEAR
+		dataType: double
+		lineageTag: 6a5d2a3c-6fc8-4ddf-af01-b3624b8babe2
+		summarizeBy: none
+		sourceColumn: TDP_PREVIOUS_YEAR_FULL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TDP_MAX_SCENARIO_CHANGE
+		dataType: double
+		lineageTag: 84568ae6-5bbf-4201-bfa7-1d4dd42980ec
+		summarizeBy: none
+		sourceColumn: TDP_MAX_SCENARIO_CHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TDP_ALERT_REGISTERED
+		dataType: string
+		lineageTag: c769eca0-6891-4395-b70e-766c2f38fb3c
+		summarizeBy: none
+		sourceColumn: TDP_ALERT_REGISTERED
+
+		annotation SummarizationSetBy = Automatic
+
+	column TDP_METRIC_1
+		dataType: string
+		lineageTag: cd5bbbed-4fb1-4b31-91ff-3fb13f0cf0ab
+		summarizeBy: none
+		sourceColumn: TDP_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column TDP_METRIC_2
+		dataType: string
+		lineageTag: b6a7ef10-d469-4f18-9c4f-21baa83cf5bc
+		summarizeBy: none
+		sourceColumn: TDP_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_3MMT_WD
+		dataType: double
+		lineageTag: cb7b2bf5-e828-4094-993e-7e0c39808e88
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_3MMT_WD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_3MMT_WD
+		dataType: double
+		lineageTag: d150d8ed-ee19-42a0-8925-60237a099b3b
+		summarizeBy: none
+		sourceColumn: PREVIOUS_3MMT_WD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WD_SAME_MONTH_PREVIOUS_YEAR_3MMT
+		dataType: double
+		lineageTag: 9f29cf8d-b5dc-437b-ab08-12bf733943df
+		summarizeBy: none
+		sourceColumn: WD_SAME_MONTH_PREVIOUS_YEAR_3MMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WD_PREVIOUS_YEAR_FULL_YEAR
+		dataType: double
+		lineageTag: 8178a3b6-8500-42a9-b65e-d0c3dc1c90ca
+		summarizeBy: none
+		sourceColumn: WD_PREVIOUS_YEAR_FULL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WD_MAX_SCENARIO_CHANGE
+		dataType: double
+		lineageTag: f547fd7c-cb03-49d9-8290-0e07db83e226
+		summarizeBy: none
+		sourceColumn: WD_MAX_SCENARIO_CHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WD_ALERT_REGISTERED
+		dataType: string
+		lineageTag: 3cca8a76-9402-40d7-8d81-1ee1b73a99ac
+		summarizeBy: none
+		sourceColumn: WD_ALERT_REGISTERED
+
+		annotation SummarizationSetBy = Automatic
+
+	column WD_METRIC_1
+		dataType: string
+		lineageTag: a9421715-7727-469e-993e-5c50106d5f95
+		summarizeBy: none
+		sourceColumn: WD_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column WD_METRIC_2
+		dataType: string
+		lineageTag: 75ccd474-93ac-49ae-8c48-07f8300ead10
+		summarizeBy: none
+		sourceColumn: WD_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_3MMT_IPS
+		dataType: double
+		lineageTag: bd72262e-2529-4b2b-9014-61601e3d6d42
+		summarizeBy: none
+		sourceColumn: CURRENT_MONTH_3MMT_IPS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_3MMT_IPS
+		dataType: double
+		lineageTag: fa03a11c-365a-450a-af14-5b693990f3a3
+		summarizeBy: none
+		sourceColumn: PREVIOUS_3MMT_IPS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT
+		dataType: double
+		lineageTag: a29193a6-3b69-4837-b957-f2c10051f6fb
+		summarizeBy: none
+		sourceColumn: IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IPS_PREVIOUS_YEAR_FULL_YEAR
+		dataType: double
+		lineageTag: 30debdae-7886-426b-894a-83dc283a70a8
+		summarizeBy: none
+		sourceColumn: IPS_PREVIOUS_YEAR_FULL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IPS_MAX_SCENARIO_CHANGE
+		dataType: double
+		lineageTag: 17aa67bf-6572-4580-9e8c-d8551fe9e7d7
+		summarizeBy: none
+		sourceColumn: IPS_MAX_SCENARIO_CHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IPS_ALERT_REGISTERED
+		dataType: string
+		lineageTag: 4c0bdf21-8e34-4336-ada1-8788568645ba
+		summarizeBy: none
+		sourceColumn: IPS_ALERT_REGISTERED
+
+		annotation SummarizationSetBy = Automatic
+
+	column IPS_METRIC_1
+		dataType: string
+		lineageTag: 8f40232d-4f28-4921-94ef-c96e9ba4a2d2
+		summarizeBy: none
+		sourceColumn: IPS_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column IPS_METRIC_2
+		dataType: string
+		lineageTag: 3c50fd48-e091-4542-bd55-e1b272f5135d
+		summarizeBy: none
+		sourceColumn: IPS_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column FINAL_ALERT_MESSAGE
+		dataType: string
+		lineageTag: d378857a-f738-4825-b0bd-a6e0ad6490b0
+		summarizeBy: none
+		sourceColumn: FINAL_ALERT_MESSAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERT_PRIORITY
+		dataType: string
+		lineageTag: 3dc15aaf-73d6-4074-a246-0f714323b7b1
+		summarizeBy: none
+		sourceColumn: ALERT_PRIORITY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DASHBOARD DATA' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_dashboard_report_2"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report,{{"COUNTRY", type text}, {"CHANNEL", type text}, {"CATEGORY", type text}, {"BRAND", type text}, {"BRAND_OWNER", type text}, {"PERIOD_ID", Int64.Type}, {"MAX_PERIOD_ID", type text}, {"YEAR", Int64.Type}, {"MONTH", Int64.Type}, {"MONTH_NAME", type text}, {"CURRENT_MONTH_MARKET_VALUE_SHARE", type number}, {"CURRENT_MONTH_3MMT_VALUE_SHARE", type number}, {"PREVIOUS_3MMT_VALUE_SHARE", type number}, {"YTD_MARKET_VALUE_SHARE", type number}, {"MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VALUE_MAX_SCENARIO_CHANGE", type number}, {"MS_SALES_ALERT_REGISTERED", type text}, {"VALUE_METRIC_1", type text}, {"VALUE_METRIC_2", type text}, {"CURRENT_MONTH_MARKET_VOLUME_SHARE", type number}, {"CURRENT_MONTH_3MMT_VOLUME_SHARE", type number}, {"PREVIOUS_3MMT_VOLUME_SHARE", type number}, {"YTD_MARKET_VOLUME_SHARE", type number}, {"MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VOLUME_MAX_SCENARIO_CHANGE", type number}, {"MS_VOLUME_ALERT_REGISTERED", type text}, {"VOLUME_METRIC_1", type text}, {"VOLUME_METRIC_2", type text}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_3MMT_PRICE", type number}, {"PREVIOUS_3MMT_PRICE", type number}, {"YTD_PRICE", type number}, {"PRICE_MAX_SCENARIO_CHANGE", type number}, {"PRICE_ALERT_REGISTERED", type text}, {"PRICE_METRIC_1", type text}, {"PRICE_METRIC_2", type text}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_3MMT_TDP", type number}, {"PREVIOUS_3MMT_TDP", type number}, {"YTD_TDP", type number}, {"TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"TDP_PREVIOUS_YEAR_FULL_YEAR", type number}, {"TDP_MAX_SCENARIO_CHANGE", type number}, {"TDP_ALERT_REGISTERED", type text}, {"TDP_METRIC_1", type text}, {"TDP_METRIC_2", type text}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_3MMT_WD", type number}, {"PREVIOUS_3MMT_WD", type number}, {"YTD_WD", type number}, {"WD_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"WD_PREVIOUS_YEAR_FULL_YEAR", type number}, {"WD_MAX_SCENARIO_CHANGE", type number}, {"WD_ALERT_REGISTERED", type text}, {"WD_METRIC_1", type text}, {"WD_METRIC_2", type text}, {"CURRENT_MONTH_IPS", type number}, {"CURRENT_MONTH_3MMT_IPS", type number}, {"PREVIOUS_3MMT_IPS", type number}, {"YTD_IPS", type number}, {"IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"IPS_PREVIOUS_YEAR_FULL_YEAR", type number}, {"IPS_MAX_SCENARIO_CHANGE", type number}, {"IPS_ALERT_REGISTERED", type text}, {"IPS_METRIC_1", type text}, {"IPS_METRIC_2", type text},   {"FINAL_ALERT_MESSAGE", type text}, {"IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO", type text}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Market Share", each if [CURRENT_MONTH_MARKET_VALUE_SHARE] = (null) then 0 else [CURRENT_MONTH_MARKET_VALUE_SHARE]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Marker Share Filter", each if [BRAND_OWNER] = "TCCC" and [Market Share] < 0.0 then "Flase" else "True"),
+				    #"Filtered Rows5" = Table.SelectRows(#"Added Custom1", each ([Marker Share Filter] = "True")),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Filtered Rows5", "KEY", each Text.Combine({[COUNTRY], [CHANNEL], [CATEGORY], [BRAND_OWNER], [BRAND],[MAX_PERIOD_ID]}, " "), type text),
+				    #"Removed Columns" = Table.RemoveColumns(#"Inserted Merged Column",{"Market Share", "Marker Share Filter"}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Removed Columns", "Country2", each if Text.Contains([COUNTRY], "Korea") then "South Korea" else if Text.Contains([COUNTRY], "Korea") then "South Korea" else [COUNTRY]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Conditional Column",{{"Country2", type text}}),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Changed Type1", "Val_key", each Text.Combine({[MAX_PERIOD_ID], [COUNTRY], [CHANNEL], [CATEGORY], [BRAND_OWNER], [BRAND]}, " "), type text)
+				in
+				    #"Inserted Merged Column1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

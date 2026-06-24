@@ -1,0 +1,35 @@
+table Table
+	lineageTag: 50ed9fd0-726c-40dc-834d-c92d69001d74
+
+	column priority
+		dataType: string
+		lineageTag: 16f1535c-92e3-4dde-af39-21c8bfed9bd6
+		summarizeBy: none
+		sourceColumn: priority
+		sortByColumn: 'sort '
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'sort '
+		dataType: string
+		lineageTag: 2e0e9168-6468-4e5a-8d45-21e5edca2654
+		summarizeBy: none
+		sourceColumn: "sort "
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8shMz1DSUTJWitWJVvJNTQGyjcBsn/xyINtQKTYWAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [priority = _t, #"sort " = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"priority", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

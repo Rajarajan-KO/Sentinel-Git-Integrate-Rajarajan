@@ -1,0 +1,86 @@
+relationship 8f209827-5365-4e36-bc9e-79abe28376eb
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'BRAND TABLE'.KEY
+	toColumn: 'DASHBOARD DATA'.KEY
+
+relationship 94f3d561-9d7b-48ab-9eb4-5588d26cd7a4
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'BRAND TABLE'.KEY
+	toColumn: 'DATA FOR TREND CHART'.KEY
+
+relationship 2b362dfd-8fc0-409b-b02f-3bf5f9b2bf50
+	fromColumn: Forecast_dashboard.KEY
+	toColumn: 'Forecast Bridge Table'.KEY
+
+relationship 9b5163f2-4eb0-4706-a49b-0d267db3e796
+	fromColumn: 'Forecast_Trend Data'.KEY
+	toColumn: 'Forecast Bridge Table'.KEY
+
+relationship 0f0d2f95-d7f3-4890-8de7-55ac748485e3
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Calender.PERIOD_ID
+	toColumn: 'BRAND TABLE'.PERIOD_ID
+
+relationship 830657c8-f463-4d8d-af3b-8f098c113b96
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Calender.PERIOD_ID
+	toColumn: 'Forecast Bridge Table'.Period
+
+relationship eb5b4a19-62fe-f8af-f428-b5924e25981e
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Global Snapshot Data'.PERIOD_ID
+	toColumn: Calender.PERIOD_ID
+
+relationship 0996e521-5bb6-f8b1-625a-6c81c64e344a
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'BRAND TABLE'.'Key for brand table'
+	toColumn: brand_level_data.'KEY FOR BRAND TABLE'
+
+relationship 1b0d2801-368e-6e7c-2c13-99f1da2a67ef
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'BRAND TABLE'.'key for market'
+	toColumn: market_level_29_09.'key for brand'
+
+relationship be9eb855-24bf-d178-589a-241a4a129f06
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'BRAND TABLE'.'Key for channel'
+	toColumn: channel_report_aug.'Key for brand'
+
+relationship f2330586-f1a0-8a13-13aa-07c43d4a7e96
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'BRAND TABLE'.'Key for trend'
+	toColumn: Trend_chart_30_09.'Key for brand'
+
+relationship 162164db-5454-59d9-81f2-819aa604f132
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: brand_level_data.'kEY FOR BRAND 2'
+	toColumn: Trend_chart_30_09.'kEY FOR BRAND 2'
+
+relationship 4d8b3ccc-9835-a7da-e2c9-aeadd03dc28e
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'BRAND TABLE'.'Key for brand table 2'
+	toColumn: brand_level_data.'KEY FOR BRAND TABLE 2'
+
+relationship a9d5582b-b720-1a62-8f94-42b97f420792
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'BRAND TABLE'.'key for pack'
+	toColumn: 'Pack & Flavour Table'.'Key for brand'
+
+relationship 53be36e6-1d1c-4803-8b74-c318e8fe56a0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Last refresh'.'Last refresh'
+	toColumn: LocalDateTable_302a855e-765e-4ed2-b3dd-5dc5ee8a93ad.Date
+
