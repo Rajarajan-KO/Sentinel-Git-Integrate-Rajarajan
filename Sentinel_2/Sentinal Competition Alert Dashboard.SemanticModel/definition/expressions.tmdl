@@ -1,0 +1,129 @@
+expression 'DASHBOARD DATA (2)' =
+		let
+		    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+		    sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_dashboard_report"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report,{{"COUNTRY", type text}, {"CHANNEL", type text}, {"CATEGORY", type text}, {"BRAND", type text}, {"BRAND_OWNER", type text}, {"PERIOD_ID", Int64.Type}, {"MAX_PERIOD_ID", type text}, {"YEAR", Int64.Type}, {"MONTH", Int64.Type}, {"MONTH_NAME", type text}, {"CURRENT_MONTH_MARKET_VALUE_SHARE", type number}, {"CURRENT_MONTH_3MMT_VALUE_SHARE", type number}, {"PREVIOUS_3MMT_VALUE_SHARE", type number}, {"YTD_MARKET_VALUE_SHARE", type number}, {"MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VALUE_MAX_SCENARIO_CHANGE", type number}, {"MS_SALES_ALERT_REGISTERED", type text}, {"VALUE_METRIC_1", type text}, {"VALUE_METRIC_2", type text}, {"CURRENT_MONTH_MARKET_VOLUME_SHARE", type number}, {"CURRENT_MONTH_3MMT_VOLUME_SHARE", type number}, {"PREVIOUS_3MMT_VOLUME_SHARE", type number}, {"YTD_MARKET_VOLUME_SHARE", type number}, {"MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VOLUME_MAX_SCENARIO_CHANGE", type number}, {"MS_VOLUME_ALERT_REGISTERED", type text}, {"VOLUME_METRIC_1", type text}, {"VOLUME_METRIC_2", type text}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_3MMT_PRICE", type number}, {"PREVIOUS_3MMT_PRICE", type number}, {"YTD_PRICE", type number}, {"PRICE_MAX_SCENARIO_CHANGE", type number}, {"PRICE_ALERT_REGISTERED", type text}, {"PRICE_METRIC_1", type text}, {"PRICE_METRIC_2", type text}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_3MMT_TDP", type number}, {"PREVIOUS_3MMT_TDP", type number}, {"YTD_TDP", type number}, {"TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"TDP_PREVIOUS_YEAR_FULL_YEAR", type number}, {"TDP_MAX_SCENARIO_CHANGE", type number}, {"TDP_ALERT_REGISTERED", type text}, {"TDP_METRIC_1", type text}, {"TDP_METRIC_2", type text}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_3MMT_WD", type number}, {"PREVIOUS_3MMT_WD", type number}, {"YTD_WD", type number}, {"WD_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"WD_PREVIOUS_YEAR_FULL_YEAR", type number}, {"WD_MAX_SCENARIO_CHANGE", type number}, {"WD_ALERT_REGISTERED", type text}, {"WD_METRIC_1", type text}, {"WD_METRIC_2", type text}, {"CURRENT_MONTH_IPS", type number}, {"CURRENT_MONTH_3MMT_IPS", type number}, {"PREVIOUS_3MMT_IPS", type number}, {"YTD_IPS", type number}, {"IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"IPS_PREVIOUS_YEAR_FULL_YEAR", type number}, {"IPS_MAX_SCENARIO_CHANGE", type number}, {"IPS_ALERT_REGISTERED", type text}, {"IPS_METRIC_1", type text}, {"IPS_METRIC_2", type text},   {"FINAL_ALERT_MESSAGE", type text}, {"IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO", type text}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+		    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([BRAND_OWNER] = "TCCC")),
+		    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"COUNTRY", "CHANNEL", "CATEGORY", "BRAND","MAX_PERIOD_ID"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+		in
+		    #"Removed Duplicates"
+	lineageTag: da6e89a8-3cf9-4882-a470-d33c3acd2783
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'BRIDGE TABLE (2)' =
+		let
+		    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+		    sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_dashboard_report"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report,{{"COUNTRY", type text}, {"CHANNEL", type text}, {"CATEGORY", type text}, {"BRAND", type text}, {"BRAND_OWNER", type text}, {"PERIOD_ID", Int64.Type}, {"MAX_PERIOD_ID", type text}, {"YEAR", Int64.Type}, {"MONTH", Int64.Type}, {"MONTH_NAME", type text}, {"CURRENT_MONTH_MARKET_VALUE_SHARE", type number}, {"CURRENT_MONTH_3MMT_VALUE_SHARE", type number}, {"PREVIOUS_3MMT_VALUE_SHARE", type number}, {"YTD_MARKET_VALUE_SHARE", type number}, {"MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VALUE_MAX_SCENARIO_CHANGE", type number}, {"MS_SALES_ALERT_REGISTERED", type text}, {"VALUE_METRIC_1", type text}, {"VALUE_METRIC_2", type text}, {"CURRENT_MONTH_MARKET_VOLUME_SHARE", type number}, {"CURRENT_MONTH_3MMT_VOLUME_SHARE", type number}, {"PREVIOUS_3MMT_VOLUME_SHARE", type number}, {"YTD_MARKET_VOLUME_SHARE", type number}, {"MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VOLUME_MAX_SCENARIO_CHANGE", type number}, {"MS_VOLUME_ALERT_REGISTERED", type text}, {"VOLUME_METRIC_1", type text}, {"VOLUME_METRIC_2", type text}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_3MMT_PRICE", type number}, {"PREVIOUS_3MMT_PRICE", type number}, {"YTD_PRICE", type number}, {"PRICE_MAX_SCENARIO_CHANGE", type number}, {"PRICE_ALERT_REGISTERED", type text}, {"PRICE_METRIC_1", type text}, {"PRICE_METRIC_2", type text}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_3MMT_TDP", type number}, {"PREVIOUS_3MMT_TDP", type number}, {"YTD_TDP", type number}, {"TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"TDP_PREVIOUS_YEAR_FULL_YEAR", type number}, {"TDP_MAX_SCENARIO_CHANGE", type number}, {"TDP_ALERT_REGISTERED", type text}, {"TDP_METRIC_1", type text}, {"TDP_METRIC_2", type text}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_3MMT_WD", type number}, {"PREVIOUS_3MMT_WD", type number}, {"YTD_WD", type number}, {"WD_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"WD_PREVIOUS_YEAR_FULL_YEAR", type number}, {"WD_MAX_SCENARIO_CHANGE", type number}, {"WD_ALERT_REGISTERED", type text}, {"WD_METRIC_1", type text}, {"WD_METRIC_2", type text}, {"CURRENT_MONTH_IPS", type number}, {"CURRENT_MONTH_3MMT_IPS", type number}, {"PREVIOUS_3MMT_IPS", type number}, {"YTD_IPS", type number}, {"IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"IPS_PREVIOUS_YEAR_FULL_YEAR", type number}, {"IPS_MAX_SCENARIO_CHANGE", type number}, {"IPS_ALERT_REGISTERED", type text}, {"IPS_METRIC_1", type text}, {"IPS_METRIC_2", type text},   {"FINAL_ALERT_MESSAGE", type text}, {"IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO", type text}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+		    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"COUNTRY", "CHANNEL", "CATEGORY", "BRAND", "BRAND_OWNER", "PRICE_METRIC_1", "PRICE_METRIC_2", "TDP_METRIC_1", "TDP_METRIC_2", "WD_METRIC_1", "WD_METRIC_2", "IPS_METRIC_1", "IPS_METRIC_2", "ALERT_ID", "FINAL_ALERT_MESSAGE","MAX_PERIOD_ID","YEAR","MONTH_NAME","MONTH","OPERATION_UNIT"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([ALERT_ID] <> null)),
+		    #"Removed Duplicates" = Table.Distinct(#"Filtered Rows"),
+		    #"Duplicated Column" = Table.DuplicateColumn(#"Removed Duplicates", "BRAND", "BRAND - Copy"),
+		    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"BRAND", "ALERT_BRANDS"}, {"BRAND - Copy", "SHARE_BRANDS"}}),
+		    #"Duplicated Column1" = Table.DuplicateColumn(#"Renamed Columns", "BRAND_OWNER", "BRAND_OWNER - Copy"),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Duplicated Column1",{{"BRAND_OWNER - Copy", "MANUFACTURER"}})
+		in
+		    #"Renamed Columns1"
+	lineageTag: 9d79239c-6d92-42d2-adf5-e5de594061a7
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'BRAND TABLE (2)' =
+		let
+		    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+		    sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_dashboard_report"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report,{{"COUNTRY", type text}, {"CHANNEL", type text}, {"CATEGORY", type text}, {"BRAND", type text}, {"BRAND_OWNER", type text}, {"PERIOD_ID", Int64.Type}, {"MAX_PERIOD_ID", type text}, {"YEAR", Int64.Type}, {"MONTH", Int64.Type}, {"MONTH_NAME", type text}, {"CURRENT_MONTH_MARKET_VALUE_SHARE", type number}, {"CURRENT_MONTH_3MMT_VALUE_SHARE", type number}, {"PREVIOUS_3MMT_VALUE_SHARE", type number}, {"YTD_MARKET_VALUE_SHARE", type number}, {"MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VALUE_MAX_SCENARIO_CHANGE", type number}, {"MS_SALES_ALERT_REGISTERED", type text}, {"VALUE_METRIC_1", type text}, {"VALUE_METRIC_2", type text}, {"CURRENT_MONTH_MARKET_VOLUME_SHARE", type number}, {"CURRENT_MONTH_3MMT_VOLUME_SHARE", type number}, {"PREVIOUS_3MMT_VOLUME_SHARE", type number}, {"YTD_MARKET_VOLUME_SHARE", type number}, {"MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VOLUME_MAX_SCENARIO_CHANGE", type number}, {"MS_VOLUME_ALERT_REGISTERED", type text}, {"VOLUME_METRIC_1", type text}, {"VOLUME_METRIC_2", type text}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_3MMT_PRICE", type number}, {"PREVIOUS_3MMT_PRICE", type number}, {"YTD_PRICE", type number}, {"PRICE_MAX_SCENARIO_CHANGE", type number}, {"PRICE_ALERT_REGISTERED", type text}, {"PRICE_METRIC_1", type text}, {"PRICE_METRIC_2", type text}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_3MMT_TDP", type number}, {"PREVIOUS_3MMT_TDP", type number}, {"YTD_TDP", type number}, {"TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"TDP_PREVIOUS_YEAR_FULL_YEAR", type number}, {"TDP_MAX_SCENARIO_CHANGE", type number}, {"TDP_ALERT_REGISTERED", type text}, {"TDP_METRIC_1", type text}, {"TDP_METRIC_2", type text}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_3MMT_WD", type number}, {"PREVIOUS_3MMT_WD", type number}, {"YTD_WD", type number}, {"WD_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"WD_PREVIOUS_YEAR_FULL_YEAR", type number}, {"WD_MAX_SCENARIO_CHANGE", type number}, {"WD_ALERT_REGISTERED", type text}, {"WD_METRIC_1", type text}, {"WD_METRIC_2", type text}, {"CURRENT_MONTH_IPS", type number}, {"CURRENT_MONTH_3MMT_IPS", type number}, {"PREVIOUS_3MMT_IPS", type number}, {"YTD_IPS", type number}, {"IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"IPS_PREVIOUS_YEAR_FULL_YEAR", type number}, {"IPS_MAX_SCENARIO_CHANGE", type number}, {"IPS_ALERT_REGISTERED", type text}, {"IPS_METRIC_1", type text}, {"IPS_METRIC_2", type text},   {"FINAL_ALERT_MESSAGE", type text}, {"IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO", type text}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+		    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"BRAND_OWNER"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+		in
+		    #"Removed Duplicates"
+	lineageTag: c8cde001-a7fe-497b-ac22-1b9c1bb52b19
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression 'Forecast_Trend Data (2)' = ```
+		let
+		    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+		    sch_kocompetitionalert_t_ext_ko_competitionalert_projected_trend_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_projected_trend_report"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_projected_trend_report,{{"COUNTRY", type text}, {"CATEGORY", type text}, {"MONTH", type text}, {"YEAR", Int64.Type}, {"TIME_PERIOD", type text}, {"PEPSICO_MARKET_SHARE_VALUE_HISTORICAL", type number}, {"PEPSICO_MARKET_SHARE_VALUE_FORECAST", type text}, {"TCCC_MARKET_SHARE_VALUE_HISTORICAL", type number}, {"TCCC_MARKET_SHARE_VALUE_FORECAST", type text}, {"PEPSICO_MARKET_SHARE_VOLUME_HISTORICAL", type number}, {"PEPSICO_MARKET_SHARE_VOLUME_FORECAST", type text}, {"TCCC_MARKET_SHARE_VOLUME_HISTORICAL", type number}, {"TCCC_MARKET_SHARE_VOLUME_FORECAST", type text}, {"MONTH_NUM", Int64.Type}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+		    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Changed Type", {"COUNTRY", "CATEGORY", "MONTH", "YEAR", "TIME_PERIOD", "MONTH_NUM", "OPERATION_UNIT", "ALERT_ID", "PERIOD_ID_GENERATED_DATA"}, "Attribute", "Value"),
+		    #"Added Conditional Column" = Table.AddColumn(#"Unpivoted Columns", "BRAND_OWNER", each if Text.Contains([Attribute], "TCCC") then "TCCC" else "PEPSICO"),
+		    #"Replaced Value" = Table.ReplaceValue(#"Added Conditional Column","TCCC_","",Replacer.ReplaceText,{"Attribute"}),
+		    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","PEPSICO_","",Replacer.ReplaceText,{"Attribute"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value1",{{"Value", type number}}),
+		    #"Pivoted Column" = Table.Pivot(#"Changed Type1", List.Distinct(#"Changed Type1"[Attribute]), "Attribute", "Value", List.Sum),
+		    #"Added Conditional Column1" = Table.AddColumn(#"Pivoted Column", "Market Value Share", each if [TIME_PERIOD] = "Historical" then [MARKET_SHARE_VALUE_HISTORICAL] else [MARKET_SHARE_VALUE_FORECAST]),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Added Conditional Column1",{{"Market Value Share", type number}}),
+		    #"Added Conditional Column2" = Table.AddColumn(#"Changed Type2", "Market Volume Share", each if [TIME_PERIOD] = "Historical" then [MARKET_SHARE_VOLUME_HISTORICAL] else [MARKET_SHARE_VOLUME_FORECAST]),
+		    #"Changed Type3" = Table.TransformColumnTypes(#"Added Conditional Column2",{{"Market Volume Share", type number}}),
+		    #"Inserted Merged Column" = Table.AddColumn(#"Changed Type3", "KEY", each Text.Combine({[COUNTRY], [CATEGORY],[PERIOD_ID_GENERATED_DATA]}, " "), type text),
+		    #"Removed Columns" = Table.RemoveColumns(#"Inserted Merged Column",{"MARKET_SHARE_VALUE_HISTORICAL", "MARKET_SHARE_VALUE_FORECAST", "MARKET_SHARE_VOLUME_HISTORICAL", "MARKET_SHARE_VOLUME_FORECAST"}),
+		    #"Inserted Merged Column1" = Table.AddColumn(#"Removed Columns", "MONTH_YEAR", each Text.Combine({[MONTH], Text.From([YEAR], "en-US")}, "'"), type text),
+		    #"Added Custom" = Table.AddColumn(#"Inserted Merged Column1", "Date Sorting", each [YEAR] *100 + [MONTH_NUM]),
+		    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Brand_Owner2", each if [TIME_PERIOD] = "Forecast" and [BRAND_OWNER] = "TCCC" then "TCCC PROJECTED" else if [TIME_PERIOD] = "Forecast" and [BRAND_OWNER] = "PEPSICO" then "PEPSICO PROJECTED" 
+		else [BRAND_OWNER]),
+		    #"Added Conditional Column3" = Table.AddColumn(#"Added Custom1", "Sort", each if [Brand_Owner2] = "TCCC" then 1 else if [Brand_Owner2] = "PEPSICO" then 2 else if [Brand_Owner2] = "TCCC PROJECTED" then 10 else 11),
+		    #"Changed Type4" = Table.TransformColumnTypes(#"Added Conditional Column3",{{"Sort", Int64.Type}}),
+		    #"Filtered Rows" = Table.SelectRows(#"Changed Type4", each ([TIME_PERIOD] = "Historical")),
+		    #"Added Custom2" = Table.AddColumn(#"Filtered Rows", "Market Value Share_Tooltip", each ""),
+		    #"Changed Type7" = Table.TransformColumnTypes(#"Added Custom2",{{"Market Value Share_Tooltip", type number}}),
+		    #"Added Custom4" = Table.AddColumn(#"Changed Type7", "Market Volume Share_Tooltip", each ""),
+		    #"Changed Type8" = Table.TransformColumnTypes(#"Added Custom4",{{"Market Volume Share_Tooltip", type number}}),
+		    #"Changed Type5" = Table.TransformColumnTypes(#"Changed Type8",{{"Date Sorting", Int64.Type}}),
+		    #"Changed Type6" = Table.TransformColumnTypes(#"Changed Type5",{{"PERIOD_ID_GENERATED_DATA", Int64.Type}}),
+		    #"Added Custom3" = Table.AddColumn(#"Changed Type6", "Cond1", each [Date Sorting] = [PERIOD_ID_GENERATED_DATA]),
+		    #"Filtered Rows1" = Table.SelectRows(#"Added Custom3", each ([Cond1] = true)),
+		    #"Replaced Value2" = Table.ReplaceValue(#"Filtered Rows1","Historical","Forecast",Replacer.ReplaceText,{"TIME_PERIOD"}),
+		    #"Removed Columns1" = Table.RemoveColumns(#"Replaced Value2",{"Cond1"}),
+		    #"Replaced Value3" = Table.ReplaceValue(#"Removed Columns1","TCCC","TCCC PROJECTED",Replacer.ReplaceText,{"Brand_Owner2"}),
+		    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","PEPSICO","PEPSICO PROJECTED",Replacer.ReplaceText,{"Brand_Owner2"}),
+		    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4",1,10,Replacer.ReplaceValue,{"Sort"}),
+		    #"Replaced Value6" = Table.ReplaceValue(#"Replaced Value5",2,11,Replacer.ReplaceValue,{"Sort"})
+		in
+		    #"Replaced Value6"
+		```
+	lineageTag: 07b883d4-5f86-4042-93d3-c849d5f9eb7e
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Calender (2)' =
+		let
+		    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+		    sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_dashboard_report"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report,{{"COUNTRY", type text}, {"CHANNEL", type text}, {"CATEGORY", type text}, {"BRAND", type text}, {"BRAND_OWNER", type text}, {"PERIOD_ID", Int64.Type}, {"MAX_PERIOD_ID", type text}, {"YEAR", Int64.Type}, {"MONTH", Int64.Type}, {"MONTH_NAME", type text}, {"CURRENT_MONTH_MARKET_VALUE_SHARE", type number}, {"CURRENT_MONTH_3MMT_VALUE_SHARE", type number}, {"PREVIOUS_3MMT_VALUE_SHARE", type number}, {"YTD_MARKET_VALUE_SHARE", type number}, {"MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VALUE_MAX_SCENARIO_CHANGE", type number}, {"MS_SALES_ALERT_REGISTERED", type text}, {"VALUE_METRIC_1", type text}, {"VALUE_METRIC_2", type text}, {"CURRENT_MONTH_MARKET_VOLUME_SHARE", type number}, {"CURRENT_MONTH_3MMT_VOLUME_SHARE", type number}, {"PREVIOUS_3MMT_VOLUME_SHARE", type number}, {"YTD_MARKET_VOLUME_SHARE", type number}, {"MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VOLUME_MAX_SCENARIO_CHANGE", type number}, {"MS_VOLUME_ALERT_REGISTERED", type text}, {"VOLUME_METRIC_1", type text}, {"VOLUME_METRIC_2", type text}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_3MMT_PRICE", type number}, {"PREVIOUS_3MMT_PRICE", type number}, {"YTD_PRICE", type number}, {"PRICE_MAX_SCENARIO_CHANGE", type number}, {"PRICE_ALERT_REGISTERED", type text}, {"PRICE_METRIC_1", type text}, {"PRICE_METRIC_2", type text}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_3MMT_TDP", type number}, {"PREVIOUS_3MMT_TDP", type number}, {"YTD_TDP", type number}, {"TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"TDP_PREVIOUS_YEAR_FULL_YEAR", type number}, {"TDP_MAX_SCENARIO_CHANGE", type number}, {"TDP_ALERT_REGISTERED", type text}, {"TDP_METRIC_1", type text}, {"TDP_METRIC_2", type text}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_3MMT_WD", type number}, {"PREVIOUS_3MMT_WD", type number}, {"YTD_WD", type number}, {"WD_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"WD_PREVIOUS_YEAR_FULL_YEAR", type number}, {"WD_MAX_SCENARIO_CHANGE", type number}, {"WD_ALERT_REGISTERED", type text}, {"WD_METRIC_1", type text}, {"WD_METRIC_2", type text}, {"CURRENT_MONTH_IPS", type number}, {"CURRENT_MONTH_3MMT_IPS", type number}, {"PREVIOUS_3MMT_IPS", type number}, {"YTD_IPS", type number}, {"IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"IPS_PREVIOUS_YEAR_FULL_YEAR", type number}, {"IPS_MAX_SCENARIO_CHANGE", type number}, {"IPS_ALERT_REGISTERED", type text}, {"IPS_METRIC_1", type text}, {"IPS_METRIC_2", type text},   {"FINAL_ALERT_MESSAGE", type text}, {"IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO", type text}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+		    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"PERIOD_ID", "YEAR", "MONTH", "MONTH_NAME"}),
+		    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+		    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "MAX_Year", each List.Max(#"Removed Duplicates"[YEAR])),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"MAX_Year", Int64.Type}}),
+		    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "Max Year Flag", each if [YEAR] = [MAX_Year] then true else false),
+		    #"Filtered Rows" = Table.SelectRows(#"Added Conditional Column", each [Max Year Flag] = true),
+		    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"YEAR"}),
+		    #"Added Custom1" = Table.AddColumn(#"Removed Columns", "YEAR", each "Latest Year"),
+		    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "MAX_Month", each List.Max(#"Added Custom1"[MONTH])),
+		    #"Added Conditional Column1" = Table.AddColumn(#"Added Custom2", "Month_Name2", each if [MONTH] = [MAX_Month] then "Latest Month" else [MONTH_NAME]),
+		    #"Removed Columns1" = Table.RemoveColumns(#"Added Conditional Column1",{"MONTH_NAME", "MAX_Year", "Max Year Flag", "MAX_Month"}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns1",{{"Month_Name2", "MONTH_NAME"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: f3531cd7-9248-4c30-8a64-a2c87950be47
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+/// sdfs
+expression 'Data Source' = "syn-tccc-udp-mai-us2-uat-03-ondemand.sql.azuresynapse.net" meta [IsParameterQuery=true, List={"syn-tccc-udp-mai-us2-dev-01-ondemand.sql.azuresynapse.net", "syn-tccc-udp-mai-us2-uat-03-ondemand.sql.azuresynapse.net", "syn-tccc-udp-mai-us2-prd-02-ondemand.sql.azuresynapse.net"}, DefaultValue="syn-tccc-udp-mai-us2-dev-01-ondemand.sql.azuresynapse.net", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 89cc63d5-8881-4f09-b44b-863c5892c6f5
+
+	annotation PBI_ResultType = Text
+

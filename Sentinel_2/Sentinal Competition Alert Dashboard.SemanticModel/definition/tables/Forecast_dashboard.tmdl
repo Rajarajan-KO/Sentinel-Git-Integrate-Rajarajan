@@ -1,0 +1,190 @@
+table Forecast_dashboard
+	lineageTag: 52643001-7deb-428d-8a2d-1867c01aea75
+
+	column COUNTRY
+		dataType: string
+		lineageTag: 8c815470-98f3-40d6-87ec-05093c48aa5c
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: ed83bb76-91f8-4b2f-b67b-ae735d345d75
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: string
+		lineageTag: cd6c5534-29d7-4b46-b4fe-fd046146541c
+		summarizeBy: none
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 4193797f-fd1d-472c-8c2f-43f97aad22de
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NUM
+		dataType: int64
+		formatString: 0
+		lineageTag: ee8b7846-864e-42e9-bd1b-1b549c2a92ad
+		summarizeBy: sum
+		sourceColumn: MONTH_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERATION_UNIT
+		dataType: string
+		lineageTag: 5f6ec701-ec40-4058-8f2c-0b6b337d769c
+		summarizeBy: none
+		sourceColumn: OPERATION_UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: ed8b4c3f-7a1d-4521-8e74-480a906d0100
+		summarizeBy: count
+		sourceColumn: ALERT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand_Owner
+		dataType: string
+		lineageTag: 8857e7ba-d5c6-4542-9dfb-e21d5903a88a
+		summarizeBy: none
+		sourceColumn: Brand_Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: string
+		lineageTag: 9e0f7eab-5290-453e-a705-b4f10a5c4367
+		summarizeBy: none
+		sourceColumn: Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY
+		dataType: string
+		lineageTag: b4f67d98-d134-464e-861b-a42431ffd2b3
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country Alert'
+		dataType: string
+		lineageTag: 719b08f3-1837-4781-bf68-d2bc23694ed7
+		summarizeBy: none
+		sourceColumn: Country Alert
+
+		annotation SummarizationSetBy = Automatic
+
+	column PEPSICO_ALERT_REGISTERED_VALUE
+		dataType: string
+		lineageTag: ced51203-2e68-438e-b0b2-b35722e6044a
+		summarizeBy: none
+		sourceColumn: PEPSICO_ALERT_REGISTERED_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column MESSAGE_VALUE
+		dataType: string
+		lineageTag: a78dac4f-249f-4f85-b20c-b2f324ff1379
+		summarizeBy: none
+		sourceColumn: MESSAGE_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURR_MONTH_MS_VALUE
+		dataType: double
+		lineageTag: c99eddc4-ce85-4b43-ac2c-29c2574963d4
+		summarizeBy: sum
+		sourceColumn: CURR_MONTH_MS_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UPCOMING_QUARTER_MS_VALUE
+		dataType: double
+		lineageTag: d0f622b7-5c77-4252-b8b4-f2e2f7ffbadf
+		summarizeBy: sum
+		sourceColumn: UPCOMING_QUARTER_MS_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DIFFERENCE_VALUE
+		dataType: double
+		lineageTag: 6fad8d54-b99f-4f08-aea3-9b0902a2e92e
+		summarizeBy: sum
+		sourceColumn: DIFFERENCE_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURR_MONTH_MS_VOLUME
+		dataType: double
+		lineageTag: 39ad7d23-ed19-42e2-b169-766567ff8024
+		summarizeBy: sum
+		sourceColumn: CURR_MONTH_MS_VOLUME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UPCOMING_QUARTER_MS_VOLUME
+		dataType: double
+		lineageTag: f80baa65-653b-4355-8a76-415d32e06828
+		summarizeBy: sum
+		sourceColumn: UPCOMING_QUARTER_MS_VOLUME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DIFFERENCE_VOLUME
+		dataType: double
+		lineageTag: 7a5045fb-90d4-48d6-abe2-fb72e486de8e
+		summarizeBy: sum
+		sourceColumn: DIFFERENCE_VOLUME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Forecast_dashboard = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_projected_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_projected_dashboard_report"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_projected_dashboard_report,{{"COUNTRY", type text}, {"CATEGORY", type text}, {"MONTH", type text}, {"YEAR", Int64.Type}, {"TCCC_CURR_MONTH_MS_VALUE", type number}, {"TCCC_UPCOMING_QUARTER_MS_VALUE", type number}, {"TCCC_DIFFERENCE_VALUE", type number}, {"PEPSICO_CURR_MONTH_MS_VALUE", type number}, {"PEPSICO_UPCOMING_QUARTER_MS_VALUE", type number}, {"PEPSICO_DIFFERENCE_VALUE", type number}, {"PEPSICO_ALERT_REGISTERED_VALUE", type text}, {"MESSAGE_VALUE", type text}, {"TCCC_CURR_MONTH_MS_VOLUME", type number}, {"TCCC_UPCOMING_QUARTER_MS_VOLUME", type number}, {"TCCC_DIFFERENCE_VOLUME", type number}, {"PEPSICO_CURR_MONTH_MS_VOLUME", type number}, {"PEPSICO_UPCOMING_QUARTER_MS_VOLUME", type number}, {"PEPSICO_DIFFERENCE_VOLUME", type number}, {"MONTH_NUM", Int64.Type}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Changed Type", {"COUNTRY", "CATEGORY", "MONTH", "YEAR", "PEPSICO_ALERT_REGISTERED_VALUE", "MESSAGE_VALUE", "MONTH_NUM", "OPERATION_UNIT", "ALERT_ID"}, "Attribute", "Value"),
+				    #"Added Conditional Column" = Table.AddColumn(#"Unpivoted Columns", "Brand_Owner", each if Text.Contains([Attribute], "TCCC") then "TCCC" else "PEPSICO"),
+				    #"Replaced Value" = Table.ReplaceValue(#"Added Conditional Column","TCCC_","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","PEPSICO_","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Pivoted Column" = Table.Pivot(#"Replaced Value1", List.Distinct(#"Replaced Value1"[Attribute]), "Attribute", "Value", List.Sum),
+				    #"Added Custom" = Table.AddColumn(#"Pivoted Column", "Period", each if Text.Length(Text.From([MONTH_NUM], "en-US")) = 1 then Text.Combine({Text.From([YEAR], "en-US"),"0" ,Text.From([MONTH_NUM], "en-US")},"") else Text.Combine({Text.From([YEAR], "en-US"), Text.From([MONTH_NUM], "en-US")}, "")),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Added Custom", "KEY", each Text.Combine({[COUNTRY], [CATEGORY],[Period]}, " "), type text),
+				    #"Inserted Merged Column2" = Table.AddColumn(#"Inserted Merged Column1", "Country Alert", each Text.Combine({[COUNTRY], Text.From([ALERT_ID], "en-US")}, " "), type text)
+				in
+				    #"Inserted Merged Column2"
+
+	annotation PBI_ResultType = Table
+

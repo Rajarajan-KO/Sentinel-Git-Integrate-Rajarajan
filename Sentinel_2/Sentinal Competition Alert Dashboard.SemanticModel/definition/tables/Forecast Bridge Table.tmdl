@@ -1,0 +1,106 @@
+table 'Forecast Bridge Table'
+	lineageTag: 80e635b2-45e0-4966-95e9-00030966fa53
+
+	column COUNTRY
+		dataType: string
+		lineageTag: 4c91e70c-73ca-45ee-b951-035485412157
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: 1547f82b-c2e9-495b-b9eb-5ee64bc9e639
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: string
+		lineageTag: 60899fd9-8b71-4d7e-af4e-e4ed51ef2b59
+		summarizeBy: none
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 500d66d9-e8aa-49c0-a9d7-e431fa122d74
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 68226a81-7ffc-44f9-bb6b-c80e5a51343b
+		summarizeBy: count
+		sourceColumn: ALERT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: string
+		lineageTag: 3bd2bad5-9d29-4636-8f4a-1ac164c07ced
+		summarizeBy: none
+		sourceColumn: Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY
+		dataType: string
+		lineageTag: b830862e-12f0-41f8-8819-8f06e04636d6
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country Alert'
+		dataType: string
+		lineageTag: 1affd2c1-83ac-4033-9047-581cab1cae88
+		summarizeBy: none
+		sourceColumn: Country Alert
+		sortByColumn: ALERT_ID
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MESSAGE_VALUE
+		dataType: string
+		lineageTag: fe8ce709-8bb6-4128-a0b3-7deff6d4cf14
+		summarizeBy: none
+		sourceColumn: MESSAGE_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERATION_UNIT
+		dataType: string
+		lineageTag: 91a67e9f-2997-4865-978c-9776828204a9
+		summarizeBy: none
+		sourceColumn: OPERATION_UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Forecast Bridge Table' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_projected_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_projected_dashboard_report"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_projected_dashboard_report,{{"COUNTRY", type text}, {"CATEGORY", type text}, {"MONTH", type text}, {"YEAR", Int64.Type}, {"TCCC_CURR_MONTH_MS_VALUE", type number}, {"TCCC_UPCOMING_QUARTER_MS_VALUE", type number}, {"TCCC_DIFFERENCE_VALUE", type number}, {"PEPSICO_CURR_MONTH_MS_VALUE", type number}, {"PEPSICO_UPCOMING_QUARTER_MS_VALUE", type number}, {"PEPSICO_DIFFERENCE_VALUE", type number}, {"PEPSICO_ALERT_REGISTERED_VALUE", type text}, {"MESSAGE_VALUE", type text}, {"TCCC_CURR_MONTH_MS_VOLUME", type number}, {"TCCC_UPCOMING_QUARTER_MS_VOLUME", type number}, {"TCCC_DIFFERENCE_VOLUME", type number}, {"PEPSICO_CURR_MONTH_MS_VOLUME", type number}, {"PEPSICO_UPCOMING_QUARTER_MS_VOLUME", type number}, {"PEPSICO_DIFFERENCE_VOLUME", type number}, {"MONTH_NUM", Int64.Type}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Changed Type",  "Period", each if Text.Length(Text.From([MONTH_NUM], "en-US")) = 1 then Text.Combine({Text.From([YEAR], "en-US"),"0" ,Text.From([MONTH_NUM], "en-US")},"") else Text.Combine({Text.From([YEAR], "en-US"), Text.From([MONTH_NUM], "en-US")}, "")),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Inserted Merged Column",{"OPERATION_UNIT","COUNTRY", "CATEGORY", "MONTH", "YEAR", "MESSAGE_VALUE", "ALERT_ID","Period"}),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Removed Other Columns", "KEY", each Text.Combine({[COUNTRY], [CATEGORY] ,[Period]}, " "), type text),
+				    #"Inserted Merged Column2" = Table.AddColumn(#"Inserted Merged Column1", "Country Alert", each Text.Combine({Text.From([ALERT_ID], "en-US"), [COUNTRY]}, "     "), type text)
+				in
+				    #"Inserted Merged Column2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
