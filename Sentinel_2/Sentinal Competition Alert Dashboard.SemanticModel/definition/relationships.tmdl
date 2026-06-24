@@ -1,0 +1,37 @@
+relationship 8f209827-5365-4e36-bc9e-79abe28376eb
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'BRAND TABLE'.KEY
+	toColumn: 'DASHBOARD DATA'.KEY
+
+relationship 94f3d561-9d7b-48ab-9eb4-5588d26cd7a4
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'BRAND TABLE'.KEY
+	toColumn: 'DATA FOR TREND CHART'.KEY
+
+relationship 2b362dfd-8fc0-409b-b02f-3bf5f9b2bf50
+	fromColumn: Forecast_dashboard.KEY
+	toColumn: 'Forecast Bridge Table'.KEY
+
+relationship 9b5163f2-4eb0-4706-a49b-0d267db3e796
+	fromColumn: 'Forecast_Trend Data'.KEY
+	toColumn: 'Forecast Bridge Table'.KEY
+
+relationship 0f0d2f95-d7f3-4890-8de7-55ac748485e3
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Calender.PERIOD_ID
+	toColumn: 'BRAND TABLE'.PERIOD_ID
+
+relationship 830657c8-f463-4d8d-af3b-8f098c113b96
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Calender.PERIOD_ID
+	toColumn: 'Forecast Bridge Table'.Period
+
+relationship eb5b4a19-62fe-f8af-f428-b5924e25981e
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Global Snapshot Data'.PERIOD_ID
+	toColumn: Calender.PERIOD_ID
+

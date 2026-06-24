@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Sentinal Competition Alert Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bf8ed2e1-a78e-b6bb-4284-409989cae72a"
+  }
+}

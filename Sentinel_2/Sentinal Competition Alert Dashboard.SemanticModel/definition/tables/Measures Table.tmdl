@@ -1,0 +1,539 @@
+table 'Measures Table'
+	lineageTag: 7129a89d-0a85-4774-b571-2624f6c7879e
+
+	measure 'MS Current Month' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Current_Month_Market_Value_Share])=0,BLANK(),max('DASHBOARD DATA'[Current_Month_Market_Value_Share])/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Current_Month_Market_Volume_Share])=0,BLANK(),MAX('DASHBOARD DATA'[Current_Month_Market_Volume_Share])/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 5fc96d95-73b1-4ac1-a5b2-8243dcc97dbd
+
+	measure 'MS Current Month 3MMT' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Current_Month_3MMT_Value_Share])=0,BLANK(),max('DASHBOARD DATA'[Current_Month_3MMT_Value_Share])/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_Volume_Share])=0,BLANK(),MAX('DASHBOARD DATA'[Current_Month_3MMT_Volume_Share])/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 13439cce-f8cc-4c23-8de2-d3df15fb6c82
+
+	measure 'MS Last Month 3MMT' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Previous_3MMT_Value_Share])=0,BLANK(),
+			    max('DASHBOARD DATA'[Previous_3MMT_Value_Share])/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Previous_3MMT_Volume_Share])=0,BLANK(),
+			    MAX('DASHBOARD DATA'[Previous_3MMT_Volume_Share])/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 472059f6-d1d6-4dd9-8fc3-a1b560306c9b
+
+	measure 'MS 3MMT VS Previous' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Current_Month_3MMT_Value_Share])=0,BLANK(),
+			(max('DASHBOARD DATA'[Current_Month_3MMT_Value_Share])-max('DASHBOARD DATA'[Previous_3MMT_Value_Share]))/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_Volume_Share])=0,BLANK(),
+			(MAX('DASHBOARD DATA'[Current_Month_3MMT_Volume_Share])-MAX('DASHBOARD DATA'[Previous_3MMT_Volume_Share]))/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 786f0636-8ce0-40e8-b1ad-6a298fc518c8
+
+	measure 'MS Current Month YTD' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[YTD_Market_Value_Share])=0,BLANK(),
+			    max('DASHBOARD DATA'[YTD_Market_Value_Share])/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[YTD_Market_Volume_Share])=0,BLANK(),
+			    MAX('DASHBOARD DATA'[YTD_Market_Volume_Share])/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 25599f67-f949-46b8-b893-30ca3ebb92a5
+
+	measure 'MS Current Month VS YTD' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Current_Month_Market_Value_Share])=0,BLANK(),
+			    (max('DASHBOARD DATA'[Current_Month_Market_Value_Share])-max('DASHBOARD DATA'[YTD_Market_Value_Share]))/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Current_Month_Market_Volume_Share])=0,BLANK(),
+			    (MAX('DASHBOARD DATA'[Current_Month_Market_Volume_Share])-MAX('DASHBOARD DATA'[YTD_Market_Volume_Share]))/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 91efdc37-c922-4be3-a2b1-58bf6a490f65
+
+	measure 'MS Current Month PY' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Market_Value_Share_Same_Month_Previous_Year])=0,BLANK(),max('DASHBOARD DATA'[Market_Value_Share_Same_Month_Previous_Year])/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Market_Volume_Share_Same_Month_Previous_Year])=0,BLANK(),MAX('DASHBOARD DATA'[Market_Volume_Share_Same_Month_Previous_Year])/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fdda1d9f-13e4-4e7a-92ac-bd1ea6af5e7a
+
+	measure 'MS Current Month vs CM PY' = ```
+			
+			 IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			 SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Current_Month_Market_Value_Share])=0,BLANK(),
+			        (max('DASHBOARD DATA'[Current_Month_Market_Value_Share])-max('DASHBOARD DATA'[Market_Value_Share_Same_Month_Previous_Year]))/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Current_Month_Market_Volume_Share])=0,BLANK(),
+			    (MAX('DASHBOARD DATA'[Current_Month_Market_Volume_Share])-MAX('DASHBOARD DATA'[Market_Volume_Share_Same_Month_Previous_Year]))/100)),BLANK())
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 2f26cdd4-3ddd-409b-854c-e24866d71cd5
+
+	measure 'MS FY PY' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Market_Value_Share_Previous_Year_Full_Year])=0,BLANK(),
+			    max('DASHBOARD DATA'[Market_Value_Share_Previous_Year_Full_Year])/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Market_Volume_Share_Previous_Year_Full_Year])=0,BLANK(),
+			    MAX('DASHBOARD DATA'[Market_Volume_Share_Previous_Year_Full_Year])/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 57f233ca-28d9-4f12-a5fa-2d80d6d2bca5
+
+	measure 'MS Current Month vs FY PY' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			 SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DASHBOARD DATA'[Current_Month_Market_Value_Share]) =0,BLANK(),
+			    (max('DASHBOARD DATA'[Current_Month_Market_Value_Share]) - max('DASHBOARD DATA'[Market_Value_Share_Previous_Year_Full_Year]))/100),
+			"Volume Share(UC)",IF(MAX('DASHBOARD DATA'[Current_Month_Market_Volume_Share])=0,BLANK(),
+			        (MAX('DASHBOARD DATA'[Current_Month_Market_Volume_Share]) - MAX('DASHBOARD DATA'[Market_Volume_Share_Previous_Year_Full_Year]))/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e37bd7ce-31cd-4d1f-8bde-3860ad5f5344
+
+	measure 'Measure for Price_Change' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_2])="Previous 3MMT Price",
+			            IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_Price])) || ISBLANK(MAX('DASHBOARD DATA'[Previous_3MMT_Price])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_Price])=0 || MAX('DASHBOARD DATA'[Previous_3MMT_Price])=0,0,
+			            DIVIDE(max('DASHBOARD DATA'[Current_Month_3MMT_Price]) , max('DASHBOARD DATA'[Previous_3MMT_Price]))-1)),
+			IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_2])="YTD Price",
+			            IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_Price])) || ISBLANK(MAX('DASHBOARD DATA'[YTD_Price])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_Price])=0 || MAX('DASHBOARD DATA'[YTD_Price])=0,0,
+			            DIVIDE(max('DASHBOARD DATA'[Current_Month_3MMT_Price]), max('DASHBOARD DATA'[YTD_Price]))-1)),BLANK())))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 21af0a35-ca4c-45c1-bc7b-a1d0abc8bf27
+
+	measure 'Measure_for WD Metric2' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE('BRAND TABLE'[WD_Metric_2]),
+			"Previous 3MMT WD",MAX('DASHBOARD DATA'[Previous_3MMT_WD])/100,
+			"WD Same Month Previous Year 3MMT",MAX('DASHBOARD DATA'[WD_Same_Month_Previous_Year_3MMT])/100,
+			"WD Previous Year Full Year",MAX('DASHBOARD DATA'[WD_Previous_Year_Full_Year])/100,
+			"YTD WD",MAX('DASHBOARD DATA'[YTD_WD])/100,
+			"null",BLANK()),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b614ea42-fa43-4861-9955-5ec3cfb91006
+
+	measure 'Measure_for IPS Metric2' = ```
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]), 
+			 SWITCH(SELECTEDVALUE('BRAND TABLE'[IPS_Metric_2]),
+			"Previous 3MMT IPS",MAX('DASHBOARD DATA'[Previous_3MMT_IPS]),
+			"IPS Same Month Previous Year 3MMT",MAX('DASHBOARD DATA'[IPS_Same_Month_Previous_Year_3MMT]),
+			"IPS Previous Year Full Year",MAX('DASHBOARD DATA'[IPS_Previous_Year_Full_Year]),
+			"YTD IPS",MAX('DASHBOARD DATA'[YTD_IPS]),
+			"null",BLANK()),BLANK())
+			```
+		formatString: 0.0
+		lineageTag: 289d2b63-4037-4bdb-989e-0512afe1796f
+
+	measure 'Measure_for TDP Metric2' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE('BRAND TABLE'[TDP_Metric_2]),
+			"Previous 3MMT TDP",MAX('DASHBOARD DATA'[Previous_3MMT_TDP]),
+			"TDP Same Month Previous Year 3MMT",MAX('DASHBOARD DATA'[TDP_Same_Month_Previous_Year_3MMT]),
+			"TDP Previous Year Full Year",MAX('DASHBOARD DATA'[TDP_Previous_Year_Full_Year]),
+			"YTD TDP",MAX('DASHBOARD DATA'[YTD_TDP]),
+			"null",BLANK()),BLANK())
+		formatString: 0.0
+		lineageTag: 88222e6b-2e2b-4bcf-9a5a-a4a08cdc186f
+
+	measure 'Measure_for WD Change' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE('BRAND TABLE'[WD_Metric_2]),
+			"Previous 3MMT WD",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])) || ISBLANK(MAX('DASHBOARD DATA'[Previous_3MMT_WD])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])=0 || MAX('DASHBOARD DATA'[Previous_3MMT_WD])=0,0,
+			(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])-MAX('DASHBOARD DATA'[Previous_3MMT_WD])))),
+			"WD Same Month Previous Year 3MMT",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])) || ISBLANK(MAX('DASHBOARD DATA'[WD_Same_Month_Previous_Year_3MMT])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])=0 || MAX('DASHBOARD DATA'[WD_Same_Month_Previous_Year_3MMT])=0,0,
+			(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])-MAX('DASHBOARD DATA'[WD_Same_Month_Previous_Year_3MMT])))),
+			"WD Previous Year Full Year",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])) || ISBLANK(MAX('DASHBOARD DATA'[WD_Previous_Year_Full_Year])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])=0 || MAX('DASHBOARD DATA'[WD_Previous_Year_Full_Year])=0,0,
+			(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])-MAX('DASHBOARD DATA'[WD_Previous_Year_Full_Year])))),
+			"YTD WD",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])) || ISBLANK(MAX('DASHBOARD DATA'[YTD_WD])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])=0 || MAX('DASHBOARD DATA'[YTD_WD])=0,0,
+			(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])-MAX('DASHBOARD DATA'[YTD_WD])))),
+			"null",BLANK()),BLANK())
+		lineageTag: 1acb8e7d-8302-4212-ad36-c4d18c376d22
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Measure_for TDP Change' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE('BRAND TABLE'[TDP_Metric_2]),
+			"Previous 3MMT TDP",IF(ISBLANK(MAX('DASHBOARD DATA'[Previous_3MMT_TDP])) || ISBLANK(MAX        ('DASHBOARD DATA'[Current_Month_3MMT_TDP])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])=0 || MAX('DASHBOARD DATA'[Previous_3MMT_TDP])=0,0,
+			        DIVIDE(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP]),MAX('DASHBOARD DATA'[Previous_3MMT_TDP]))-1)),
+			"TDP Same Month Previous Year 3MMT",IF(ISBLANK(MAX('DASHBOARD DATA'[TDP_Same_Month_Previous_Year_3MMT])) || ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])=0 || MAX('DASHBOARD DATA'[TDP_Same_Month_Previous_Year_3MMT])=0,0,
+			        DIVIDE(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP]),MAX('DASHBOARD DATA'[TDP_Same_Month_Previous_Year_3MMT]))-1)),
+			"TDP Previous Year Full Year",IF(ISBLANK(MAX('DASHBOARD DATA'[TDP_Previous_Year_Full_Year])) || ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])=0 || MAX('DASHBOARD DATA'[TDP_Previous_Year_Full_Year])=0,0,
+			        DIVIDE(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP]),MAX('DASHBOARD DATA'[TDP_Previous_Year_Full_Year]))-1)),
+			"YTD TDP",IF(ISBLANK(MAX('DASHBOARD DATA'[YTD_TDP])) || ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])=0 || MAX('DASHBOARD DATA'[YTD_TDP])=0,0,
+			        DIVIDE(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP]),MAX('DASHBOARD DATA'[YTD_TDP]))-1)),
+			BLANK()),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b01a0227-7caf-48d0-811e-c98a6c6da838
+
+	measure 'Measure_for IPS Change' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE('BRAND TABLE'[IPS_Metric_2]),
+			"Previous 3MMT IPS",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])) || ISBLANK(MAX('DASHBOARD DATA'[Previous_3MMT_IPS])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])=0 || MAX('DASHBOARD DATA'[Previous_3MMT_IPS])=0,0,
+			MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])-MAX('DASHBOARD DATA'[Previous_3MMT_IPS]))),
+			
+			"IPS Same Month Previous Year 3MMT",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])) || ISBLANK(MAX('DASHBOARD DATA'[IPS_Same_Month_Previous_Year_3MMT])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])=0 || MAX('DASHBOARD DATA'[IPS_Same_Month_Previous_Year_3MMT])=0,0,
+			MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])-MAX('DASHBOARD DATA'[IPS_Same_Month_Previous_Year_3MMT]))),
+			"IPS Previous Year Full Year",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])) || ISBLANK(MAX('DASHBOARD DATA'[IPS_Previous_Year_Full_Year])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])=0 || MAX('DASHBOARD DATA'[IPS_Previous_Year_Full_Year])=0,0,
+			MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])-MAX('DASHBOARD DATA'[IPS_Previous_Year_Full_Year]))),
+			"YTD IPS",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])) || ISBLANK(MAX('DASHBOARD DATA'[YTD_IPS])),BLANK(),
+			IF(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])=0 || MAX('DASHBOARD DATA'[YTD_IPS])=0,0,
+			MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])-MAX('DASHBOARD DATA'[YTD_IPS]))),
+			"null",BLANK()),BLANK())
+		formatString: 0.0
+		lineageTag: b08f149a-980b-4052-bea4-c80b81f29322
+
+	measure 'Measure_for WD Metric1' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			 IF(SELECTEDVALUE('BRAND TABLE'[WD_Metric_1])= "Current Month 3MMT WD",
+			IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])),BLANK(),MAX('DASHBOARD DATA'[Current_Month_3MMT_WD])/100),BLANK()),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ba69beac-0e58-4400-b9d8-0869cea04522
+
+	measure 'Measure_for IPS Metric1' = ```
+			
+			 IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			 IF(SELECTEDVALUE('BRAND TABLE'[IPS_Metric_1])= "Current Month 3MMT IPS",
+			 IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])),BLANK(),MAX('DASHBOARD DATA'[Current_Month_3MMT_IPS])),BLANK()),BLANK())
+			```
+		formatString: 0.0
+		lineageTag: 2209eaef-f240-4913-8ebe-69546bf1a675
+
+	measure 'Measure_for TDP Metric1' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			 IF(SELECTEDVALUE('BRAND TABLE'[TDP_Metric_1])= "Current Month 3MMT TDP",
+			 IF(ISBLANK(MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])),BLANK(),MAX('DASHBOARD DATA'[Current_Month_3MMT_TDP])),BLANK()),BLANK())
+		formatString: 0.0
+		lineageTag: 4a5df5f3-d1e1-472a-b6a1-36dfb127c546
+
+	measure 'Measure for Price Metric1' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Price$/Ltr",IF(ISBLANK(max('DASHBOARD DATA'[Current_Month_3MMT_Price])),BLANK(),
+			            IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_1]) ="Current Month 3MMT Price",
+			            max('DASHBOARD DATA'[Current_Month_3MMT_Price]),BLANK())),
+			"Price$/UC",IF(ISBLANK(max('DASHBOARD DATA'[Current_Month_3MMT_Price])),BLANK(),
+			                IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_1]) ="Current Month 3MMT Price",
+			                max('DASHBOARD DATA'[Current_Month_3MMT_Price])/5.678,BLANK()))),BLANK())
+		formatString: 0.00
+		lineageTag: 223db61c-f689-45a8-ac8f-25711a0206d2
+
+	measure 'Measure for Price_metric2' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Price$/Ltr",IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_2])="Previous 3MMT Price",
+			            max('DASHBOARD DATA'[Previous_3MMT_Price])
+			            ,IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_2])="YTD Price",
+			            max('DASHBOARD DATA'[YTD_Price]),BLANK())),
+			"Price$/UC",IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_2])="Previous 3MMT Price",
+			            max('DASHBOARD DATA'[Previous_3MMT_Price])/5.678
+			            ,IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_2])="YTD Price",
+			            max('DASHBOARD DATA'[YTD_Price])/5.678
+			            ,BLANK()))),BLANK())
+		formatString: 0.00
+		lineageTag: 8323cc7d-f481-4b00-995b-2103baed2a02
+
+	measure 'Measure for MS Trend' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(max('DATA FOR TREND CHART'[Current_Month_Market_Value_Share])=0,BLANK(),max('DATA FOR TREND CHART'[Current_Month_Market_Value_Share])/100),
+			"Volume Share(UC)",IF(MAX('DATA FOR TREND CHART'[Current_Month_Market_Volume_Share])=0,BLANK(),MAX('DATA FOR TREND CHART'[Current_Month_Market_Volume_Share])/100)),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 61c92b24-d23b-42cb-a113-d17a79ba114b
+
+	measure 'Measure for Price Trend' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Price$/Ltr",IF(max('DATA FOR TREND CHART'[CURRENT_MONTH_PRICE])=0,BLANK(),
+			            max('DATA FOR TREND CHART'[CURRENT_MONTH_PRICE])),
+			"Price$/UC",IF(max('DATA FOR TREND CHART'[CURRENT_MONTH_PRICE])=0,BLANK(),
+			                max('DATA FOR TREND CHART'[CURRENT_MONTH_PRICE])/5.678)),BLANK())
+		formatString: 0.00
+		lineageTag: cc656ab3-d2cb-4c83-8929-d8836d485b95
+
+	measure 'Measure for Execution Trend' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),SWITCH(SELECTEDVALUE('Execution Metric'[Metric]),
+			"WD",IF(max('DATA FOR TREND CHART'[CURRENT_MONTH_WD])=0,BLANK(),
+			            max('DATA FOR TREND CHART'[CURRENT_MONTH_WD])),
+			"IPS",IF(max('DATA FOR TREND CHART'[CURRENT_MONTH_IPS])=0,BLANK(),
+			                max('DATA FOR TREND CHART'[CURRENT_MONTH_IPS])),
+			"TDP",IF(max('DATA FOR TREND CHART'[CURRENT_MONTH_TDP])=0,BLANK(),
+			        max('DATA FOR TREND CHART'[CURRENT_MONTH_TDP]))))
+		formatString: 0.0
+		lineageTag: 8c53e295-7edf-48af-85be-18a5840ef4ed
+
+	measure 'MS Competitor Current Month' =
+			
+			IF(ISFILTERED('Forecast Bridge Table'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(ISBLANK(SUM('Forecast_dashboard'[Curr_Month_MS_VALUE])) || SUM('Forecast_dashboard'[Curr_Month_MS_VALUE]) = 0 ,BLANK(),SUM('Forecast_dashboard'[Curr_Month_MS_VALUE])),
+			"Volume Share(UC)",IF(ISBLANK(SUM('Forecast_dashboard'[Curr_Month_MS_VOLUME])) || SUM('Forecast_dashboard'[Curr_Month_MS_VOLUME]) = 0 ,BLANK(),SUM('Forecast_dashboard'[Curr_Month_MS_VOLUME]))),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9df1ba8e-1371-48e2-bf54-e4944ed0045c
+
+	measure 'MS Competitor Upcoming Qaurter Month' =
+			
+			IF(ISFILTERED('Forecast Bridge Table'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",IF(ISBLANK(max('Forecast_dashboard'[Upcoming_Quarter_MS_VALUE])) || max('Forecast_dashboard'[Upcoming_Quarter_MS_VALUE]) = 0,BLANK(),max('Forecast_dashboard'[Upcoming_Quarter_MS_VALUE])),
+			"Volume Share(UC)",IF(ISBLANK(MAX('Forecast_dashboard'[Upcoming_Quarter_MS_VOLUME]))||MAX('Forecast_dashboard'[Upcoming_Quarter_MS_VOLUME]) = 0,BLANK(),MAX('Forecast_dashboard'[Upcoming_Quarter_MS_VOLUME]))),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3e649b70-e52a-49f2-bcec-5d2293f5cb56
+
+	measure 'MS Competitor Differnce' =
+			
+			IF(ISFILTERED('Forecast Bridge Table'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)", IF(ISBLANK(SUM('Forecast_dashboard'[Curr_Month_MS_VALUE])) || SUM('Forecast_dashboard'[Curr_Month_MS_VALUE])=0 || ISBLANK(SUM('Forecast_dashboard'[Upcoming_Quarter_MS_VALUE])) || SUM('Forecast_dashboard'[Upcoming_Quarter_MS_VALUE])=0,BLANK(),
+			SUM('Forecast_dashboard'[Upcoming_Quarter_MS_VALUE]) - SUM('Forecast_dashboard'[Curr_Month_MS_VALUE])),
+			"Volume Share(UC)",
+			IF(ISBLANK(SUM('Forecast_dashboard'[Curr_Month_MS_VOLUME])) || SUM('Forecast_dashboard'[Curr_Month_MS_VOLUME])=0 || ISBLANK(SUM('Forecast_dashboard'[Upcoming_Quarter_MS_VOLUME])) || SUM('Forecast_dashboard'[Upcoming_Quarter_MS_VOLUME])=0,BLANK(),
+			SUM('Forecast_dashboard'[Upcoming_Quarter_MS_VOLUME]) - SUM('Forecast_dashboard'[Curr_Month_MS_VOLUME]))),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 7ea611da-3745-40a2-9c30-47b0806a22e5
+
+	measure 'Measure for select' = IF(ISFILTERED('BRAND TABLE'[ALERT_ID])," ","Please Select an Alert from the Alert Overview")
+		lineageTag: 8f81013c-e19c-4946-b73c-2d88bd331275
+
+	measure 'MS for forecast Trend' =
+			
+			IF(ISFILTERED('Forecast Bridge Table'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",SUM('Forecast_Trend Data'[Market Value Share]),
+			"Volume Share(UC)",SUM('Forecast_Trend Data'[Market Volume Share])),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e4ba700e-af63-44c8-9228-2295525e1ac2
+
+	measure 'Selected price metric' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_2])="Previous 3MMT Price","PP 3MMT Price"
+			            ,IF(SELECTEDVALUE('BRAND TABLE'[Price_Metric_2])="YTD Price","YTD Price"
+			            ,"")),"")
+		lineageTag: 697f755c-d535-48c5-a94e-c94835f1a0ff
+
+	measure 'MS for forecast Trend Tooltip' =
+			
+			IF(ISFILTERED('Forecast Bridge Table'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE(Unit[Unit]),
+			"Value Share(USD)",SUM('Forecast_Trend Data'[Market Value Share_Tooltip]),
+			"Volume Share(UC)",SUM('Forecast_Trend Data'[Market Volume Share_Tooltip])),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9df5424e-895a-4931-98a2-fd05f7186b03
+
+	measure 'selected IPS Metric1' = ```
+			
+			 IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			 IF(SELECTEDVALUE('BRAND TABLE'[IPS_Metric_1])= "Current Month 3MMT IPS",
+			 "CM 3MMT"
+			 ,""),"")
+			```
+		lineageTag: e06116cf-b63b-472e-8651-b8d4a863c7b5
+
+	measure 'Selected IPS Metric2' = ```
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]), 
+			 SWITCH(SELECTEDVALUE('BRAND TABLE'[IPS_Metric_2]),
+			"Previous 3MMT IPS","PP 3MMT",
+			"IPS Same Month Previous Year 3MMT","PY 3MMT",
+			"IPS Previous Year Full Year","PYFY",
+			"YTD IPS","YTD",
+			"null",""),"")
+			```
+		lineageTag: 22f26a94-db1a-455b-bf7b-edc28413561f
+
+	measure 'Selected TDP Metric1' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			 IF(SELECTEDVALUE('BRAND TABLE'[TDP_Metric_1])= "Current Month 3MMT TDP",
+			 "CM 3MMT"
+			 ,""),"")
+		lineageTag: 7525e390-064b-402d-a90b-791aa998a2be
+
+	measure 'Selected TDP Metric2' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE('BRAND TABLE'[TDP_Metric_2]),
+			"Previous 3MMT TDP","PP 3MMT",
+			"TDP Same Month Previous Year 3MMT","PY 3MMT",
+			"TDP Previous Year Full Year","PYFY",
+			"YTD TDP","YTD",
+			"null",""),"")
+		lineageTag: ab43dd8c-a529-42f6-88a8-4d1f1abef5ab
+
+	measure 'Selected WD Metric1' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			 IF(SELECTEDVALUE('BRAND TABLE'[WD_Metric_1])= "Current Month 3MMT WD",
+			 "CM 3MMT","")
+			,"")
+		lineageTag: 04f3e4cd-1238-49c2-8251-0954ebfca9a7
+
+	measure 'Selected WD Metric2' =
+			
+			IF(ISFILTERED('BRAND TABLE'[ALERT_ID]),
+			SWITCH(SELECTEDVALUE('BRAND TABLE'[WD_Metric_2]),
+			"Previous 3MMT WD","PP 3MMT",
+			"WD Same Month Previous Year 3MMT","PY 3MMT",
+			"WD Previous Year Full Year","PYFY",
+			"YTD WD","YTD",
+			"null",""),"")
+		lineageTag: a848059f-a855-4558-9847-d34a37e93bc5
+
+	measure Messege = SELECTEDVALUE('BRAND TABLE'[FINAL_ALERT_MESSAGE])
+		lineageTag: 9e1c80a0-babb-46da-b9a3-87df63693081
+
+	measure Format_Measure = 1
+		formatString: 0
+		lineageTag: acb5f9c4-7e3d-45df-9ab0-a5ba08077fba
+
+	measure 'Forecast Alert Count' = IF(COUNT('Forecast Bridge Table'[ALERT_ID])>0,COUNT('Forecast Bridge Table'[ALERT_ID]),0)
+		formatString: 0
+		lineageTag: f87923e3-c3b5-470e-b7e9-73ea01d18ead
+
+	measure 'Dashboard Alert Count' = IF(DISTINCTCOUNT('BRAND TABLE'[ALERT_ID])>0,DISTINCTCOUNT('BRAND TABLE'[ALERT_ID]),0)
+		formatString: 0
+		lineageTag: baf2799d-86d7-43f2-a1d4-978ab65eb985
+
+	measure IsOUFiltered = IF(ISFILTERED('BRAND TABLE'[OPERATION_UNIT]),1,0)
+		formatString: 0
+		lineageTag: ad0c503f-56c6-4a11-a6a0-ef6356393097
+
+	measure IsCountryFiltered = IF(ISFILTERED('BRAND TABLE'[COUNTRY]),1,0)
+		formatString: 0
+		lineageTag: 0141928b-7d7c-490d-b929-47387adb630e
+
+	measure IsAlertIDFiltered = IF(ISFILTERED('BRAND TABLE'[ALERT_ID_2]),1,0)
+		formatString: 0
+		lineageTag: 064a01c2-4f44-4c50-b8e4-3c539f20a0c9
+
+	measure IsCategoryFiltered = IF(ISFILTERED('BRAND TABLE'[CATEGORY]),1,0)
+		formatString: 0
+		lineageTag: fd3a2162-2f7a-49da-ae52-9294884be9d2
+
+	measure Isalert_brandFiltered = IF(ISFILTERED('BRAND TABLE'[ALERT_BRANDS]),1,0)
+		formatString: 0
+		lineageTag: 6bec447b-9c9b-4f88-b441-0b53900f9bd2
+
+	measure IsBrand_OwnerFiltered = IF(ISFILTERED('BRAND TABLE'[BRAND_OWNER]),1,0)
+		formatString: 0
+		lineageTag: 32ffb889-8159-438d-b2b7-e077a13a7923
+
+	measure IsChannelFiltered = IF(ISFILTERED('BRAND TABLE'[CHANNEL]),1,0)
+		formatString: 0
+		lineageTag: f053953e-6aa1-42bd-89a7-43cb46dc55a5
+
+	measure isTrendyearFiltered = IF(ISFILTERED('DATA FOR TREND CHART'[YEAR]),1,0)
+		formatString: 0
+		lineageTag: 92cee2f9-625d-4476-844d-51100b0bcaf8
+
+	measure IstrendMonthFiltered = IF(ISFILTERED('DATA FOR TREND CHART'[MONTH_NAME]),1,0)
+		formatString: 0
+		lineageTag: fda841d5-0131-4284-8cc1-3cd5e34aae43
+
+	measure IsForecastTrendyearFiltered = IF(ISFILTERED('Forecast_Trend Data'[YEAR]),1,0)
+		formatString: 0
+		lineageTag: 49d1b4db-2610-4f7e-93ca-d78de5e52059
+
+	measure IsForecastTrendmonthFiltered = IF(ISFILTERED('Forecast_Trend Data'[MONTH]),1,0)
+		formatString: 0
+		lineageTag: ac8bcf80-70fa-4418-8af7-ebeb27630890
+
+	measure 'Global Snapshot Alert Count' = IF(COUNT('Global Snapshot Data'[ALERT_ID])>0,COUNT('Global Snapshot Data'[ALERT_ID]),0)
+		formatString: 0
+		lineageTag: 2653448c-a2b6-4dd0-b0be-cffb00bf18d3
+
+	measure 'isGlobalSnapshotcategory Selected' = IF(ISFILTERED('Global Snapshot Data'[CATEGORY]),1,0)
+		formatString: 0
+		lineageTag: fad99611-3789-45de-bbfb-d0f05c2d57a8
+
+	measure 'isGlobalSnapshotcountry Selected' = IF(ISFILTERED('Global Snapshot Data'[COUNTRY]),1,0)
+		formatString: 0
+		lineageTag: 2f379d36-666a-4be7-8158-08b0ec391d9a
+
+	measure 'Global Snapshot Message' = SELECTEDVALUE('Global Snapshot Data'[FINAL_ALERT_MESSAGE])
+		lineageTag: 2a3d0a5f-979e-4bde-80b9-95aed19bd67e
+
+	measure IsForecastOUFiltered = IF(ISFILTERED('Forecast Bridge Table'[OPERATION_UNIT]),1,0)
+		formatString: 0
+		lineageTag: aba72a2c-6668-4cd6-a420-9f88653b9247
+
+	measure IsForecastCountryFiltered = IF(ISFILTERED('Forecast Bridge Table'[COUNTRY]),1,0)
+		formatString: 0
+		lineageTag: a512f11f-2e3e-47c2-8448-647b7ab12013
+
+	measure IsForecastCategoryFiltered = IF(ISFILTERED('Forecast Bridge Table'[CATEGORY]),1,0)
+		formatString: 0
+		lineageTag: 1fb17de6-700e-4357-8da0-c732d7710054
+
+	column Measures
+		dataType: string
+		isHidden
+		lineageTag: a7d82a25-0291-4402-acd8-bf9424429fa5
+		summarizeBy: none
+		sourceColumn: Measures
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measures Table' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Measures = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Measures", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

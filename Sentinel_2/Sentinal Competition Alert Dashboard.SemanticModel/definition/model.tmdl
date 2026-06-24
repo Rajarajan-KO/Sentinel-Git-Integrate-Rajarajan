@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Unit","Measures Table","Calender","DASHBOARD DATA","DATA FOR TREND CHART","BRAND TABLE","DASHBOARD DATA (2)","BRIDGE TABLE (2)","BRAND TABLE (2)","Execution Metric","Forecast_dashboard","Forecast_Trend Data","Forecast Bridge Table","Forecast_Trend Data (2)","Calender (2)","Data Source","Global Snapshot Data"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.129.905.0 (24.05)
+
+ref table DateTableTemplate_1fc1c5b9-c778-4bc0-9b61-5a2c01d24f2e
+ref table Unit
+ref table 'Measures Table'
+ref table 'DASHBOARD DATA'
+ref table 'DATA FOR TREND CHART'
+ref table 'BRAND TABLE'
+ref table 'Execution Metric'
+ref table Forecast_dashboard
+ref table 'Forecast_Trend Data'
+ref table 'Forecast Bridge Table'
+ref table Calender
+ref table 'Global Snapshot Data'
+
+ref cultureInfo en-US
+

@@ -1,0 +1,56 @@
+table Calender
+	lineageTag: 90116b23-8d79-47e3-b57a-6229279dae20
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: db21ae81-1e61-4c83-a90b-f8a984ef70c8
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: string
+		lineageTag: 583b05da-16d9-4c18-8102-fe865baa69da
+		summarizeBy: none
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: 7da37beb-62d9-4a34-8f74-15d7422561f2
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME
+		dataType: string
+		lineageTag: f061d4e7-b330-4576-9672-2ca7a2cc0fc2
+		summarizeBy: none
+		sourceColumn: MONTH_NAME
+		sortByColumn: MONTH
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calender = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_dashboard_report"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report,{{"COUNTRY", type text}, {"CHANNEL", type text}, {"CATEGORY", type text}, {"BRAND", type text}, {"BRAND_OWNER", type text}, {"PERIOD_ID", Int64.Type}, {"MAX_PERIOD_ID", type text}, {"YEAR", Int64.Type}, {"MONTH", Int64.Type}, {"MONTH_NAME", type text}, {"CURRENT_MONTH_MARKET_VALUE_SHARE", type number}, {"CURRENT_MONTH_3MMT_VALUE_SHARE", type number}, {"PREVIOUS_3MMT_VALUE_SHARE", type number}, {"YTD_MARKET_VALUE_SHARE", type number}, {"MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VALUE_MAX_SCENARIO_CHANGE", type number}, {"MS_SALES_ALERT_REGISTERED", type text}, {"VALUE_METRIC_1", type text}, {"VALUE_METRIC_2", type text}, {"CURRENT_MONTH_MARKET_VOLUME_SHARE", type number}, {"CURRENT_MONTH_3MMT_VOLUME_SHARE", type number}, {"PREVIOUS_3MMT_VOLUME_SHARE", type number}, {"YTD_MARKET_VOLUME_SHARE", type number}, {"MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VOLUME_MAX_SCENARIO_CHANGE", type number}, {"MS_VOLUME_ALERT_REGISTERED", type text}, {"VOLUME_METRIC_1", type text}, {"VOLUME_METRIC_2", type text}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_3MMT_PRICE", type number}, {"PREVIOUS_3MMT_PRICE", type number}, {"YTD_PRICE", type number}, {"PRICE_MAX_SCENARIO_CHANGE", type number}, {"PRICE_ALERT_REGISTERED", type text}, {"PRICE_METRIC_1", type text}, {"PRICE_METRIC_2", type text}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_3MMT_TDP", type number}, {"PREVIOUS_3MMT_TDP", type number}, {"YTD_TDP", type number}, {"TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"TDP_PREVIOUS_YEAR_FULL_YEAR", type number}, {"TDP_MAX_SCENARIO_CHANGE", type number}, {"TDP_ALERT_REGISTERED", type text}, {"TDP_METRIC_1", type text}, {"TDP_METRIC_2", type text}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_3MMT_WD", type number}, {"PREVIOUS_3MMT_WD", type number}, {"YTD_WD", type number}, {"WD_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"WD_PREVIOUS_YEAR_FULL_YEAR", type number}, {"WD_MAX_SCENARIO_CHANGE", type number}, {"WD_ALERT_REGISTERED", type text}, {"WD_METRIC_1", type text}, {"WD_METRIC_2", type text}, {"CURRENT_MONTH_IPS", type number}, {"CURRENT_MONTH_3MMT_IPS", type number}, {"PREVIOUS_3MMT_IPS", type number}, {"YTD_IPS", type number}, {"IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"IPS_PREVIOUS_YEAR_FULL_YEAR", type number}, {"IPS_MAX_SCENARIO_CHANGE", type number}, {"IPS_ALERT_REGISTERED", type text}, {"IPS_METRIC_1", type text}, {"IPS_METRIC_2", type text},   {"FINAL_ALERT_MESSAGE", type text}, {"IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO", type text}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"PERIOD_ID", "YEAR", "MONTH", "MONTH_NAME"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Duplicates", each ([PERIOD_ID] <> null)),
+				    #"Appended Query" = Table.Combine({#"Filtered Rows", #"Calender (2)"})
+				in
+				    #"Appended Query"
+
+	annotation PBI_ResultType = Table
+
