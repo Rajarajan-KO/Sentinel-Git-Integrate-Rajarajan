@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "7e6d50311725ae6b7bbe",
+  "position": {
+    "x": 0,
+    "y": 113.82920245725222,
+    "z": 5000,
+    "height": 117,
+    "width": 1225.1119284867352,
+    "tabOrder": 4000
+  },
+  "visualGroup": {
+    "displayName": "Tiltle group",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "4144bdeb2e6935f03c50"
+}

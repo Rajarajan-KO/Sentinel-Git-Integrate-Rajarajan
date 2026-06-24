@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "a73460eb4ea587677aa2",
+  "position": {
+    "x": 1666.3153028230122,
+    "y": 866,
+    "z": 59000,
+    "height": 436,
+    "width": 790.47215503937957,
+    "tabOrder": 85000
+  },
+  "visualGroup": {
+    "displayName": "Execution Metics",
+    "groupMode": "ScaleMode"
+  }
+}

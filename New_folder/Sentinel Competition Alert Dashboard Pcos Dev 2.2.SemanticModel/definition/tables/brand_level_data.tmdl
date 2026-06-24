@@ -1,0 +1,186 @@
+table brand_level_data
+	lineageTag: 84c63f00-26d3-43a6-9500-679a79564feb
+
+	column 'BRAND SORTING'
+		dataType: string
+		lineageTag: 3b412feb-59d7-4097-87bd-2f16fc9df850
+		summarizeBy: none
+		sourceColumn: BRAND SORTING
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KEY FOR BRAND TABLE' = brand_level_data[period_id]&"_"& brand_level_data[COUNTRY]&"_"&brand_level_data[CATEGORY]&"_"&brand_level_data[BRAND_OWNER]&"_"&brand_level_data[BRAND]
+		lineageTag: 261b4343-f520-4f58-a0b4-1770ca82fcd9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY
+		dataType: string
+		lineageTag: 296b9845-ad52-45f7-93fc-7419184d1ed2
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: aff25ad7-d790-46cf-82ec-740473fbb729
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: 617f5150-558d-4a4e-a0a3-9eb1778b972b
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: 4e80473d-5268-4af9-aa85-d3720916ce38
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+		sortByColumn: 'BRAND SORTING'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: string
+		lineageTag: 14655967-c7e3-456b-b9b5-3ae15e71fa03
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUM_OF_SALES_VALUE
+		dataType: double
+		lineageTag: d9866e7f-b54b-47b7-a7ec-a4c33e91e3d7
+		summarizeBy: sum
+		sourceColumn: SUM_OF_SALES_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CATEGORY_VALUE
+		dataType: double
+		lineageTag: e0483a2e-ee06-42b2-a167-322fb91892f1
+		summarizeBy: sum
+		sourceColumn: CATEGORY_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_SHARE
+		dataType: double
+		lineageTag: 49a638f6-ed83-4619-92e7-eb1948576101
+		summarizeBy: sum
+		sourceColumn: MARKET_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CM_MARKET_SHARE
+		dataType: double
+		lineageTag: dbd870b2-8dd8-467b-a606-d17668121afb
+		summarizeBy: sum
+		sourceColumn: CM_MARKET_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PY_SAME_MONTH_SHARE
+		dataType: double
+		lineageTag: 25f588f0-1a82-4a3e-9b93-fc2da04c01d8
+		summarizeBy: sum
+		sourceColumn: PY_SAME_MONTH_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SHARE_CHANGE
+		dataType: double
+		lineageTag: 1e2f6924-9ff9-4070-8670-843a3caedfaa
+		summarizeBy: sum
+		sourceColumn: SHARE_CHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_3MMT_VALUE
+		dataType: double
+		lineageTag: d9123a8c-6129-4ef6-acf6-5781890219b7
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_3MMT_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_3MMT_VALUE
+		dataType: double
+		lineageTag: b7635bdf-8b7d-485b-81d9-44d028138abd
+		summarizeBy: sum
+		sourceColumn: PREVIOUS_3MMT_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SHARE_CHANGE_3MMT
+		dataType: double
+		lineageTag: 1f5cd224-2b18-42f1-a121-bc8cccb8669f
+		summarizeBy: sum
+		sourceColumn: SHARE_CHANGE_3MMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'sort column' = IF(brand_level_data[BRAND_OWNER]="TCCC",10,0)
+		formatString: 0
+		lineageTag: 5c2657d5-0f82-4c89-9770-768450611a52
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'kEY FOR BRAND 2' = brand_level_data[BRAND]&"_"&brand_level_data[BRAND_OWNER]
+		lineageTag: 0de6315a-e27f-469e-b7f1-aa3062bf7adc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KEY FOR BRAND TABLE 2' = brand_level_data[period_id]&"_"& brand_level_data[COUNTRY]&"_"&brand_level_data[CATEGORY]&"_"&brand_level_data[BRAND_OWNER]
+		lineageTag: a51f3b02-b614-415f-9895-3608c4a2cbdd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition brand_level_data = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("syn-tccc-udp-mdp-us2-prd-01-ondemand.sql.azuresynapse.net"),
+				    db_marketing_analytics = Source{[Name="db_marketing_analytics"]}[Data],
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_brand_level_new = db_marketing_analytics{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_brand_level_new"]}[Data],
+				    #"Added Conditional Column" = Table.AddColumn(sch_kocompetitionalert_t_ext_ko_competitionalert_brand_level_new, "BRAND SORTING", each if [BRAND_OWNER] = "TCCC" then 0 else 10),
+				    #"Uppercased Text" = Table.TransformColumns(#"Added Conditional Column",{{"COUNTRY", Text.Upper, type text}}),
+				    #"Uppercased Text1" = Table.TransformColumns(#"Uppercased Text",{{"COUNTRY", Text.Upper, type text}, {"CATEGORY", Text.Upper, type text}, {"BRAND", Text.Upper, type text}, {"BRAND_OWNER", Text.Upper, type text}})
+				in
+				    #"Uppercased Text1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

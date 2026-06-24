@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "16b65b0a594de3da906e",
+  "position": {
+    "x": 697.89368155198781,
+    "y": 27,
+    "z": 6000,
+    "height": 70,
+    "width": 92,
+    "tabOrder": 8000
+  },
+  "visualGroup": {
+    "displayName": "Delta",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "a73460eb4ea587677aa2"
+}

@@ -1,0 +1,142 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "3d4cf9320a206182b803",
+  "position": {
+    "x": 470.92288242730717,
+    "y": 120.10113780025284,
+    "z": 1000,
+    "height": 909.18655491960328,
+    "width": 1551.8331226295827,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "shape",
+    "objects": {
+      "shape": [
+        {
+          "properties": {
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangle'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rotation": [
+        {
+          "properties": {
+            "shapeAngle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "text": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'The source of Retail Audit Data (Volume, Value and Distribution) is Marketplace Performance Measurement 2.0 (MPM 20) data product. It stores data from all our MPM data providers and incorporates globally standardized product definitions, aligned with public reporting standards, based on ISSCOM guidelines while addressing data provider limitations.   Note: preliminary validation has been completed for topline data only: from Category through Brand Owner. However it''s still ongoing for more granular levels such as brand, SKU, and additional data elements like channel, distribution etc. Therefore, all should be used and interpreted directionally until further the notice.   For any queries or questions on the content, data quality (potential error or missing attributes and values in the MPM, or disconnect between different back-end tables e.g. cube & factbook) or need understanding of new harmonized definitions please contact MPM Data Team Support.   Please continue to refer to the ongoing updates to MPM 2.0 Knowledge Hub for information on the data product. For 140 data availability, please refer to tab titled ''data availability''. Cola/ Non-Cola split is currently not available for following markets and hence SSD category would appear as ''SSD Others'': Bolivia, Japan, Philippiness, Thailand, Vietnam, Indonesia, USA, China, Algeria, Egypt. Morocco, South Africa and Turkey'"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "fill": [
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.6
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "686cf1528eb341aa8b9a",
+  "howCreated": "InsertVisualButton"
+}

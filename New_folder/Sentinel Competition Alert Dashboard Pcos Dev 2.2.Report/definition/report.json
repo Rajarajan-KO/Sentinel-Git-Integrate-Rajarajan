@@ -1,0 +1,343 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY23SU11",
+      "reportVersionAtImport": {
+        "visual": "1.8.85",
+        "report": "2.0.85",
+        "page": "1.3.85"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "GlobeMap1447669447625"
+  ],
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "53910761900644599060204.png",
+          "path": "53910761900644599060204.png",
+          "type": "Image"
+        },
+        {
+          "name": "53910763306027233361881.png",
+          "path": "53910763306027233361881.png",
+          "type": "Image"
+        },
+        {
+          "name": "53910763616784433738933.png",
+          "path": "53910763616784433738933.png",
+          "type": "Image"
+        },
+        {
+          "name": "53910765283815101542083.png",
+          "path": "53910765283815101542083.png",
+          "type": "Image"
+        },
+        {
+          "name": "53910766638792036101849.png",
+          "path": "53910766638792036101849.png",
+          "type": "Image"
+        },
+        {
+          "name": "567889303954706578487177.png",
+          "path": "567889303954706578487177.png",
+          "type": "Image"
+        },
+        {
+          "name": "56788937674446427077853.png",
+          "path": "56788937674446427077853.png",
+          "type": "Image"
+        },
+        {
+          "name": "56788938017104273324318.png",
+          "path": "56788938017104273324318.png",
+          "type": "Image"
+        },
+        {
+          "name": "alert7000886315006436.png",
+          "path": "alert7000886315006436.png",
+          "type": "Image"
+        },
+        {
+          "name": "brand3494222785170924.png",
+          "path": "brand3494222785170924.png",
+          "type": "Image"
+        },
+        {
+          "name": "category07806857517029298.png",
+          "path": "category07806857517029298.png",
+          "type": "Image"
+        },
+        {
+          "name": "channel5448672831045087.png",
+          "path": "channel5448672831045087.png",
+          "type": "Image"
+        },
+        {
+          "name": "coca-cola8994508641826968.png",
+          "path": "coca-cola8994508641826968.png",
+          "type": "Image"
+        },
+        {
+          "name": "country5832144859717148.png",
+          "path": "country5832144859717148.png",
+          "type": "Image"
+        },
+        {
+          "name": "cross_icon5434972486117056.jfif",
+          "path": "cross_icon5434972486117056.jfif",
+          "type": "Image"
+        },
+        {
+          "name": "download9076341170926192.jfif",
+          "path": "download9076341170926192.jfif",
+          "type": "Image"
+        },
+        {
+          "name": "Email_Button_21907237769511827.png",
+          "path": "Email_Button_21907237769511827.png",
+          "type": "Image"
+        },
+        {
+          "name": "Frame_1000005380_(1)5196607997958336.png",
+          "path": "Frame_1000005380_(1)5196607997958336.png",
+          "type": "Image"
+        },
+        {
+          "name": "Frame_10000059576947476363437344.png",
+          "path": "Frame_10000059576947476363437344.png",
+          "type": "Image"
+        },
+        {
+          "name": "Frame_10000059578413775121784914.png",
+          "path": "Frame_10000059578413775121784914.png",
+          "type": "Image"
+        },
+        {
+          "name": "Frame_10000059587659716944826513.png",
+          "path": "Frame_10000059587659716944826513.png",
+          "type": "Image"
+        },
+        {
+          "name": "Frame_100000595916382993892737296.png",
+          "path": "Frame_100000595916382993892737296.png",
+          "type": "Image"
+        },
+        {
+          "name": "Gradient_3014307050378813302.png",
+          "path": "Gradient_3014307050378813302.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_10000052903140800568437945.png",
+          "path": "Group_10000052903140800568437945.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_10000056089743209950223088.png",
+          "path": "Group_10000056089743209950223088.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_10000057719979393882775911.png",
+          "path": "Group_10000057719979393882775911.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_10000059355244232711420316.png",
+          "path": "Group_10000059355244232711420316.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_10000059365970572145883657.png",
+          "path": "Group_10000059365970572145883657.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_100000593746588347811144537.png",
+          "path": "Group_100000593746588347811144537.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_10000059395328227131667869.png",
+          "path": "Group_10000059395328227131667869.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_10000059403510958794660408.png",
+          "path": "Group_10000059403510958794660408.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_10000059436302629370100845.png",
+          "path": "Group_10000059436302629370100845.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_100000594612225814656269485.png",
+          "path": "Group_100000594612225814656269485.png",
+          "type": "Image"
+        },
+        {
+          "name": "Group_100000594614982615197289184.jpg",
+          "path": "Group_100000594614982615197289184.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "home_icon06174762319164362.png",
+          "path": "home_icon06174762319164362.png",
+          "type": "Image"
+        },
+        {
+          "name": "image_(3)09458012496703794.png",
+          "path": "image_(3)09458012496703794.png",
+          "type": "Image"
+        },
+        {
+          "name": "info_icon07617195201812077.png",
+          "path": "info_icon07617195201812077.png",
+          "type": "Image"
+        },
+        {
+          "name": "manufacturer5673784078964754.png",
+          "path": "manufacturer5673784078964754.png",
+          "type": "Image"
+        },
+        {
+          "name": "Map_Icon34621266866248845.jfif",
+          "path": "Map_Icon34621266866248845.jfif",
+          "type": "Image"
+        },
+        {
+          "name": "message9386621016206369.png",
+          "path": "message9386621016206369.png",
+          "type": "Image"
+        },
+        {
+          "name": "pie_icon4003588691588831.png",
+          "path": "pie_icon4003588691588831.png",
+          "type": "Image"
+        },
+        {
+          "name": "refresh_icon32432687529350623.png",
+          "path": "refresh_icon32432687529350623.png",
+          "type": "Image"
+        },
+        {
+          "name": "right_-_slider_button_image9587057097089746.png",
+          "path": "right_-_slider_button_image9587057097089746.png",
+          "type": "Image"
+        },
+        {
+          "name": "Screenshot_2026-06-16_15471403405954447426274.png",
+          "path": "Screenshot_2026-06-16_15471403405954447426274.png",
+          "type": "Image"
+        },
+        {
+          "name": "sentinel_dashbaord_25714186919214201.webp",
+          "path": "sentinel_dashbaord_25714186919214201.webp",
+          "type": "Image"
+        },
+        {
+          "name": "sentinel_dashboard_19759624608261597.png",
+          "path": "sentinel_dashboard_19759624608261597.png",
+          "type": "Image"
+        },
+        {
+          "name": "Simon18217123069661612.png",
+          "path": "Simon18217123069661612.png",
+          "type": "Image"
+        },
+        {
+          "name": "Simon9081330129993237.png",
+          "path": "Simon9081330129993237.png",
+          "type": "Image"
+        },
+        {
+          "name": "slider_button_image2756864895639408.png",
+          "path": "slider_button_image2756864895639408.png",
+          "type": "Image"
+        },
+        {
+          "name": "Vector_6615558299469904568.png",
+          "path": "Vector_6615558299469904568.png",
+          "type": "Image"
+        },
+        {
+          "name": "white_trend_Icon33592715728023426.png",
+          "path": "white_trend_Icon33592715728023426.png",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY23SU11",
+          "path": "BaseThemes/CY23SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "isPersistentUserStateDisabled": true,
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "filterPaneHiddenInEditMode": true,
+    "useDefaultAggregateDisplayName": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "f1935ace5a2c0b6e3712",
+  "position": {
+    "x": 0,
+    "y": 600,
+    "z": 33000,
+    "height": 712.95620157478709,
+    "width": 2503.1427442697268,
+    "tabOrder": 23000
+  },
+  "visualGroup": {
+    "displayName": "Average Price Trend",
+    "groupMode": "ScaleMode"
+  }
+}

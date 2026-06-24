@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "b47f49147eb40e19a55b",
+  "position": {
+    "x": 28.333333333333336,
+    "y": 820.49684795848134,
+    "z": 14000,
+    "height": 437.836485374852,
+    "width": 805.12366424808431,
+    "tabOrder": 37000
+  },
+  "visualGroup": {
+    "displayName": "MS Trend",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

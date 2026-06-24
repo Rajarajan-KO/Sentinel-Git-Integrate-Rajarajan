@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "cb6db7200eec6678daae",
+  "position": {
+    "x": 33.333333333333336,
+    "y": 820,
+    "z": 99000,
+    "height": 428.33333333333348,
+    "width": 805,
+    "tabOrder": 99000
+  },
+  "visualGroup": {
+    "displayName": "Ms Table",
+    "groupMode": "ScaleMode"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "460ce866b1dbb128eb90",
+  "position": {
+    "x": 65,
+    "y": 503.55825863899,
+    "z": 22000,
+    "height": 72.883432171432759,
+    "width": 430.67482646755724,
+    "tabOrder": 18000
+  },
+  "visual": {
+    "visualType": "image",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "imageUrl": {
+              "expr": {
+                "ResourcePackageItem": {
+                  "PackageName": "RegisteredResources",
+                  "PackageType": 1,
+                  "ItemName": "Frame_1000005380_(1)5196607997958336.png"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualLink": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bookmark'"
+                }
+              }
+            },
+            "webUrl": {
+              "expr": {
+                "Literal": {
+                  "Value": "'https://onedrive.coca-cola.com/:b:/r/personal/sghoshchoudhury_coca-cola_com/Documents/Global/Sentinel/Sentinel-%20Knowledge%20Transfer/Decision%20Point%20KT/Documentation/MS%20teams%20Manual/MS%20Team%20Notifications%20Manual.pdf?csf=1&web=1&e=KA9ysd'"
+                }
+              }
+            },
+            "bookmark": {
+              "expr": {
+                "Literal": {
+                  "Value": "'209e985eaba01dc903c0'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "howCreated": "InsertVisualButton"
+}

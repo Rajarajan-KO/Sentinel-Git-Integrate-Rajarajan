@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "53fe5c27d13eac111d2e",
+  "position": {
+    "x": 111.18830772862286,
+    "y": 248.15941145228871,
+    "z": 0,
+    "height": 307.78212719082558,
+    "width": 1057.0946357967623,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "market_level_29_09"
+                    }
+                  },
+                  "Property": "COUNTRY"
+                }
+              },
+              "queryRef": "market_level_29_09.COUNTRY",
+              "nativeQueryRef": "COUNTRY"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "market_level_29_09"
+                        }
+                      },
+                      "Property": "CURRENT_MONTH_MARKET_VALUE_SHARE"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Sum(market_level_29_09.CURRENT_MONTH_MARKET_VALUE_SHARE)",
+              "nativeQueryRef": "Max of CURRENT_MONTH_MARKET_VALUE_SHARE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "market_level_29_09"
+                        }
+                      },
+                      "Property": "MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Sum(market_level_29_09.MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR)",
+              "nativeQueryRef": "Max of MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "MARKET LEVEL ABS"
+                }
+              },
+              "queryRef": "Measures Table.MARKET LEVEL ABS",
+              "nativeQueryRef": "MARKET LEVEL ABS"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "Market_share_change"
+                }
+              },
+              "queryRef": "Measures Table.Market_share_change",
+              "nativeQueryRef": "Market_share_change"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

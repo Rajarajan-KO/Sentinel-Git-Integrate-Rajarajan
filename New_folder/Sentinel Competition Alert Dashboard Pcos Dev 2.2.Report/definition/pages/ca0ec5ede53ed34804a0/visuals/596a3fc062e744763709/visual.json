@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "596a3fc062e744763709",
+  "position": {
+    "x": 0,
+    "y": 208.20568730255266,
+    "z": 1000,
+    "height": 510.85519152585084,
+    "width": 532.31969537147484,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Trend_chart_30_09"
+                    }
+                  },
+                  "Property": "BRAND"
+                }
+              },
+              "queryRef": "Trend_chart_30_09.BRAND",
+              "nativeQueryRef": "BRAND"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Trend_chart_30_09"
+                    }
+                  },
+                  "Property": "BRAND_OWNER"
+                }
+              },
+              "queryRef": "Trend_chart_30_09.BRAND_OWNER",
+              "nativeQueryRef": "BRAND_OWNER"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

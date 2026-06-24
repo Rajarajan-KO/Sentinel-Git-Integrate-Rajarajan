@@ -1,0 +1,219 @@
+table channel_report_aug
+	lineageTag: d104c83a-6c17-4718-91a7-5d622706c586
+
+	column ALERT_ID
+		dataType: string
+		lineageTag: 064e51ad-e709-4efc-a9b4-68175fabe426
+		summarizeBy: none
+		sourceColumn: ALERT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY
+		dataType: string
+		lineageTag: 6b6ac68f-fbec-4ed6-ac63-8d664807f991
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: be406ba6-3db5-43c8-9af7-c0249ab43f5e
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANNEL
+		dataType: string
+		lineageTag: f13f3af6-9c88-441f-a69b-be63b4907ca0
+		summarizeBy: none
+		sourceColumn: CHANNEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: ca26113a-feef-42a1-b220-698b27f4c80f
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: 5acf62dc-5f4e-48c8-ba96-f9364f0652ec
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: fa095f60-d8ae-4c43-b76d-63836f72b439
+		summarizeBy: count
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 824c6a28-7531-4790-8bb4-de8733529d79
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: b720454e-0386-4622-8284-f2a294fc75fd
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_WD
+		dataType: double
+		lineageTag: f2c02b84-7bb6-4c30-a33b-b4ff28232a22
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_WD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_IPS
+		dataType: double
+		lineageTag: 2148723f-df0a-45f2-98dd-56e0cc1cc593
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_IPS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_TDP
+		dataType: double
+		lineageTag: 7bdc2b52-e2df-43d3-a7e4-2f82eb89bd03
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_TDP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Key for brand' = channel_report_aug[PERIOD_ID]&"_"& channel_report_aug[COUNTRY]&"_"&channel_report_aug[CATEGORY]&"_"&channel_report_aug[BRAND]&"_"&channel_report_aug[BRAND_OWNER]
+		lineageTag: 42ca5ad7-96c5-407d-a33a-b7209349d099
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_MARKET_VALUE_SHARE
+		dataType: double
+		lineageTag: 1c13022d-425f-4530-9a56-4cd77757e3b1
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_MARKET_VALUE_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR
+		dataType: double
+		lineageTag: f3d426c4-5161-4bba-9b41-cdbb83cbec27
+		summarizeBy: sum
+		sourceColumn: MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_MARKET_VOLUME_SHARE
+		dataType: double
+		lineageTag: d5431676-0fc1-4dd5-996e-1d6e35141997
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_MARKET_VOLUME_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR
+		dataType: double
+		lineageTag: a2ab470b-32a2-48d2-9a35-f6e79d08bac6
+		summarizeBy: sum
+		sourceColumn: MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_3MMT_PRICE
+		dataType: double
+		lineageTag: be27011b-caaa-478f-8f2d-e5861b494796
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_3MMT_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_3MMT_PRICE
+		dataType: double
+		lineageTag: 845edcee-837c-42fb-a208-126ff610f6b4
+		summarizeBy: sum
+		sourceColumn: PREVIOUS_3MMT_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_YEAR_SAME_MONTH_WD
+		dataType: double
+		lineageTag: 6993dfa4-ac3d-4796-bf70-93fc3c2429c5
+		summarizeBy: sum
+		sourceColumn: PREVIOUS_YEAR_SAME_MONTH_WD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_YEAR_SAME_MONTH_IPS
+		dataType: double
+		lineageTag: 7f9b936f-9559-4bef-a6e7-1adf4b7e5701
+		summarizeBy: sum
+		sourceColumn: PREVIOUS_YEAR_SAME_MONTH_IPS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_YEAR_SAME_MONTH_TDP
+		dataType: double
+		lineageTag: 089df07b-7fea-4eb0-9053-99ec25d4abaa
+		summarizeBy: sum
+		sourceColumn: PREVIOUS_YEAR_SAME_MONTH_TDP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition channel_report_aug = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("syn-tccc-udp-mdp-us2-prd-01-ondemand.sql.azuresynapse.net"),
+				    db_marketing_analytics = Source{[Name="db_marketing_analytics"]}[Data],
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_channel_level_new = db_marketing_analytics{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_channel_level_new"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(sch_kocompetitionalert_t_ext_ko_competitionalert_channel_level_new,{{"BRAND_OWNER", Text.Upper, type text}, {"BRAND", Text.Upper, type text}, {"CHANNEL", Text.Upper, type text}, {"CATEGORY", Text.Upper, type text}, {"COUNTRY", Text.Upper, type text}})
+				in
+				    #"Uppercased Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

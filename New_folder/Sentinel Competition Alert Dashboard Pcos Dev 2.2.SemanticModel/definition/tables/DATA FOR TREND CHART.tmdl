@@ -1,0 +1,216 @@
+table 'DATA FOR TREND CHART'
+	lineageTag: 3dbdfe25-ce53-4c9f-8ba4-63a68a684994
+
+	column COUNTRY
+		dataType: string
+		lineageTag: a30a4dba-b164-46cb-8418-6f89739b790d
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANNEL
+		dataType: string
+		lineageTag: f4c8b28f-2dd1-4f29-8d7c-16600ba7897d
+		summarizeBy: none
+		sourceColumn: CHANNEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: b8d4fbc7-d0c3-4b8b-a4fe-ea9e2ee67b58
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: 57c4072c-0815-429b-8f77-202bc0791feb
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: e4a826ea-872e-4c97-aba0-6776e49c74f3
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 756b013a-2faa-493e-8225-5276921ffb36
+		summarizeBy: count
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: f917b6f0-2584-4cb6-9bc4-f591ba39917f
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d9588f1-4ba1-400c-957e-39210246d1c7
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_PRICE
+		dataType: double
+		lineageTag: 489c8504-9abf-4455-bcc1-071999e60bd6
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_TDP
+		dataType: double
+		lineageTag: 6e383a45-6ca1-45e3-af70-9c1d8a9ef2e1
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_TDP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_WD
+		dataType: double
+		lineageTag: 79f6a04a-6b71-424e-9b16-9f80cb847ff9
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_WD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_IPS
+		dataType: double
+		lineageTag: 25db04d4-8344-4456-9012-2a6cf8c96820
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_IPS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ALERT_ID
+		dataType: string
+		lineageTag: 41290d90-f216-4d28-93d4-03da4dbd0b98
+		summarizeBy: none
+		sourceColumn: ALERT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY
+		dataType: string
+		lineageTag: 05288225-c0c8-4203-ab3d-7b70313dd249
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME
+		dataType: string
+		lineageTag: 6fffe616-e6cb-45bd-ac53-6221e4a2ffd0
+		summarizeBy: none
+		sourceColumn: MONTH_NAME
+		sortByColumn: MONTH
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'YEAR MONTH'
+		dataType: string
+		lineageTag: 2c163003-b941-47d9-8f74-775b6fd65820
+		summarizeBy: none
+		sourceColumn: YEAR MONTH
+		sortByColumn: 'Date sorting'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date sorting'
+		dataType: int64
+		formatString: 0
+		lineageTag: 313a374f-f6ae-42ba-8e6d-6d84f5247f73
+		summarizeBy: sum
+		sourceColumn: Date sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID_GENERATED_DATA
+		dataType: string
+		lineageTag: 9c709f97-adf5-4230-a26b-5da1fb7ceff3
+		summarizeBy: none
+		sourceColumn: PERIOD_ID_GENERATED_DATA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Current_Month_Market_Volume_Share
+		dataType: double
+		lineageTag: 7d1307b7-82b9-4534-9001-0bfc5bb4c5c6
+		summarizeBy: sum
+		sourceColumn: Current_Month_Market_Volume_Share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Current_Month_Market_Value_Share
+		dataType: double
+		lineageTag: 546f11aa-ae54-4e3e-b02d-24311918e391
+		summarizeBy: sum
+		sourceColumn: Current_Month_Market_Value_Share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is alert to be finally triggered for the Brand(Yes or No)'
+		dataType: string
+		lineageTag: 6288af3b-42c1-42e4-95a3-36c4d9e43a40
+		summarizeBy: none
+		sourceColumn: Is alert to be finally triggered for the Brand(Yes or No)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DATA FOR TREND CHART' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_trend_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_trend_report"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(sch_kocompetitionalert_t_ext_ko_competitionalert_trend_report,{{"IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO", "Is alert to be finally triggered for the Brand(Yes or No)"}, {"RUN_STATUS_PERIOD_ID", "PERIOD_ID_GENERATED_DATA"}, {"CURRENT_MONTH_MARKET_VALUE_SHARE", "Current_Month_Market_Value_Share"}, {"CURRENT_MONTH_MARKET_VOLUME_SHARE", "Current_Month_Market_Volume_Share"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"COUNTRY", type text}, {"CHANNEL", type text}, {"CATEGORY", type text}, {"BRAND", type text}, {"BRAND_OWNER", type text}, {"PERIOD_ID", Int64.Type}, {"YEAR", Int64.Type}, {"MONTH", Int64.Type}, {"Current_Month_Market_Value_Share", type number}, {"Current_Month_Market_Volume_Share", type number}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_IPS", type number}, {"Is alert to be finally triggered for the Brand(Yes or No)", type text}, {"ALERT_ID", type text}, {"PERIOD_ID_GENERATED_DATA", type text}}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Changed Type", "KEY", each Text.Combine({[COUNTRY], [CHANNEL], [CATEGORY], [BRAND_OWNER], [BRAND],[PERIOD_ID_GENERATED_DATA]}, " "), type text),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Inserted Merged Column",{{"Current_Month_Market_Value_Share", type number}, {"Current_Month_Market_Volume_Share", type number}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_IPS", type number}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "MONTH_NAME", each if [MONTH] = 1 then "JAN" else if [MONTH] = 2 then "FEB" else if [MONTH] = 3 then "MAR" else if [MONTH] = 4 then "APR" else if [MONTH] = 5 then "MAY" else if [MONTH] = 6 then "JUN" else if [MONTH] = 7 then "JUL" else if [MONTH] = 8 then "AUG" else if [MONTH] = 9 then "SEP" else if [MONTH] = 10 then "OCT" else if [MONTH] = 11 then "NOV" else if [MONTH] = 12 then "DEC" else [MONTH]),
+				    #"Inserted Last Characters" = Table.AddColumn(#"Added Conditional Column", "Last Characters", each Text.End(Text.From([YEAR], "en-US"), 2), type text),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Inserted Last Characters", "YEAR MONTH", each Text.Combine({[MONTH_NAME], [Last Characters]}, "'"), type text),
+				    #"Removed Columns" = Table.RemoveColumns(#"Inserted Merged Column1",{"Last Characters"}),
+				    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Date sorting", each [YEAR] *100 + [MONTH]),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom",{{"Date sorting", Int64.Type}})
+				in
+				    #"Changed Type2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

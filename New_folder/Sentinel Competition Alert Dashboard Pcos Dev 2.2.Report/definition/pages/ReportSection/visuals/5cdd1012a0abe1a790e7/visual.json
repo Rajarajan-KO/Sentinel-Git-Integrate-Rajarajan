@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "5cdd1012a0abe1a790e7",
+  "position": {
+    "x": 845.91403996540112,
+    "y": 822.32413989234078,
+    "z": 54000,
+    "height": 427.06961833531147,
+    "width": 808.31579145260844,
+    "tabOrder": 1000
+  },
+  "visualGroup": {
+    "displayName": "Price Trend",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

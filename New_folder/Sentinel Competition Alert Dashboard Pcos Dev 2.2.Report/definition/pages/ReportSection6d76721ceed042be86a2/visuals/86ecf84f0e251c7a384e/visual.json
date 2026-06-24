@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "86ecf84f0e251c7a384e",
+  "position": {
+    "x": 2294,
+    "y": 825,
+    "z": 43000,
+    "height": 40.300910843877091,
+    "width": 135.33104733159098,
+    "tabOrder": 55000
+  },
+  "visualGroup": {
+    "displayName": "Trend Month Slicer",
+    "groupMode": "ScaleMode"
+  }
+}

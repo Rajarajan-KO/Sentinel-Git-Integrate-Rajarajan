@@ -1,0 +1,463 @@
+table 'BRAND TABLE'
+	lineageTag: 5259e1d8-5a0c-4dca-a3e1-82a1552ec1b8
+
+	measure 'Market Share for brand filter' =
+			
+			IF(AND(MAX('DASHBOARD DATA'[Current_Month_Market_Value_Share])<0.2,SELECTEDVALUE('BRAND TABLE'[MANUFACTURER])="TCCC") ,BLANK(),1)
+		formatString: 0
+		lineageTag: f7392f07-eee7-4c44-923a-fa7b6ff4c39f
+
+	measure 'test for color' = if(SELECTEDVALUE('BRAND TABLE'[MONTH])<3,"#818181","#FFFF0")
+		lineageTag: 446e88bc-27a0-4126-9555-d84f1c034f99
+
+	measure 'test for' = if(SELECTEDVALUE('BRAND TABLE'[MONTH])<3,".","Priority")
+		lineageTag: 80773350-aaaa-426f-b6e4-d1f07f1a2e5b
+
+	measure 'test for color 2' = if(SELECTEDVALUE('BRAND TABLE'[MONTH])<3,"#818181","White")
+		lineageTag: 7e764a33-81bc-4c4b-a8bc-ff1e85f4483e
+
+	column ALERT_BRANDS
+		dataType: string
+		lineageTag: 9959867d-76f6-4d07-bb0d-5dac63a60ceb
+		summarizeBy: none
+		sourceColumn: ALERT_BRANDS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 28f3b15a-a04f-4a3c-b837-df664fc79943
+		summarizeBy: count
+		sourceColumn: ALERT_ID
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: dad7be57-88db-437c-8e76-50b2d2e1bbc7
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY
+		dataType: string
+		lineageTag: 03765a7f-c3d9-4ee4-a722-d7dc22f5e773
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY
+		dataType: string
+		lineageTag: b01ea566-6587-4adc-8749-2d4f4c0650fb
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANNEL
+		dataType: string
+		lineageTag: cdd4db3a-80e7-40fc-850a-9c7e4f079bbf
+		summarizeBy: none
+		sourceColumn: CHANNEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: 37e45692-945a-476a-a791-77787ca74ae4
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHARE_BRANDS
+		dataType: string
+		lineageTag: 6470bf45-8ea2-49b3-9a8e-42e5ae38a966
+		summarizeBy: none
+		sourceColumn: SHARE_BRANDS
+		sortByColumn: 'Brand Sorting'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MANUFACTURER
+		dataType: string
+		lineageTag: 1c1075a4-bf17-4fe2-8868-298b46542612
+		summarizeBy: none
+		sourceColumn: MANUFACTURER
+		sortByColumn: 'Brand Sorting'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alert id_Country'
+		dataType: string
+		lineageTag: a855cf1c-e284-47f2-9602-8b287418b8aa
+		summarizeBy: none
+		sourceColumn: Alert id_Country
+		sortByColumn: ALERT_ID
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Brand Sorting'
+		dataType: int64
+		formatString: 0
+		lineageTag: adbee26c-ca5e-47c0-8aba-ae64d3d9a3e2
+		summarizeBy: sum
+		sourceColumn: Brand Sorting
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAX_PERIOD_ID
+		dataType: string
+		lineageTag: ebb63fe7-a9a5-4ab3-b805-e02682b11de1
+		summarizeBy: none
+		sourceColumn: MAX_PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: b82e3aa7-b2fb-47c5-a078-777d65fdce44
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME
+		dataType: string
+		lineageTag: 66f52cd6-2699-45cf-bbc8-562ca54ea22c
+		summarizeBy: none
+		sourceColumn: MONTH_NAME
+		sortByColumn: MONTH
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Key'
+		dataType: string
+		lineageTag: 75167a0b-4cd7-4b5b-9eb0-844620b77cc9
+		summarizeBy: none
+		sourceColumn: Forecast Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d1de2f4-f7a0-48fd-b6eb-033ca42a577c
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Name_Latest
+		dataType: string
+		lineageTag: b2a08751-0dc5-41a9-bd0c-8c1d51418089
+		summarizeBy: none
+		sourceColumn: Month_Name_Latest
+		sortByColumn: MONTH
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 92cbfffa-0b1c-47dc-93e2-ac71d71d7134
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Period'
+		dataType: string
+		lineageTag: c43c36ce-cf1c-4dd3-bede-2f607c21f8e1
+		summarizeBy: none
+		sourceColumn: Latest Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Name Latest'
+		dataType: string
+		lineageTag: 589a565d-2d2a-4658-8f6a-e0dff5512f3a
+		summarizeBy: none
+		sourceColumn: Year Name Latest
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_share_filter
+		dataType: string
+		lineageTag: 124de39f-3934-49f7-8e6b-a58d490d4a5f
+		summarizeBy: none
+		sourceColumn: brand_share_filter
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERATION_UNIT
+		dataType: string
+		lineageTag: 96dc2061-3fdc-42f1-bab4-8ae1b0ee8ea6
+		summarizeBy: none
+		sourceColumn: OPERATION_UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_METRIC_1
+		dataType: string
+		lineageTag: 96880423-d9fc-4bd2-949e-7bcdd35d2c3c
+		summarizeBy: none
+		sourceColumn: PRICE_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_METRIC_2
+		dataType: string
+		lineageTag: c0f174ee-6df5-4364-8c34-009e63dae1ab
+		summarizeBy: none
+		sourceColumn: PRICE_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column TDP_METRIC_1
+		dataType: string
+		lineageTag: a768efc9-6631-440c-9203-341b916f85ec
+		summarizeBy: none
+		sourceColumn: TDP_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column TDP_METRIC_2
+		dataType: string
+		lineageTag: 32af537f-be76-4d13-909e-2c96bdd8c557
+		summarizeBy: none
+		sourceColumn: TDP_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column WD_METRIC_1
+		dataType: string
+		lineageTag: d99bd0d0-c983-4124-ad2d-067ce7546c9f
+		summarizeBy: none
+		sourceColumn: WD_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column WD_METRIC_2
+		dataType: string
+		lineageTag: 495baab5-9bd7-4841-99a1-bf7b1f837b5a
+		summarizeBy: none
+		sourceColumn: WD_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column IPS_METRIC_1
+		dataType: string
+		lineageTag: ed9aa6f7-860e-4ea5-a117-98c41eb80f29
+		summarizeBy: none
+		sourceColumn: IPS_METRIC_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column IPS_METRIC_2
+		dataType: string
+		lineageTag: df782f27-9b80-44da-8aa8-3c696c9232b1
+		summarizeBy: none
+		sourceColumn: IPS_METRIC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column FINAL_ALERT_MESSAGE
+		dataType: string
+		lineageTag: 9ea443d5-b41e-4edb-a587-3643cd0a6d4e
+		summarizeBy: none
+		sourceColumn: FINAL_ALERT_MESSAGE
+		sortByColumn: 'Messege sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Messege sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a25fc88-8c48-4f27-856e-eca12c742267
+		summarizeBy: sum
+		sourceColumn: Messege sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERT_ID_2
+		dataType: string
+		lineageTag: 06b88ffb-37ae-4ebe-8c57-f66965be2e4d
+		summarizeBy: none
+		sourceColumn: ALERT_ID_2
+		sortByColumn: ALERT_ID
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Priority = "WIP"
+		lineageTag: e2f67c5a-14b9-4bd4-a6c3-0db1c397bbfa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_MS_Alert = IF(CONTAINSSTRING('BRAND TABLE'[FINAL_ALERT_MESSAGE],"Share"),"With MS","Without MS")
+		lineageTag: 7e535214-5520-400f-bdc2-f54bc605f911
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERT_PRIORITY
+		dataType: string
+		lineageTag: 852d2acf-fec3-44f4-96e6-bceca58ff8b6
+		summarizeBy: none
+		sourceColumn: ALERT_PRIORITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column = CALCULATE(MAX('BRAND TABLE'[FINAL_ALERT_MESSAGE]),ALLEXCEPT('BRAND TABLE','BRAND TABLE'[ALERT_ID],'BRAND TABLE'[YEAR],'BRAND TABLE'[MONTH]))
+		lineageTag: 8e1c760d-ed16-403a-ae99-7bf62c7c8f0e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Column 2' = IF('BRAND TABLE'[Column]='BRAND TABLE'[FINAL_ALERT_MESSAGE],'BRAND TABLE'[ALERT_PRIORITY],BLANK())
+		lineageTag: d3a0ed01-17c1-4ef6-a493-eb8708942498
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key for brand table' = 'BRAND TABLE'[PERIOD_ID]&"_"&'BRAND TABLE'[COUNTRY]&"_"&'BRAND TABLE'[New_Category_2]&"_"&'BRAND TABLE'[MANUFACTURER]&"_"&'BRAND TABLE'[SHARE_BRANDS]
+		lineageTag: e41b37c6-ee29-4fc0-b101-fff44e9e8e97
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'key for market' = 'BRAND TABLE'[PERIOD_ID]&"_"& 'BRAND TABLE'[New_Category_2]&"_"&'BRAND TABLE'[SHARE_BRANDS]
+		lineageTag: 46ab0f83-b5a3-4a3c-9066-b31ae5b42925
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key for channel' = 'BRAND TABLE'[PERIOD_ID]&"_"&'BRAND TABLE'[COUNTRY]&"_"&'BRAND TABLE'[New_Category_2]&"_"&'BRAND TABLE'[SHARE_BRANDS]&"_"&'BRAND TABLE'[BRAND_OWNER]
+		lineageTag: 268fccae-f1aa-470b-8a56-7adef062db92
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key for trend' = 'BRAND TABLE'[COUNTRY]&"_"&'BRAND TABLE'[New_Category_2]
+		lineageTag: 36f1bd7e-231a-4041-b362-73c6a6240c2e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key for brand table 2' = 'BRAND TABLE'[PERIOD_ID]&"_"&'BRAND TABLE'[COUNTRY]&"_"&'BRAND TABLE'[New_Category_2]&"_"&'BRAND TABLE'[MANUFACTURER]
+		lineageTag: 87923cc7-84af-438f-bbd4-6ba1199003c6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'key for market_2' = 'BRAND TABLE'[PERIOD_ID]&"_"& 'BRAND TABLE'[New_Category_2]&"_"&'BRAND TABLE'[SHARE_BRANDS]&"_"&'BRAND TABLE'[MANUFACTURER]
+		lineageTag: 491f3971-a54c-4631-a12a-304f14cd947f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'key for pack' = 'BRAND TABLE'[COUNTRY]&"_"&'BRAND TABLE'[New_Category_2]&"_"&'BRAND TABLE'[MANUFACTURER]&"_"&'BRAND TABLE'[SHARE_BRANDS]
+		lineageTag: 2c04e555-88ff-499f-83a0-0ba638cde80f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column New_category =
+			
+			IF('BRAND TABLE'[CATEGORY]="CORE SPARKLING_COLA","CORE SPARKLING",IF('BRAND TABLE'[CATEGORY]="CORE SPARKLING_NON-COLA","CORE SPARKLING",'BRAND TABLE'[CATEGORY]))
+		lineageTag: 2704888a-a7b8-4266-8484-32e4ee7ab8ae
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cola/Non-Cola = IF('BRAND TABLE'[CATEGORY]="CORE SPARKLING_COLA","COLA",IF('BRAND TABLE'[CATEGORY]="CORE SPARKLING_NON-COLA","NON-COLA"))
+		lineageTag: 1c5a7087-68ad-4feb-8a03-818aca601653
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column New_Category_2 = 'BRAND TABLE'[CATEGORY]
+		lineageTag: acc5d832-9309-4820-8138-67e7cdcb1690
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'BRAND TABLE' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_dashboard_report_2"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_dashboard_report,{{"COUNTRY", type text}, {"CHANNEL", type text}, {"CATEGORY", type text}, {"BRAND", type text}, {"BRAND_OWNER", type text}, {"PERIOD_ID", Int64.Type}, {"MAX_PERIOD_ID", type text}, {"YEAR", Int64.Type}, {"MONTH", Int64.Type}, {"MONTH_NAME", type text}, {"CURRENT_MONTH_MARKET_VALUE_SHARE", type number}, {"CURRENT_MONTH_3MMT_VALUE_SHARE", type number}, {"PREVIOUS_3MMT_VALUE_SHARE", type number}, {"YTD_MARKET_VALUE_SHARE", type number}, {"MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VALUE_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VALUE_MAX_SCENARIO_CHANGE", type number}, {"MS_SALES_ALERT_REGISTERED", type text}, {"VALUE_METRIC_1", type text}, {"VALUE_METRIC_2", type text}, {"CURRENT_MONTH_MARKET_VOLUME_SHARE", type number}, {"CURRENT_MONTH_3MMT_VOLUME_SHARE", type number}, {"PREVIOUS_3MMT_VOLUME_SHARE", type number}, {"YTD_MARKET_VOLUME_SHARE", type number}, {"MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR", type number}, {"MARKET_VOLUME_SHARE_PREVIOUS_YEAR_FULL_YEAR", type number}, {"VOLUME_MAX_SCENARIO_CHANGE", type number}, {"MS_VOLUME_ALERT_REGISTERED", type text}, {"VOLUME_METRIC_1", type text}, {"VOLUME_METRIC_2", type text}, {"CURRENT_MONTH_PRICE", type number}, {"CURRENT_MONTH_3MMT_PRICE", type number}, {"PREVIOUS_3MMT_PRICE", type number}, {"YTD_PRICE", type number}, {"PRICE_MAX_SCENARIO_CHANGE", type number}, {"PRICE_ALERT_REGISTERED", type text}, {"PRICE_METRIC_1", type text}, {"PRICE_METRIC_2", type text}, {"CURRENT_MONTH_TDP", type number}, {"CURRENT_MONTH_3MMT_TDP", type number}, {"PREVIOUS_3MMT_TDP", type number}, {"YTD_TDP", type number}, {"TDP_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"TDP_PREVIOUS_YEAR_FULL_YEAR", type number}, {"TDP_MAX_SCENARIO_CHANGE", type number}, {"TDP_ALERT_REGISTERED", type text}, {"TDP_METRIC_1", type text}, {"TDP_METRIC_2", type text}, {"CURRENT_MONTH_WD", type number}, {"CURRENT_MONTH_3MMT_WD", type number}, {"PREVIOUS_3MMT_WD", type number}, {"YTD_WD", type number}, {"WD_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"WD_PREVIOUS_YEAR_FULL_YEAR", type number}, {"WD_MAX_SCENARIO_CHANGE", type number}, {"WD_ALERT_REGISTERED", type text}, {"WD_METRIC_1", type text}, {"WD_METRIC_2", type text}, {"CURRENT_MONTH_IPS", type number}, {"CURRENT_MONTH_3MMT_IPS", type number}, {"PREVIOUS_3MMT_IPS", type number}, {"YTD_IPS", type number}, {"IPS_SAME_MONTH_PREVIOUS_YEAR_3MMT", type number}, {"IPS_PREVIOUS_YEAR_FULL_YEAR", type number}, {"IPS_MAX_SCENARIO_CHANGE", type number}, {"IPS_ALERT_REGISTERED", type text}, {"IPS_METRIC_1", type text}, {"IPS_METRIC_2", type text},   {"FINAL_ALERT_MESSAGE", type text}, {"IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO", type text}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type", "Market Share", each if [CURRENT_MONTH_MARKET_VALUE_SHARE] =(null) then 0 else [CURRENT_MONTH_MARKET_VALUE_SHARE]),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Market Share Filter", each if [BRAND_OWNER] = "TCCC" and [Market Share] <0.0 then "Flase" else "True"),
+				    #"Filtered Rows5" = Table.SelectRows(#"Added Custom2", each ([Market Share Filter] = "True")),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows5",{"COUNTRY", "CHANNEL", "CATEGORY", "BRAND", "BRAND_OWNER", "MAX_PERIOD_ID", "YEAR", "MONTH", "MONTH_NAME", "PRICE_METRIC_1", "PRICE_METRIC_2", "TDP_METRIC_1", "TDP_METRIC_2", "WD_METRIC_1", "WD_METRIC_2", "IPS_METRIC_1", "IPS_METRIC_2", "FINAL_ALERT_MESSAGE", "OPERATION_UNIT", "ALERT_ID", "ALERT_PRIORITY"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([ALERT_ID] <> null)),
+				    #"Removed Duplicates" = Table.Distinct(#"Filtered Rows"),
+				    #"Merged Queries" = Table.NestedJoin(#"Removed Duplicates", {"COUNTRY", "CHANNEL", "CATEGORY","MAX_PERIOD_ID"}, #"DASHBOARD DATA (2)", {"COUNTRY", "CHANNEL", "CATEGORY","MAX_PERIOD_ID"}, "DASHBOARD DATA (2)", JoinKind.LeftOuter),
+				    #"Expanded DASHBOARD DATA (2)" = Table.ExpandTableColumn(#"Merged Queries", "DASHBOARD DATA (2)", {"BRAND"}, {"DASHBOARD DATA (2).BRAND"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded DASHBOARD DATA (2)",{{"BRAND", "ALERT_BRANDS"}, {"DASHBOARD DATA (2).BRAND", "SHARE_BRANDS"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "MANUFACTURER", each "TCCC"),
+				    #"Appended Query" = Table.Combine({#"Added Custom", #"BRIDGE TABLE (2)"}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Appended Query", "KEY", each Text.Combine({[COUNTRY], [CHANNEL], [CATEGORY], [MANUFACTURER], [SHARE_BRANDS],[MAX_PERIOD_ID]}, " "), type text),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Inserted Merged Column", "Alert id_Country", each Text.Combine({Text.From([ALERT_ID], "en-US"), [COUNTRY]}, " "), type text),
+				    #"Added Conditional Column" = Table.AddColumn(#"Inserted Merged Column1", "Brand Sorting", each if [MANUFACTURER] = "TCCC" then 0 else 10),
+				    #"Inserted Merged Column2" = Table.AddColumn(#"Added Conditional Column", "Forecast Key", each Text.Combine({[COUNTRY], [CATEGORY],[MAX_PERIOD_ID]}, " "), type text),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Inserted Merged Column2", "MAX_PERIOD_ID", "PERIOD_ID"),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Duplicated Column",{{"PERIOD_ID", Int64.Type}}),
+				    #"Added Custom3" = Table.AddColumn(#"Changed Type1", "MAX_PERIOD", each List.Max(#"Changed Type1"[PERIOD_ID])),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom3",{{"MAX_PERIOD", Int64.Type}}),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Changed Type2", "Month_Name_Latest", each if [PERIOD_ID] = [MAX_PERIOD] then "Latest Month" else [MONTH_NAME]),
+				    #"Inserted First Characters" = Table.AddColumn(#"Added Conditional Column1", "Max_Year", each Text.Start(Text.From([MAX_PERIOD], "en-US"), 4), type text),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Inserted First Characters",{{"Max_Year", Int64.Type}}),
+				    #"Added Conditional Column3" = Table.AddColumn(#"Changed Type4", "Year Name Latest", each if [YEAR] = [Max_Year] then "Latest Year" else [YEAR]),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Conditional Column3",{{"MAX_PERIOD", type text}}),
+				    #"Inserted Last Characters" = Table.AddColumn(#"Changed Type3", "Last Characters", each Text.End([MAX_PERIOD], 2), type text),
+				    #"Added Conditional Column2" = Table.AddColumn(#"Inserted Last Characters", "Max_Month", each if [Last Characters] = "01" then "January" else if [Last Characters] = "02" then "February" else if [Last Characters] = "03" then "March" else if [Last Characters] = "04" then "April" else if [Last Characters] = "05" then "May" else if [Last Characters] = "06" then "June" else if [Last Characters] = "07" then "July" else if [Last Characters] = "08" then "August" else if [Last Characters] = "09" then "September" else if [Last Characters] = "10" then "October" else if [Last Characters] = "11" then "November" else if [Last Characters] = "12" then "December" else " "),
+				    #"Changed Type5" = Table.TransformColumnTypes(#"Added Conditional Column2",{{"Max_Year", type text}}),
+				    #"Inserted Merged Column3" = Table.AddColumn(#"Changed Type5", "Latest Period", each Text.Combine({[Max_Month], [Max_Year]}, " "), type text),
+				    #"Inserted Merged Column4" = Table.AddColumn(#"Inserted Merged Column3", "Val_key", each Text.Combine({[MAX_PERIOD_ID], [COUNTRY], [CHANNEL], [CATEGORY], [MANUFACTURER], [SHARE_BRANDS]}, " "), type text),
+				    #"Merged Queries1" = Table.NestedJoin(#"Inserted Merged Column4", {"Val_key"}, #"DASHBOARD DATA", {"Val_key"}, "DASHBOARD DATA", JoinKind.LeftOuter),
+				    #"Expanded DASHBOARD DATA" = Table.ExpandTableColumn(#"Merged Queries1", "DASHBOARD DATA", {"CURRENT_MONTH_MARKET_VALUE_SHARE"}, {"Market Value Share"}),
+				    #"Added Custom5" = Table.AddColumn(#"Expanded DASHBOARD DATA", "Market value", each if [Market Value Share] =null then 0 else [Market Value Share]),
+				    #"Changed Type6" = Table.TransformColumnTypes(#"Added Custom5",{{"Market value", type number}}),
+				    #"Added Custom4" = Table.AddColumn(#"Changed Type6", "brand_share_filter", each if [MANUFACTURER] = "TCCC" and [Market value] <0.2 then 0 else 1),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom4",{"MAX_PERIOD", "Max_Year", "Last Characters", "Max_Month","Market Value Share","Market value","Val_key"}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Removed Columns", {{"FINAL_ALERT_MESSAGE", Splitter.SplitTextByDelimiter(". ", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "FINAL_ALERT_MESSAGE"),
+				    #"Changed Type7" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"FINAL_ALERT_MESSAGE", type text}}),
+				    #"Added Conditional Column4" = Table.AddColumn(#"Changed Type7", "Messege sort", each if Text.Contains([FINAL_ALERT_MESSAGE], "Share") then 1 else if Text.Contains([FINAL_ALERT_MESSAGE], "Price") then 2 else 3),
+				    #"Changed Type8" = Table.TransformColumnTypes(#"Added Conditional Column4",{{"Messege sort", Int64.Type}}),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Changed Type8", "ALERT_ID", "ALERT_ID_2"),
+				    #"Changed Type9" = Table.TransformColumnTypes(#"Duplicated Column1",{{"ALERT_ID_2", type text}}),
+				    #"Uppercased Text" = Table.TransformColumns(#"Changed Type9",{{"COUNTRY", Text.Upper, type text}, {"CATEGORY", Text.Upper, type text}})
+				in
+				    #"Uppercased Text"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+
