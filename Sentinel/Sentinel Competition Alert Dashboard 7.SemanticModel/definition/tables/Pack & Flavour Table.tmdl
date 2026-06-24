@@ -1,0 +1,151 @@
+table 'Pack & Flavour Table'
+	lineageTag: dd469b4f-d49e-47d8-b4bb-7bcab58bcf77
+
+	column COUNTRY
+		dataType: string
+		lineageTag: ffa6ec09-ba74-4166-8f56-0bddbc3e975c
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: f6bae5b8-4fb8-4a44-a8b0-1f424c0962ea
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: 7532e218-e3b9-4549-a81c-2b0662239572
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: de044fd1-ade7-485d-a052-8774ffbc722d
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_TYPE
+		dataType: string
+		lineageTag: 12586145-454c-4ffa-b687-b55b0716793c
+		summarizeBy: none
+		sourceColumn: DATA_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FLAVOUR_PACK
+		dataType: string
+		lineageTag: 3c6ac79e-864a-43f7-ad5d-d20a9fb7f15a
+		summarizeBy: none
+		sourceColumn: FLAVOUR_PACK
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUARTER
+		dataType: string
+		lineageTag: 3ec366bc-8af6-4532-91e3-f5d73d25f742
+		summarizeBy: none
+		sourceColumn: QUARTER
+		sortByColumn: 'Pack visual table.sort for quater'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column RUN_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 99a0c290-96a4-43d0-b674-d2b0a2d436e3
+		summarizeBy: count
+		sourceColumn: RUN_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALES_VALUE
+		dataType: double
+		lineageTag: 06360006-2e29-40c0-9ab2-24e4a565f343
+		summarizeBy: sum
+		sourceColumn: SALES_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SALES_VOLUME
+		dataType: double
+		lineageTag: 7b5bf949-9541-4676-bb30-d53a54c8562f
+		summarizeBy: sum
+		sourceColumn: SALES_VOLUME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SALES_VOLUME_UC
+		dataType: double
+		lineageTag: bf809e39-a365-47d2-a695-89d7c314f282
+		summarizeBy: sum
+		sourceColumn: SALES_VOLUME_UC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Key for brand' =
+			
+			'Pack & Flavour Table'[COUNTRY]&"_"&'Pack & Flavour Table'[CATEGORY]&"_"&'Pack & Flavour Table'[BRAND_OWNER]&"_"&'Pack & Flavour Table'[BRAND]
+		lineageTag: 475f23a1-5cfc-4a25-ade1-c44c3883e297
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quater2 = RIGHT('Pack & Flavour Table'[QUARTER],2)&MID('Pack & Flavour Table'[QUARTER],2,1)
+		dataType: int64
+		formatString: 0
+		lineageTag: 95f95b81-2735-4751-af02-ce4ef69e7385
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pack visual table.sort for quater'
+		dataType: int64
+		formatString: 0
+		lineageTag: 54b598f2-fea7-41da-bf2c-5a4c3758bde7
+		summarizeBy: sum
+		sourceColumn: Pack visual table.sort for quater
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rank of Quarter' = RANKX('Pack & Flavour Table','Pack & Flavour Table'[Quater2],,DESC,Dense)
+		formatString: 0
+		lineageTag: e66d4f9f-22b4-4eea-800e-4c9316d47164
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Pack & Flavour Table' = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("syn-tccc-udp-mdp-us2-prd-01-ondemand.sql.azuresynapse.net", "db_marketing_analytics", [EnableCrossDatabaseFolding = true]),
+				  #"Navigation 1" = Source{[Schema = "sch_kocompetitionalert", Item = "t_ext_ko_competitionalert_pack_flavour_level_new_s2"]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(#"Navigation 1", {"QUARTER"}, #"Pack visual table", {"QUARTER"}, "Pack visual table", JoinKind.LeftOuter),
+				    #"Expanded Pack visual table" = Table.ExpandTableColumn(#"Merged Queries", "Pack visual table", {"sort for quater"}, {"Pack visual table.sort for quater"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Expanded Pack visual table")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,213 @@
+table 'Forecast_Trend Data'
+	lineageTag: b40c2bb2-a4b8-4fd8-8c91-f64c6238766a
+
+	column COUNTRY
+		dataType: string
+		lineageTag: 08b6767f-ba24-42fe-b221-42a6c362f1c3
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: 07e02878-fb21-47fe-b965-0f58bef68f4b
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: string
+		lineageTag: 1de52cca-ceee-4bd6-9b95-c52bb2e0d1a7
+		summarizeBy: none
+		sourceColumn: MONTH
+		sortByColumn: MONTH_NUM
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 45c890c4-cd34-40b8-b099-ce12857c009c
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIME_PERIOD
+		dataType: string
+		lineageTag: 9b5db6db-92ca-48b0-b658-d4567219852a
+		summarizeBy: none
+		sourceColumn: TIME_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NUM
+		dataType: int64
+		formatString: 0
+		lineageTag: 23cdb72f-013c-4f6b-8b10-abbbefd383f7
+		summarizeBy: sum
+		sourceColumn: MONTH_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERATION_UNIT
+		dataType: string
+		lineageTag: 1a00cd98-6789-463c-aa50-67b5dca60088
+		summarizeBy: none
+		sourceColumn: OPERATION_UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: af86801c-222d-4c45-a2e4-b22de4df6065
+		summarizeBy: count
+		sourceColumn: ALERT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID_GENERATED_DATA
+		dataType: string
+		lineageTag: cc8d691c-adb6-42ee-af4c-1ccc01ef1d28
+		summarizeBy: none
+		sourceColumn: PERIOD_ID_GENERATED_DATA
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: 1d91575b-2c9b-411a-b6ec-2f2141b157ea
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Market Value Share'
+		dataType: double
+		lineageTag: 3c9a6f2a-7aba-44e1-9d58-39285ba18961
+		summarizeBy: sum
+		sourceColumn: Market Value Share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Market Volume Share'
+		dataType: double
+		lineageTag: 76a102fc-43e3-4d4a-b153-07b6f70735e0
+		summarizeBy: sum
+		sourceColumn: Market Volume Share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KEY
+		dataType: string
+		lineageTag: f8065a23-c648-4f78-baf7-85320b957d5a
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_YEAR
+		dataType: string
+		lineageTag: e078eda7-6e07-4567-84aa-deace6cf6268
+		summarizeBy: none
+		sourceColumn: MONTH_YEAR
+		sortByColumn: 'Date Sorting'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Sorting'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0fa6a3f0-02b5-4824-b3da-6109ee43cf29
+		summarizeBy: sum
+		sourceColumn: Date Sorting
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand_Owner2
+		dataType: string
+		lineageTag: 7d3b6ce0-e9bb-4ca0-b4f7-a637ce902e05
+		summarizeBy: none
+		sourceColumn: Brand_Owner2
+		sortByColumn: Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: double
+		formatString: 0
+		lineageTag: 8aa96008-31b3-415a-a12f-addd209bb85a
+		summarizeBy: sum
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Market Value Share_Tooltip'
+		dataType: double
+		lineageTag: 28132af6-4311-420e-b26b-c2b65f5417c9
+		summarizeBy: sum
+		sourceColumn: Market Value Share_Tooltip
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Market Volume Share_Tooltip'
+		dataType: double
+		lineageTag: 3bcb40ff-c90b-41e2-9bf6-af3aca9989ea
+		summarizeBy: sum
+		sourceColumn: Market Volume Share_Tooltip
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Forecast_Trend Data' = m
+		mode: import
+		source = ```
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_projected_trend_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_projected_trend_report"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(sch_kocompetitionalert_t_ext_ko_competitionalert_projected_trend_report,{{"COUNTRY", type text}, {"CATEGORY", type text}, {"MONTH", type text}, {"YEAR", Int64.Type}, {"TIME_PERIOD", type text}, {"PEPSICO_MARKET_SHARE_VALUE_HISTORICAL", type number}, {"PEPSICO_MARKET_SHARE_VALUE_FORECAST", type text}, {"TCCC_MARKET_SHARE_VALUE_HISTORICAL", type number}, {"TCCC_MARKET_SHARE_VALUE_FORECAST", type text}, {"PEPSICO_MARKET_SHARE_VOLUME_HISTORICAL", type number}, {"PEPSICO_MARKET_SHARE_VOLUME_FORECAST", type text}, {"TCCC_MARKET_SHARE_VOLUME_HISTORICAL", type number}, {"TCCC_MARKET_SHARE_VOLUME_FORECAST", type text}, {"MONTH_NUM", Int64.Type}, {"OPERATION_UNIT", type text}, {"ALERT_ID", Int64.Type}}),
+				    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Changed Type", {"COUNTRY", "CATEGORY", "MONTH", "YEAR", "TIME_PERIOD", "MONTH_NUM", "OPERATION_UNIT", "ALERT_ID", "PERIOD_ID_GENERATED_DATA"}, "Attribute", "Value"),
+				    #"Added Conditional Column" = Table.AddColumn(#"Unpivoted Columns", "BRAND_OWNER", each if Text.Contains([Attribute], "TCCC") then "TCCC" else "PEPSICO"),
+				    #"Replaced Value" = Table.ReplaceValue(#"Added Conditional Column","TCCC_","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","PEPSICO_","",Replacer.ReplaceText,{"Attribute"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value1",{{"Value", type number}}),
+				    #"Pivoted Column" = Table.Pivot(#"Changed Type1", List.Distinct(#"Changed Type1"[Attribute]), "Attribute", "Value", List.Sum),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Pivoted Column", "Market Value Share", each if [TIME_PERIOD] = "Historical" then [MARKET_SHARE_VALUE_HISTORICAL] else [MARKET_SHARE_VALUE_FORECAST]),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Conditional Column1",{{"Market Value Share", type number}}),
+				    #"Added Conditional Column2" = Table.AddColumn(#"Changed Type2", "Market Volume Share", each if [TIME_PERIOD] = "Historical" then [MARKET_SHARE_VOLUME_HISTORICAL] else [MARKET_SHARE_VOLUME_FORECAST]),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Conditional Column2",{{"Market Volume Share", type number}}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Changed Type3", "KEY", each Text.Combine({[COUNTRY], [CATEGORY],[PERIOD_ID_GENERATED_DATA]}, " "), type text),
+				    #"Removed Columns" = Table.RemoveColumns(#"Inserted Merged Column",{"MARKET_SHARE_VALUE_HISTORICAL", "MARKET_SHARE_VALUE_FORECAST", "MARKET_SHARE_VOLUME_HISTORICAL", "MARKET_SHARE_VOLUME_FORECAST"}),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Removed Columns", "MONTH_YEAR", each Text.Combine({[MONTH], Text.From([YEAR], "en-US")}, "'"), type text),
+				    #"Added Custom" = Table.AddColumn(#"Inserted Merged Column1", "Date Sorting", each [YEAR] *100 + [MONTH_NUM]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Brand_Owner2", each if [TIME_PERIOD] = "Forecast" and [BRAND_OWNER] = "TCCC" then "TCCC PROJECTED" else if [TIME_PERIOD] = "Forecast" and [BRAND_OWNER] = "PEPSICO" then "PEPSICO PROJECTED" 
+				else [BRAND_OWNER]),
+				    #"Added Conditional Column3" = Table.AddColumn(#"Added Custom1", "Sort", each if [Brand_Owner2] = "TCCC" then 1 else if [Brand_Owner2] = "PEPSICO" then 2 else if [Brand_Owner2] = "TCCC PROJECTED" then 10 else 11),
+				    #"Changed Type4" = Table.TransformColumnTypes(#"Added Conditional Column3",{{"Sort", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type4", "Market Value Share", "Market Value Share_Tooltip"),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Duplicated Column", "Market Volume Share", "Market Volume Share_Tooltip"),
+				    #"Appended Query" = Table.Combine({#"Duplicated Column1", #"Forecast_Trend Data (2)"})
+				in
+				    #"Appended Query"
+				```
+
+	annotation PBI_ResultType = Table
+

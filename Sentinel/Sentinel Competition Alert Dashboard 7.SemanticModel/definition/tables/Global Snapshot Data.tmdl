@@ -1,0 +1,177 @@
+table 'Global Snapshot Data'
+	lineageTag: 062190b5-19cb-4f6d-a183-627b08dfae20
+
+	column COUNTRY
+		dataType: string
+		lineageTag: 08ba1e9f-2ca9-47f3-907b-9d5270641dac
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANNEL
+		dataType: string
+		lineageTag: 9993dbc0-7f3d-4869-957a-508a356d0bf3
+		summarizeBy: none
+		sourceColumn: CHANNEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: 2113c740-a68e-4a3e-acfb-d9ef9f599916
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: 887383ce-9f76-4c12-8b65-ebc0e1788962
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: b0160d37-14c2-4599-9e1e-7e81f750b637
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e88da0a-647d-4560-9fb7-c5dba548c96e
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAX_PERIOD_ID
+		dataType: string
+		lineageTag: 8330c880-59f6-476c-8732-188a2e05b448
+		summarizeBy: none
+		sourceColumn: MAX_PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: c68b1573-1945-42df-aef6-4671a8b854a3
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: 704db6a5-c206-4c96-b126-b78711af70ea
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_NAME
+		dataType: string
+		lineageTag: e520f2ad-3970-4c97-b338-590aaceef53a
+		summarizeBy: none
+		sourceColumn: MONTH_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_MARKET_VALUE_SHARE
+		dataType: double
+		lineageTag: 22e9000c-5fa9-4120-a6ca-b1baddd772b1
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_MARKET_VALUE_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PREVIOUS_MONTH_MARKET_VALUE_SHARE
+		dataType: double
+		lineageTag: 30beefd1-46d0-4e11-b257-9ff72530996a
+		summarizeBy: sum
+		sourceColumn: PREVIOUS_MONTH_MARKET_VALUE_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VALUE_SHARE_DIFFERENCE
+		dataType: double
+		lineageTag: 48d600e6-c986-4332-a21b-bf85628760f1
+		summarizeBy: sum
+		sourceColumn: MARKET_VALUE_SHARE_DIFFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MS_CHNL_FLAG
+		dataType: string
+		lineageTag: e29b606f-5be6-4680-a7f3-5b0044466291
+		summarizeBy: none
+		sourceColumn: MS_CHNL_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column MS_SALES_ALERT_REGISTERED
+		dataType: string
+		lineageTag: 15f11947-1c15-4f25-b185-ae47558eafd0
+		summarizeBy: none
+		sourceColumn: MS_SALES_ALERT_REGISTERED
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO
+		dataType: string
+		lineageTag: 27c9356b-1e32-41bf-80c8-effd5ea5fbaf
+		summarizeBy: none
+		sourceColumn: IS_ALERT_TO_BE_TRIGGERED_FOR_THE_BRAND_YES_OR_NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column OPERATION_UNIT
+		dataType: string
+		lineageTag: f3dac1a6-d6f0-4a27-81da-04fc6150f67e
+		summarizeBy: none
+		sourceColumn: OPERATION_UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALERT_ID
+		dataType: string
+		lineageTag: 676ecd8d-0f53-47cb-b16e-4e5c94187af9
+		summarizeBy: none
+		sourceColumn: ALERT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FINAL_ALERT_MESSAGE
+		dataType: string
+		lineageTag: 759a29f5-0026-4baa-a707-eeb3ba504cb3
+		summarizeBy: none
+		sourceColumn: FINAL_ALERT_MESSAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Global Snapshot Data' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Data Source", "db_marketing_analytics"),
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_global_snapshot_report = Source{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_global_snapshot_report_s2"]}[Data]
+				in
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_global_snapshot_report
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

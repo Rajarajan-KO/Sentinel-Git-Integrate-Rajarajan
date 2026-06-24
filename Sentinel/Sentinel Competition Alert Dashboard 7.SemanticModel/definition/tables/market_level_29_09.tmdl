@@ -1,0 +1,131 @@
+table market_level_29_09
+	lineageTag: bdb993eb-75ff-47a9-a6b1-abb00c32bd55
+
+	column COUNTRY
+		dataType: string
+		lineageTag: 1a889362-c021-4934-ba3b-e14e5b2356ca
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: 2ae843f2-166f-45a0-a2a6-b892a9e1b3b5
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: e6c5697f-0c27-4f53-abb1-007c07a599d2
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: 9ca81d7a-51d4-48b9-903f-e57b494a2bf0
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: string
+		lineageTag: 98bbcf17-d02e-4959-8146-9ffcd12cfe91
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: e7087940-c0d8-485a-bf81-c5e639c77f8b
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: 4980b695-402c-48af-8409-ce60b4249715
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_MONTH_MARKET_VALUE_SHARE
+		dataType: double
+		lineageTag: 7672e1e3-6b1f-4038-bc21-5d93ba41ffc9
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_MARKET_VALUE_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR
+		dataType: double
+		lineageTag: c5d6bf48-9e10-4efb-96f0-6b58ae551a10
+		summarizeBy: sum
+		sourceColumn: MARKET_VALUE_SHARE_SAME_MONTH_PREVIOUS_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_MONTH_MARKET_VOLUME_SHARE
+		dataType: double
+		lineageTag: 4e2143a0-df6d-4a3f-b934-0e1a2ec8062d
+		summarizeBy: sum
+		sourceColumn: CURRENT_MONTH_MARKET_VOLUME_SHARE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR
+		dataType: double
+		lineageTag: 73b4f0d7-2a16-44da-876a-f2346bba6e5c
+		summarizeBy: sum
+		sourceColumn: MARKET_VOLUME_SHARE_SAME_MONTH_PREVIOUS_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'key for brand' = market_level_29_09[PERIOD_ID]&"_"& market_level_29_09[CATEGORY]&"_"&market_level_29_09[BRAND]
+		lineageTag: 35805b5d-3f67-42be-b899-ea6d7b602d07
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column RANK
+		dataType: int64
+		formatString: 0
+		lineageTag: c9f98f36-cec1-4e4f-bf67-b2dc05193532
+		summarizeBy: sum
+		sourceColumn: RANK
+
+		annotation SummarizationSetBy = Automatic
+
+	partition market_level_29_09 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("syn-tccc-udp-mdp-us2-prd-01-ondemand.sql.azuresynapse.net"),
+				    db_marketing_analytics = Source{[Name="db_marketing_analytics"]}[Data],
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_market_level_new = db_marketing_analytics{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_market_level_new_s2"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(sch_kocompetitionalert_t_ext_ko_competitionalert_market_level_new,{{"CATEGORY", Text.Upper, type text}, {"COUNTRY", Text.Upper, type text}, {"BRAND", Text.Upper, type text}, {"BRAND_OWNER", Text.Upper, type text}})
+				in
+				    #"Uppercased Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

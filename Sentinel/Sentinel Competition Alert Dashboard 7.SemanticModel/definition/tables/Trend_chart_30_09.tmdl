@@ -1,0 +1,172 @@
+table Trend_chart_30_09
+	lineageTag: becdb05b-6150-49f4-9460-35e88f7a2404
+
+	column RUN_STATUS_PERIOD_ID
+		dataType: string
+		lineageTag: d25073ee-4e2b-47f9-b111-718c5531f231
+		summarizeBy: none
+		sourceColumn: RUN_STATUS_PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key for brand' = Trend_chart_30_09[Country]&"_"&Trend_chart_30_09[Category]
+		lineageTag: e9470f35-0cbc-4eb3-904e-e1879d7a9ae4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_year =
+			
+			SWITCH(Trend_chart_30_09[Month],1,"Jan, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			2,"Feb, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			3,"Mar, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			4,"Apr, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			5,"May, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			6,"Jun, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			7,"Jul, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			8,"Aug, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			9,"Sep, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			10,"Oct, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			11,"Nov, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"),
+			12,"Dec, "&FORMAT(right(Trend_chart_30_09[Year],2),"00"))
+		lineageTag: 85ed09b3-6555-4d51-860b-2d71ddf7a0d9
+		summarizeBy: none
+		sortByColumn: PERIOD_ID
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY
+		dataType: string
+		lineageTag: cc69f875-a3c8-4c87-ab5d-a94f3a8e6cc1
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: ce0a6d8f-c45e-4a6a-87f3-d7b3f8e2a6a3
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: 17d38e5e-4fbb-4f1a-b9b6-9637b3eeed2a
+		summarizeBy: none
+		sourceColumn: BRAND
+		sortByColumn: Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_OWNER
+		dataType: string
+		lineageTag: 55ff1f2e-be90-4c04-a5d7-766390c5ebfe
+		summarizeBy: none
+		sourceColumn: BRAND_OWNER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 17c931a8-9fe8-4769-89a4-4dbce1e810e6
+		summarizeBy: count
+		sourceColumn: PERIOD_ID
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: d6aff665-bb29-4f66-831e-35c238b0965a
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d4d953f-7cd8-444c-922d-df5917d95dc8
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUE
+		dataType: double
+		lineageTag: 362af8e6-b94e-43c7-a2cb-c3e12993365d
+		summarizeBy: sum
+		sourceColumn: VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLUME
+		dataType: double
+		lineageTag: 9bb39891-baa1-4b61-8e56-6830aa06f817
+		summarizeBy: sum
+		sourceColumn: VOLUME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AVG_PRICE
+		dataType: double
+		lineageTag: dea011af-a01d-4094-9789-cafee70ab33f
+		summarizeBy: sum
+		sourceColumn: AVG_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'kEY FOR BRAND 2' = Trend_chart_30_09[BRAND]&"_"&Trend_chart_30_09[BRAND_OWNER]
+		lineageTag: 20c312b7-0e8d-4f65-9d12-f07ff498cf1a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort = IF(Trend_chart_30_09[BRAND_OWNER]="TCCC",10,0)
+		formatString: 0
+		lineageTag: 0acea590-0cce-4e49-8119-6f705b27ac0c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recent_run =
+			
+			var a= MAX(Trend_chart_30_09[RUN_STATUS_PERIOD_ID])
+			RETURN
+			IF(Trend_chart_30_09[RUN_STATUS_PERIOD_ID]=a,1,0)
+		formatString: 0
+		lineageTag: d1138138-0d50-431d-b422-8565e60e6df6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Trend_chart_30_09 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("syn-tccc-udp-mdp-us2-prd-01-ondemand.sql.azuresynapse.net"),
+				    db_marketing_analytics = Source{[Name="db_marketing_analytics"]}[Data],
+				    sch_kocompetitionalert_t_ext_ko_competitionalert_trend_level_new = db_marketing_analytics{[Schema="sch_kocompetitionalert",Item="t_ext_ko_competitionalert_trend_level_new_s2"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(sch_kocompetitionalert_t_ext_ko_competitionalert_trend_level_new,{{"COUNTRY", Text.Upper, type text}, {"CATEGORY", Text.Upper, type text}, {"BRAND", Text.Upper, type text}, {"BRAND_OWNER", Text.Upper, type text}})
+				in
+				    #"Uppercased Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
